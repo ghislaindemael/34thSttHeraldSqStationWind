@@ -51,7 +51,7 @@ h3 {
     background-color: orange;
 }
 
-#nrwqLabel h3 {
+#nqrwLabel h3 {
     background-color: yellow;
 }
 
@@ -59,16 +59,12 @@ h3 {
     display: flex;
 }
 
-.dirlbldiv {
-
-}
-
 .dirlbldiv h4 {
     text-align: center;
     font-family: 'Helvetica', serif;
 }
 
-.uptown, .downtown {
+.UP, .DOWN {
     width: 50%;
     border:black solid 1px;
 }
@@ -81,6 +77,13 @@ h3 {
     height: 22px;
     border-top: black 1px solid;
     border-bottom: black 1px solid;
+    font-family: 'Helvetica', serif;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    font-size: 0.75em;
+    padding-left: 5px;
 }
 
 .dirLines {

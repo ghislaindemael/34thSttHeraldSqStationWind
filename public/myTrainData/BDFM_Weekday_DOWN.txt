@@ -1,0 +1,379 @@
+06:05:00, Brighton Beach
+06:24:00, Brighton Beach
+06:43:00, Brighton Beach
+06:56:00, Brighton Beach
+07:06:00, Brighton Beach
+07:16:00, Brighton Beach
+07:27:30, Brighton Beach
+07:37:30, Brighton Beach
+07:47:30, Brighton Beach
+07:56:30, Brighton Beach
+08:08:30, Brighton Beach
+08:16:30, Brighton Beach
+08:26:30, Brighton Beach
+08:36:30, Brighton Beach
+08:44:00, Brighton Beach
+08:55:00, Brighton Beach
+09:03:30, Brighton Beach
+09:12:30, Brighton Beach
+09:23:30, Brighton Beach
+09:30:00, Brighton Beach
+09:37:00, Brighton Beach
+09:47:00, Brighton Beach
+09:57:00, Brighton Beach
+10:07:00, Brighton Beach
+10:17:00, Brighton Beach
+10:27:00, Brighton Beach
+10:37:00, Brighton Beach
+10:47:00, Brighton Beach
+10:57:00, Brighton Beach
+11:07:00, Brighton Beach
+11:17:00, Brighton Beach
+11:27:00, Brighton Beach
+11:37:00, Brighton Beach
+11:47:00, Brighton Beach
+11:57:00, Brighton Beach
+12:07:00, Brighton Beach
+12:17:00, Brighton Beach
+12:27:00, Brighton Beach
+12:37:00, Brighton Beach
+12:47:00, Brighton Beach
+12:57:00, Brighton Beach
+13:07:00, Brighton Beach
+13:17:00, Brighton Beach
+13:27:00, Brighton Beach
+13:37:00, Brighton Beach
+13:47:00, Brighton Beach
+13:57:00, Brighton Beach
+14:07:00, Brighton Beach
+14:17:00, Brighton Beach
+14:27:00, Brighton Beach
+14:37:00, Brighton Beach
+14:47:00, Brighton Beach
+14:57:00, Brighton Beach
+15:07:00, Brighton Beach
+15:17:00, Brighton Beach
+15:27:30, Brighton Beach
+15:37:30, Brighton Beach
+15:47:00, Brighton Beach
+15:57:00, Brighton Beach
+16:07:00, Brighton Beach
+16:17:00, Brighton Beach
+16:40:00, Brighton Beach
+16:25:30, Brighton Beach
+16:48:30, Brighton Beach
+16:32:30, Brighton Beach
+16:57:00, Brighton Beach
+17:04:30, Brighton Beach
+17:10:30, Brighton Beach
+17:17:30, Brighton Beach
+17:23:30, Brighton Beach
+17:29:30, Brighton Beach
+17:35:30, Brighton Beach
+17:41:30, Brighton Beach
+17:49:30, Brighton Beach
+17:55:30, Brighton Beach
+18:04:00, Brighton Beach
+18:12:00, Brighton Beach
+18:20:00, Brighton Beach
+18:28:00, Brighton Beach
+18:37:00, Brighton Beach
+18:47:00, Brighton Beach
+18:57:00, Brighton Beach
+19:07:00, Brighton Beach
+19:17:00, Brighton Beach
+19:27:00, Brighton Beach
+19:37:00, Brighton Beach
+19:47:00, Brighton Beach
+19:57:00, Brighton Beach
+20:07:00, Brighton Beach
+20:17:00, Brighton Beach
+20:27:00, Brighton Beach
+20:37:00, Brighton Beach
+20:47:00, Brighton Beach
+20:57:00, Brighton Beach
+21:07:00, Brighton Beach
+21:17:00, Brighton Beach
+21:27:00, Brighton Beach
+21:37:00, Brighton Beach
+00:48:00, Coney Island-Stillwell Av
+01:03:30, Coney Island-Stillwell Av
+01:23:30, Coney Island-Stillwell Av
+01:43:30, Coney Island-Stillwell Av
+02:03:30, Coney Island-Stillwell Av
+02:23:30, Coney Island-Stillwell Av
+02:43:30, Coney Island-Stillwell Av
+03:03:30, Coney Island-Stillwell Av
+03:23:30, Coney Island-Stillwell Av
+03:43:30, Coney Island-Stillwell Av
+04:03:30, Coney Island-Stillwell Av
+04:23:30, Coney Island-Stillwell Av
+04:43:30, Coney Island-Stillwell Av
+05:03:30, Coney Island-Stillwell Av
+05:23:30, Coney Island-Stillwell Av
+05:43:30, Coney Island-Stillwell Av
+06:00:00, Coney Island-Stillwell Av
+06:15:00, Coney Island-Stillwell Av
+06:28:00, Coney Island-Stillwell Av
+06:41:00, Coney Island-Stillwell Av
+06:52:00, Coney Island-Stillwell Av
+07:03:00, Coney Island-Stillwell Av
+07:11:00, Coney Island-Stillwell Av
+07:19:00, Coney Island-Stillwell Av
+07:26:00, Coney Island-Stillwell Av
+07:34:00, Coney Island-Stillwell Av
+07:41:30, Coney Island-Stillwell Av
+07:50:00, Coney Island-Stillwell Av
+08:01:00, Coney Island-Stillwell Av
+08:11:00, Coney Island-Stillwell Av
+08:21:00, Coney Island-Stillwell Av
+08:28:30, Coney Island-Stillwell Av
+08:35:00, Coney Island-Stillwell Av
+08:41:00, Coney Island-Stillwell Av
+08:47:00, Coney Island-Stillwell Av
+08:53:00, Coney Island-Stillwell Av
+08:59:00, Coney Island-Stillwell Av
+09:06:00, Coney Island-Stillwell Av
+09:14:30, Coney Island-Stillwell Av
+09:22:00, Coney Island-Stillwell Av
+09:31:30, Coney Island-Stillwell Av
+09:41:00, Coney Island-Stillwell Av
+09:51:00, Coney Island-Stillwell Av
+10:01:00, Coney Island-Stillwell Av
+10:11:30, Coney Island-Stillwell Av
+10:21:00, Coney Island-Stillwell Av
+10:32:00, Coney Island-Stillwell Av
+10:41:00, Coney Island-Stillwell Av
+10:51:00, Coney Island-Stillwell Av
+11:02:00, Coney Island-Stillwell Av
+11:11:30, Coney Island-Stillwell Av
+11:21:00, Coney Island-Stillwell Av
+11:31:00, Coney Island-Stillwell Av
+11:41:00, Coney Island-Stillwell Av
+11:51:00, Coney Island-Stillwell Av
+12:01:00, Coney Island-Stillwell Av
+12:11:00, Coney Island-Stillwell Av
+12:21:00, Coney Island-Stillwell Av
+12:31:00, Coney Island-Stillwell Av
+12:41:00, Coney Island-Stillwell Av
+12:51:00, Coney Island-Stillwell Av
+13:01:00, Coney Island-Stillwell Av
+13:11:00, Coney Island-Stillwell Av
+13:21:00, Coney Island-Stillwell Av
+13:31:30, Coney Island-Stillwell Av
+13:41:00, Coney Island-Stillwell Av
+13:51:00, Coney Island-Stillwell Av
+14:02:00, Coney Island-Stillwell Av
+14:11:30, Coney Island-Stillwell Av
+14:21:00, Coney Island-Stillwell Av
+14:32:00, Coney Island-Stillwell Av
+14:41:30, Coney Island-Stillwell Av
+14:51:00, Coney Island-Stillwell Av
+15:02:00, Coney Island-Stillwell Av
+15:11:30, Coney Island-Stillwell Av
+15:21:00, Coney Island-Stillwell Av
+15:32:00, Coney Island-Stillwell Av
+15:41:30, Coney Island-Stillwell Av
+15:51:00, Coney Island-Stillwell Av
+16:01:00, Coney Island-Stillwell Av
+16:11:30, Coney Island-Stillwell Av
+16:19:30, Coney Island-Stillwell Av
+16:29:00, Coney Island-Stillwell Av
+16:37:30, Coney Island-Stillwell Av
+16:45:30, Coney Island-Stillwell Av
+16:53:00, Coney Island-Stillwell Av
+16:59:00, Coney Island-Stillwell Av
+17:03:00, Coney Island-Stillwell Av
+17:08:00, Coney Island-Stillwell Av
+17:15:00, Coney Island-Stillwell Av
+17:21:00, Coney Island-Stillwell Av
+17:27:30, Coney Island-Stillwell Av
+17:33:00, Coney Island-Stillwell Av
+17:40:00, Coney Island-Stillwell Av
+17:45:00, Coney Island-Stillwell Av
+17:52:00, Coney Island-Stillwell Av
+18:00:00, Coney Island-Stillwell Av
+18:05:30, Coney Island-Stillwell Av
+18:16:30, Coney Island-Stillwell Av
+18:24:30, Coney Island-Stillwell Av
+18:32:00, Coney Island-Stillwell Av
+18:41:00, Coney Island-Stillwell Av
+18:52:00, Coney Island-Stillwell Av
+19:01:30, Coney Island-Stillwell Av
+00:45:30, Coney Island-Stillwell Av
+01:05:30, Coney Island-Stillwell Av
+01:25:30, Coney Island-Stillwell Av
+01:45:30, Coney Island-Stillwell Av
+02:05:30, Coney Island-Stillwell Av
+02:25:30, Coney Island-Stillwell Av
+02:45:30, Coney Island-Stillwell Av
+03:05:30, Coney Island-Stillwell Av
+03:25:30, Coney Island-Stillwell Av
+03:45:30, Coney Island-Stillwell Av
+04:05:30, Coney Island-Stillwell Av
+04:25:30, Coney Island-Stillwell Av
+04:45:30, Coney Island-Stillwell Av
+05:05:30, Coney Island-Stillwell Av
+05:25:30, Coney Island-Stillwell Av
+05:39:00, Coney Island-Stillwell Av
+05:53:00, Coney Island-Stillwell Av
+06:05:00, Coney Island-Stillwell Av
+06:17:00, Coney Island-Stillwell Av
+06:26:30, Coney Island-Stillwell Av
+06:32:00, Coney Island-Stillwell Av
+06:38:30, Coney Island-Stillwell Av
+06:45:00, Coney Island-Stillwell Av
+06:52:30, Coney Island-Stillwell Av
+06:59:00, Coney Island-Stillwell Av
+07:05:00, Church Av
+07:11:00, Coney Island-Stillwell Av
+07:17:00, Kings Hwy
+07:22:30, Coney Island-Stillwell Av
+07:29:30, Kings Hwy
+07:34:30, Coney Island-Stillwell Av
+07:39:30, Kings Hwy
+07:44:30, Coney Island-Stillwell Av
+07:48:30, Kings Hwy
+07:53:00, Coney Island-Stillwell Av
+07:57:00, Coney Island-Stillwell Av
+08:01:00, Kings Hwy
+08:04:30, Coney Island-Stillwell Av
+08:09:00, Coney Island-Stillwell Av
+08:13:00, Kings Hwy
+08:17:30, Coney Island-Stillwell Av
+08:21:30, Coney Island-Stillwell Av
+08:24:30, Kings Hwy
+08:28:00, Coney Island-Stillwell Av
+08:32:00, Kings Hwy
+08:38:00, Coney Island-Stillwell Av
+08:40:00, Kings Hwy
+08:46:00, Coney Island-Stillwell Av
+08:48:00, Kings Hwy
+08:53:00, Coney Island-Stillwell Av
+08:56:00, Kings Hwy
+09:02:30, Coney Island-Stillwell Av
+09:06:30, Kings Hwy
+09:10:30, Coney Island-Stillwell Av
+09:14:00, Kings Hwy
+09:19:30, Coney Island-Stillwell Av
+09:23:00, Coney Island-Stillwell Av
+09:29:30, Kings Hwy
+09:34:00, Coney Island-Stillwell Av
+09:39:00, Coney Island-Stillwell Av
+09:42:00, Kings Hwy
+09:49:00, Coney Island-Stillwell Av
+09:53:00, Coney Island-Stillwell Av
+09:59:00, Coney Island-Stillwell Av
+10:06:00, Kings Hwy
+10:12:00, Coney Island-Stillwell Av
+10:17:30, Coney Island-Stillwell Av
+10:23:00, Coney Island-Stillwell Av
+10:29:00, Coney Island-Stillwell Av
+10:35:30, Coney Island-Stillwell Av
+10:40:00, Coney Island-Stillwell Av
+10:46:30, Coney Island-Stillwell Av
+10:52:00, Coney Island-Stillwell Av
+10:56:30, Coney Island-Stillwell Av
+11:01:30, Coney Island-Stillwell Av
+11:08:30, Coney Island-Stillwell Av
+11:15:30, Coney Island-Stillwell Av
+11:20:30, Coney Island-Stillwell Av
+11:25:30, Coney Island-Stillwell Av
+11:32:00, Coney Island-Stillwell Av
+11:39:00, Coney Island-Stillwell Av
+11:46:30, Coney Island-Stillwell Av
+11:52:00, Coney Island-Stillwell Av
+12:00:00, Coney Island-Stillwell Av
+12:07:30, Coney Island-Stillwell Av
+12:15:30, Coney Island-Stillwell Av
+12:22:30, Coney Island-Stillwell Av
+12:30:00, Coney Island-Stillwell Av
+12:37:30, Coney Island-Stillwell Av
+12:45:30, Coney Island-Stillwell Av
+12:52:30, Coney Island-Stillwell Av
+13:00:30, Coney Island-Stillwell Av
+13:08:00, Coney Island-Stillwell Av
+13:15:30, Coney Island-Stillwell Av
+13:22:30, Coney Island-Stillwell Av
+13:30:30, Coney Island-Stillwell Av
+13:38:00, Coney Island-Stillwell Av
+13:46:00, Coney Island-Stillwell Av
+13:52:30, Coney Island-Stillwell Av
+14:00:00, Coney Island-Stillwell Av
+14:07:00, Coney Island-Stillwell Av
+14:11:30, Coney Island-Stillwell Av
+14:17:30, Coney Island-Stillwell Av
+14:23:30, Kings Hwy
+14:29:30, Coney Island-Stillwell Av
+14:37:30, Coney Island-Stillwell Av
+14:45:30, Coney Island-Stillwell Av
+14:53:30, Coney Island-Stillwell Av
+15:00:00, Coney Island-Stillwell Av
+15:08:00, Coney Island-Stillwell Av
+15:15:30, Coney Island-Stillwell Av
+15:22:30, Coney Island-Stillwell Av
+15:29:00, Coney Island-Stillwell Av
+15:37:30, Kings Hwy
+15:45:30, Coney Island-Stillwell Av
+15:53:00, Coney Island-Stillwell Av
+16:01:00, Kings Hwy
+16:04:30, Coney Island-Stillwell Av
+16:10:30, Kings Hwy
+16:16:30, Coney Island-Stillwell Av
+16:23:00, Coney Island-Stillwell Av
+16:28:30, Kings Hwy
+16:33:30, Coney Island-Stillwell Av
+16:39:00, Kings Hwy
+16:44:00, Coney Island-Stillwell Av
+16:48:30, Kings Hwy
+16:55:00, Coney Island-Stillwell Av
+17:00:00, Kings Hwy
+17:05:00, Coney Island-Stillwell Av
+17:10:00, Kings Hwy
+17:14:30, Coney Island-Stillwell Av
+17:19:30, Kings Hwy
+17:24:00, Coney Island-Stillwell Av
+17:29:00, Kings Hwy
+17:33:30, Coney Island-Stillwell Av
+17:39:00, Kings Hwy
+17:44:00, Coney Island-Stillwell Av
+17:50:00, Kings Hwy
+17:54:30, Coney Island-Stillwell Av
+18:00:30, Kings Hwy
+18:06:00, Coney Island-Stillwell Av
+18:10:00, Kings Hwy
+18:15:00, Coney Island-Stillwell Av
+18:20:30, Kings Hwy
+18:26:00, Coney Island-Stillwell Av
+18:30:30, Coney Island-Stillwell Av
+18:35:30, Coney Island-Stillwell Av
+18:39:30, Coney Island-Stillwell Av
+18:44:00, Coney Island-Stillwell Av
+18:49:00, Kings Hwy
+18:54:00, Coney Island-Stillwell Av
+18:59:30, Coney Island-Stillwell Av
+19:05:30, Coney Island-Stillwell Av
+19:09:30, Coney Island-Stillwell Av
+19:14:30, Coney Island-Stillwell Av
+19:20:30, Kings Hwy
+19:26:00, Coney Island-Stillwell Av
+19:31:00, Coney Island-Stillwell Av
+19:35:00, Kings Hwy
+19:41:00, Coney Island-Stillwell Av
+19:46:00, Coney Island-Stillwell Av
+19:52:30, Coney Island-Stillwell Av
+19:56:30, Coney Island-Stillwell Av
+20:00:30, Kings Hwy
+20:05:30, Coney Island-Stillwell Av
+20:10:30, Coney Island-Stillwell Av
+20:16:30, Coney Island-Stillwell Av
+20:22:00, Coney Island-Stillwell Av
+20:29:30, Coney Island-Stillwell Av
+20:34:30, Kings Hwy
+20:40:30, Coney Island-Stillwell Av
+20:46:30, Kings Hwy
+20:53:00, Coney Island-Stillwell Av
+20:59:00, Coney Island-Stillwell Av
+21:05:00, Coney Island-Stillwell Av
+21:11:30, Coney Island-Stillwell Av
+21:17:00, Coney Island-Stillwell Av

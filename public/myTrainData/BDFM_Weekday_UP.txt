@@ -1,0 +1,366 @@
+06:35:00, Bedford Park Blvd
+06:45:00, Bedford Park Blvd
+06:55:00, Bedford Park Blvd
+07:05:00, Bedford Park Blvd
+07:16:00, Bedford Park Blvd
+07:23:00, Bedford Park Blvd
+07:31:30, Bedford Park Blvd
+07:38:30, Bedford Park Blvd
+07:47:00, Bedford Park Blvd
+07:56:00, Bedford Park Blvd
+08:03:00, Bedford Park Blvd
+08:09:00, Bedford Park Blvd
+08:15:00, Bedford Park Blvd
+08:20:00, Bedford Park Blvd
+08:26:00, Bedford Park Blvd
+08:33:00, Kingsbridge Rd
+08:38:30, Kingsbridge Rd
+08:46:00, Kingsbridge Rd
+08:52:00, Bedford Park Blvd
+08:56:00, 145 St
+09:02:00, 145 St
+09:09:30, 145 St
+09:17:30, 145 St
+09:25:00, 145 St
+09:32:30, 145 St
+09:40:00, 145 St
+09:48:00, 145 St
+09:56:30, 145 St
+10:06:30, 145 St
+10:16:30, 145 St
+10:26:30, 145 St
+10:36:30, 145 St
+10:46:30, 145 St
+10:56:30, 145 St
+11:06:30, 145 St
+11:16:30, 145 St
+11:26:30, 145 St
+11:36:30, 145 St
+11:46:30, 145 St
+11:56:30, 145 St
+12:06:30, 145 St
+12:16:30, 145 St
+12:26:30, 145 St
+12:36:30, 145 St
+12:46:30, 145 St
+12:56:30, 145 St
+13:06:30, 145 St
+13:16:30, 145 St
+13:26:30, 145 St
+13:36:30, 145 St
+13:46:30, 145 St
+13:56:30, 145 St
+14:06:30, 145 St
+14:16:30, 145 St
+14:26:30, 145 St
+14:36:30, 145 St
+14:46:30, 145 St
+14:56:30, 145 St
+15:06:30, 145 St
+15:16:30, 145 St
+15:26:30, 145 St
+15:36:30, 145 St
+15:46:30, Bedford Park Blvd
+15:56:30, Bedford Park Blvd
+16:07:00, Bedford Park Blvd
+16:17:00, Bedford Park Blvd
+16:27:00, Bedford Park Blvd
+16:37:00, Bedford Park Blvd
+16:47:30, Bedford Park Blvd
+16:55:00, Bedford Park Blvd
+17:07:30, Bedford Park Blvd
+17:15:00, Bedford Park Blvd
+17:28:00, Bedford Park Blvd
+17:38:00, Bedford Park Blvd
+17:49:30, Bedford Park Blvd
+17:58:30, Bedford Park Blvd
+18:07:00, Bedford Park Blvd
+18:17:00, Bedford Park Blvd
+18:27:00, Bedford Park Blvd
+18:35:30, 145 St
+18:45:30, 145 St
+18:57:30, 145 St
+19:05:30, 145 St
+19:15:30, 145 St
+19:29:00, 145 St
+19:36:30, 145 St
+19:45:30, 145 St
+19:55:30, 145 St
+20:05:30, 145 St
+20:15:30, 145 St
+20:25:30, 145 St
+20:35:30, 145 St
+20:46:30, 145 St
+20:55:30, 145 St
+21:06:30, 145 St
+21:15:30, 145 St
+21:25:30, 145 St
+21:35:30, 145 St
+02:50:00, Norwood-205 St
+03:10:00, Norwood-205 St
+03:30:00, Norwood-205 St
+03:50:00, Norwood-205 St
+04:10:00, Norwood-205 St
+04:30:00, Norwood-205 St
+04:50:00, Norwood-205 St
+05:10:00, Norwood-205 St
+05:30:00, Norwood-205 St
+05:50:00, Norwood-205 St
+06:06:00, Norwood-205 St
+06:20:30, Norwood-205 St
+06:31:00, Norwood-205 St
+06:40:30, Norwood-205 St
+06:51:00, Norwood-205 St
+07:01:00, Norwood-205 St
+07:12:00, Norwood-205 St
+07:21:00, Norwood-205 St
+07:28:30, Norwood-205 St
+07:36:00, Norwood-205 St
+07:45:00, Norwood-205 St
+07:52:30, Norwood-205 St
+08:00:00, Norwood-205 St
+08:07:00, Norwood-205 St
+08:13:00, Norwood-205 St
+08:18:00, Norwood-205 St
+08:24:30, Norwood-205 St
+08:31:00, Bedford Park Blvd
+08:37:00, Norwood-205 St
+08:43:00, Bedford Park Blvd
+08:49:30, Norwood-205 St
+08:54:30, Bedford Park Blvd
+09:00:00, Norwood-205 St
+09:06:00, Norwood-205 St
+09:14:30, Norwood-205 St
+09:22:00, Norwood-205 St
+09:30:00, Norwood-205 St
+09:37:00, Norwood-205 St
+09:44:30, Norwood-205 St
+09:53:30, Norwood-205 St
+10:03:00, Norwood-205 St
+10:13:00, Norwood-205 St
+10:23:00, Norwood-205 St
+10:33:00, Norwood-205 St
+10:43:00, Norwood-205 St
+10:53:00, Norwood-205 St
+11:03:00, Norwood-205 St
+11:13:00, Norwood-205 St
+11:23:00, Norwood-205 St
+11:33:00, Norwood-205 St
+11:43:00, Norwood-205 St
+11:53:00, Norwood-205 St
+12:03:00, Norwood-205 St
+12:13:00, Norwood-205 St
+12:23:00, Norwood-205 St
+12:33:00, Norwood-205 St
+12:43:00, Norwood-205 St
+12:53:00, Norwood-205 St
+13:03:00, Norwood-205 St
+13:13:00, Norwood-205 St
+13:23:00, Norwood-205 St
+13:33:00, Norwood-205 St
+13:43:00, Norwood-205 St
+13:53:00, Norwood-205 St
+14:03:00, Norwood-205 St
+14:13:00, Norwood-205 St
+14:23:00, Norwood-205 St
+14:33:00, Norwood-205 St
+14:43:00, Norwood-205 St
+14:53:00, Norwood-205 St
+15:03:00, Norwood-205 St
+15:13:00, Norwood-205 St
+15:21:00, Norwood-205 St
+15:29:00, Norwood-205 St
+15:33:30, Norwood-205 St
+15:43:00, Norwood-205 St
+15:53:00, Norwood-205 St
+16:03:00, Norwood-205 St
+16:10:00, Norwood-205 St
+16:20:30, Norwood-205 St
+16:30:00, Norwood-205 St
+16:41:00, Norwood-205 St
+16:50:00, Norwood-205 St
+16:58:00, Norwood-205 St
+17:04:30, Norwood-205 St
+17:11:00, Norwood-205 St
+17:18:30, Norwood-205 St
+17:26:30, Norwood-205 St
+17:36:30, Norwood-205 St
+17:46:30, Norwood-205 St
+17:56:30, Norwood-205 St
+18:04:00, Norwood-205 St
+18:13:00, Norwood-205 St
+18:23:00, Norwood-205 St
+18:32:00, Norwood-205 St
+18:39:30, Norwood-205 St
+18:48:30, Norwood-205 St
+18:54:00, Norwood-205 St
+19:02:00, Norwood-205 St
+19:11:00, Norwood-205 St
+03:09:30, Jamaica-179 St
+03:29:30, Jamaica-179 St
+03:49:30, Jamaica-179 St
+04:09:30, Jamaica-179 St
+04:29:30, Jamaica-179 St
+04:49:30, Jamaica-179 St
+05:09:30, Jamaica-179 St
+05:29:30, Jamaica-179 St
+05:42:30, Jamaica-179 St
+05:56:30, Jamaica-179 St
+06:08:30, Jamaica-179 St
+06:19:30, Jamaica-179 St
+06:31:30, Jamaica-179 St
+06:42:00, Jamaica-179 St
+06:53:00, Jamaica-179 St
+07:02:30, Jamaica-179 St
+07:16:30, Jamaica-179 St
+07:10:00, Jamaica-179 St
+07:23:30, Jamaica-179 St
+07:29:30, Jamaica-179 St
+07:42:30, Jamaica-179 St
+07:36:30, Jamaica-179 St
+07:52:00, Jamaica-179 St
+07:48:00, Jamaica-179 St
+07:55:00, Jamaica-179 St
+07:58:00, Jamaica-179 St
+08:05:30, Jamaica-179 St
+08:12:00, Jamaica-179 St
+08:19:30, Jamaica-179 St
+08:15:30, Jamaica-179 St
+08:32:30, Jamaica-179 St
+08:27:30, Jamaica-179 St
+08:40:00, Jamaica-179 St
+08:47:00, Jamaica-179 St
+08:54:00, Jamaica-179 St
+08:36:30, Jamaica-179 St
+09:03:30, Jamaica-179 St
+08:59:00, Jamaica-179 St
+09:16:00, Jamaica-179 St
+09:09:00, Jamaica-179 St
+09:26:00, Jamaica-179 St
+09:22:30, Jamaica-179 St
+09:35:00, Jamaica-179 St
+09:30:30, Jamaica-179 St
+09:47:00, Jamaica-179 St
+09:41:00, Jamaica-179 St
+09:55:00, Jamaica-179 St
+10:00:00, Jamaica-179 St
+10:06:30, Jamaica-179 St
+10:15:30, Jamaica-179 St
+10:20:30, Jamaica-179 St
+10:26:00, Jamaica-179 St
+10:33:00, Jamaica-179 St
+10:40:00, Jamaica-179 St
+10:47:00, Jamaica-179 St
+10:58:30, Jamaica-179 St
+10:53:00, Jamaica-179 St
+11:04:30, Jamaica-179 St
+11:11:30, Jamaica-179 St
+11:18:30, Jamaica-179 St
+11:25:30, Jamaica-179 St
+11:33:00, Jamaica-179 St
+11:41:00, Jamaica-179 St
+11:48:30, Jamaica-179 St
+11:56:00, Jamaica-179 St
+12:03:30, Jamaica-179 St
+12:10:30, Jamaica-179 St
+12:17:30, Jamaica-179 St
+12:25:30, Jamaica-179 St
+12:32:00, Jamaica-179 St
+12:38:30, Jamaica-179 St
+12:44:30, Jamaica-179 St
+12:50:00, Jamaica-179 St
+12:56:00, Jamaica-179 St
+13:02:00, Jamaica-179 St
+13:09:00, Jamaica-179 St
+13:16:30, Jamaica-179 St
+13:22:00, Jamaica-179 St
+13:27:00, Jamaica-179 St
+13:33:30, Jamaica-179 St
+13:40:30, Jamaica-179 St
+13:47:30, Jamaica-179 St
+13:55:30, Jamaica-179 St
+14:01:30, Jamaica-179 St
+14:08:00, Jamaica-179 St
+14:13:30, Jamaica-179 St
+14:20:00, Jamaica-179 St
+14:27:00, Jamaica-179 St
+14:34:00, Jamaica-179 St
+14:42:00, Jamaica-179 St
+14:50:30, Jamaica-179 St
+14:57:00, Jamaica-179 St
+15:02:30, Jamaica-179 St
+15:13:00, Jamaica-179 St
+15:07:30, Jamaica-179 St
+15:20:00, Jamaica-179 St
+15:27:00, Jamaica-179 St
+15:37:30, Jamaica-179 St
+15:32:30, Jamaica-179 St
+15:45:30, Jamaica-179 St
+15:50:30, Jamaica-179 St
+15:57:00, Jamaica-179 St
+16:07:00, Jamaica-179 St
+16:02:30, Jamaica-179 St
+16:12:00, Jamaica-179 St
+16:17:30, Jamaica-179 St
+16:22:00, Jamaica-179 St
+16:32:00, Jamaica-179 St
+16:27:00, Jamaica-179 St
+16:38:00, Jamaica-179 St
+16:47:00, Jamaica-179 St
+16:43:00, Jamaica-179 St
+16:54:30, Jamaica-179 St
+16:51:30, Jamaica-179 St
+17:03:00, Jamaica-179 St
+16:59:00, Jamaica-179 St
+17:11:00, Jamaica-179 St
+17:07:00, Jamaica-179 St
+17:19:00, Jamaica-179 St
+17:15:00, Jamaica-179 St
+17:26:00, Jamaica-179 St
+17:23:00, Jamaica-179 St
+17:35:00, Jamaica-179 St
+17:31:00, Jamaica-179 St
+17:43:00, Jamaica-179 St
+17:39:00, Jamaica-179 St
+17:52:00, Jamaica-179 St
+17:48:00, Jamaica-179 St
+18:00:30, Jamaica-179 St
+17:56:00, Jamaica-179 St
+18:10:30, Jamaica-179 St
+18:05:30, Jamaica-179 St
+18:20:30, Jamaica-179 St
+18:15:30, Jamaica-179 St
+18:31:30, Jamaica-179 St
+18:25:30, Jamaica-179 St
+18:41:30, Jamaica-179 St
+18:37:00, Jamaica-179 St
+18:52:00, Jamaica-179 St
+18:46:00, Jamaica-179 St
+19:03:00, Jamaica-179 St
+18:58:00, Jamaica-179 St
+19:13:30, Jamaica-179 St
+19:09:00, Jamaica-179 St
+19:23:30, Jamaica-179 St
+19:18:30, Jamaica-179 St
+19:34:00, Jamaica-179 St
+19:28:30, Jamaica-179 St
+19:45:30, Jamaica-179 St
+19:41:00, Jamaica-179 St
+19:55:00, Jamaica-179 St
+19:50:00, Jamaica-179 St
+20:06:00, Jamaica-179 St
+20:00:00, Jamaica-179 St
+20:13:00, Jamaica-179 St
+20:20:00, Jamaica-179 St
+20:26:00, Jamaica-179 St
+20:31:30, Jamaica-179 St
+20:37:30, Jamaica-179 St
+20:43:00, Jamaica-179 St
+20:48:00, Jamaica-179 St
+20:55:00, Jamaica-179 St
+21:01:30, Jamaica-179 St
+21:08:00, Jamaica-179 St
+21:14:00, Jamaica-179 St
+21:21:30, Jamaica-179 St
+21:29:00, Jamaica-179 St
+21:36:30, Jamaica-179 St

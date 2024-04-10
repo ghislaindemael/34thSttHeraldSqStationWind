@@ -14,34 +14,41 @@ function timeStringToMinutes(timeString) {
     return hours * 60 + minutes;
 }
 
-function processDepartureTimes(lineType) {
+function processDepartureTimes(lineType, direction) {
     let departureTimes = [];
 
     for (const day of ['Weekday', 'Saturday', 'Sunday']) {
-        const inputFile = path.join(outputDir, `${lineType}_${day}.txt`);
+        const inputFile = path.join(outputDir, `${lineType}_${day}_${direction}.txt`);
         const readStream = fs.createReadStream(inputFile);
         const readInterface = createInterface({ input: readStream });
 
         readInterface.on('line', line => {
-            const departureTime = timeStringToMinutes(line);
+            const fields = line.split(',');
+            const departureTime = timeStringToMinutes(fields[0]);
+            const headsign = fields[1];
 
             if (day === 'Weekday') {
                 for (let i = 0; i <= 4; i++) {
-                    departureTimes.push(departureTime + 1440 * i);
+                    departureTimes.push(`${departureTime + 1440 * i}:${headsign}`);
                 }
             } else if (day === 'Saturday') {
-                departureTimes.push(departureTime + 1440 * 5);
+                departureTimes.push(`${departureTime + 1440 * 5}:${headsign}`);
             } else if (day === 'Sunday') {
-                departureTimes.push(departureTime + 1440 * 6);
+                departureTimes.push(`${departureTime + 1440 * 6}:${headsign}`);
             }
         });
 
         readInterface.on('close', () => {
-            departureTimes.sort((a, b) => a - b);
-            fs.writeFileSync(path.join(outputDir, `${lineType}_DepartureTimes.txt`), departureTimes.join('\n'));
+            departureTimes.sort((a, b) => a.split(':')[0] - b.split(':')[0]);
+            fs.writeFileSync(path.join(outputDir, `${lineType}_${direction}_Times.txt`), departureTimes.join('\n'));
         });
     }
 }
 
-processDepartureTimes('BDFM');
-processDepartureTimes('NQRW');
+function processLineDepartureTimes(lineType){
+    processDepartureTimes(lineType, "UP");
+    processDepartureTimes(lineType, "DOWN");
+}
+
+processLineDepartureTimes('BDFM');
+processLineDepartureTimes('NQRW');
