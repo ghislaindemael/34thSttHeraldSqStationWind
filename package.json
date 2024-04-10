@@ -8,5 +8,10 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "adm-zip": "^0.5.12",
+    "axios": "^1.6.8"
+  },
+  "type": "module"
 }
