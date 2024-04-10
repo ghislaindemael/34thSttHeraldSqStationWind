@@ -3,3 +3,87 @@ h1 {
     text-align: center;
     font-family: 'Helvetica', serif;
 }
+
+h3 {
+    font-family: 'Helvetica', serif;
+}
+
+#timetable {
+    width: 95%;
+    display: flex;
+}
+
+.timeDifCol {
+    width: 5%;
+    border: black 1px solid;
+    padding-top: 129px;
+}
+
+.timeDifCol .cell {
+    text-align: center;
+    justify-content: center;
+    font-family: 'Helvetica', serif;
+}
+
+.linesCol {
+    border: black 1px solid;
+    border-left: 0;
+    width: 46%;
+}
+
+.lineLabel {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+}
+
+.lineLabel h3 {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+
+#bdfmLabel h3 {
+    background-color: orange;
+}
+
+#nrwqLabel h3 {
+    background-color: yellow;
+}
+
+.timeColumn {
+    display: flex;
+}
+
+.dirlbldiv {
+
+}
+
+.dirlbldiv h4 {
+    text-align: center;
+    font-family: 'Helvetica', serif;
+}
+
+.uptown, .downtown {
+    width: 50%;
+    border:black solid 1px;
+}
+
+.lineCol {
+    width: 50%;
+}
+
+.cell {
+    height: 22px;
+    border-top: black 1px solid;
+    border-bottom: black 1px solid;
+}
+
+.dirLines {
+    display: flex;
+}
+
