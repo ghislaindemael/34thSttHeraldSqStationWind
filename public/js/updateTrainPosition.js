@@ -3,7 +3,7 @@ function updateTrainPosition(routeColumnId, direction) {
 
     var now = new Date();
     var dayOfWeek = now.getDay();
-    var hours = now.getHours();
+    var hours = now.getHours() - 6;
     var minutes = now.getMinutes();
     var minutesSinceMonday = hours * 60 + minutes
     switch (dayOfWeek) {

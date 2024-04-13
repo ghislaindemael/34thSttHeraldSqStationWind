@@ -2,6 +2,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
+import { Station } from './public/js/Station.js'
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -15,6 +16,16 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
+var station = new Station();
+station.addRoomWithName("RoomA");
+station.addRoomWithName("RoomB");
+station.addPassage("RoomA", "RoomB");
+station.findRoomName("RoomA").windStrength = 80;
+console.log(station.rooms);
+station.setPassageTempWind();
+console.log(station.passages);
+station.setRoomWindWithPassages();
+console.log(station.rooms);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
