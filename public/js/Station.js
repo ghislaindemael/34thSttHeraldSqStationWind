@@ -1,5 +1,5 @@
 import { Room } from "./Room.js";
-import {Passage} from "./Passage.js";
+import { Passage } from "./Passage.js";
 import endRoom from "express/lib/view.js";
 
 export class Station {
@@ -7,8 +7,14 @@ export class Station {
     passages = []
 
     constructor() {
-        console.log("New Station");
+        //console.log("New Station");
     };
+
+    printRooms(){
+        this.rooms.forEach(room =>{
+           console.log(room.name + " " + room.windStrength);
+        });
+    }
 
     addRoom(){
         this.rooms.push(new Room("default"));
@@ -38,9 +44,26 @@ export class Station {
         room2.addPassage(passage);
     }
 
+    //Wind Management
+
+    cycle(){
+        this.setPassageTempWind();
+        this.decreaseWindStrength(1);
+        this.setRoomWindWithPassages();
+    }
+
     setPassageTempWind(){
         for(let i = 0; i < this.passages.length; i++){
             this.passages[i].setWindStrengthFromStartRoom();
+        }
+    }
+
+    decreaseWindStrength(number){
+        for(let i = 0; i < this.rooms.length; i++){
+            this.rooms[i].windStrength -= number;
+            if(this.rooms[i].windStrength < 0){
+                this.rooms[i].windStrength = 0;
+            }
         }
     }
 
@@ -49,6 +72,8 @@ export class Station {
             this.rooms[i].updateWindFromPassages();
         }
     }
+
+
 
 
 

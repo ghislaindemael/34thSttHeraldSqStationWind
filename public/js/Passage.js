@@ -2,15 +2,17 @@
 
 export class Passage {
 
-    startRoom;
-    endRoom;
+    startRoom = null;
+    endRoom = null;
+    factor = 50;
     direction = 0;
     windStrength = 0;
-    factor = 0;
 
-    constructor(startRoom, endRoom) {
+
+    constructor(startRoom, endRoom, factor) {
         this.startRoom = startRoom;
         this.endRoom = endRoom;
+        this.factor = factor;
     }
 
     get windStrength() {
@@ -21,8 +23,16 @@ export class Passage {
 
     }
 
+    set factor(factor) {
+        this.factor = factor;
+    }
+
     setWindStrengthFromStartRoom(){
         this.windStrength = this.startRoom.windStrength;
+    }
+
+    setStrengthFromRoomWithFactor(){
+        this.windStrength = Math.round(this.startRoom.windStrength * (this.factor / 100));
     }
 
 }

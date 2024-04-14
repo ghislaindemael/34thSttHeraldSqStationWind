@@ -27,11 +27,17 @@ export class Room {
     }
 
     updateWindFromPassages(){
+        let averageStrengthInPassages = 0;
         for(let i = 0; i < this.passages.length; i++){
             if(this.passages[i].endRoom === this){
-                console.log("This is an end room");
-                this.windStrength += this.passages[i].windStrength;
+                averageStrengthInPassages += this.passages[i].windStrength;
             }
+        }
+        if(this.passages.length > 0){
+            averageStrengthInPassages /= this.passages.length;
+        }
+        if(averageStrengthInPassages > this.windStrength) {
+            this.windStrength = averageStrengthInPassages;
         }
     }
 }

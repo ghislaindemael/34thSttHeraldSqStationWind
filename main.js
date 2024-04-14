@@ -20,14 +20,17 @@ var station = new Station();
 station.addRoomWithName("RoomA");
 station.addRoomWithName("RoomB");
 station.addPassage("RoomA", "RoomB");
+station.printRooms();
 station.findRoomName("RoomA").windStrength = 80;
-console.log(station.rooms);
-station.setPassageTempWind();
-console.log(station.passages);
-station.setRoomWindWithPassages();
-console.log(station.rooms);
+station.cycle();
+station.printRooms();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });
+
+setInterval(function() {
+    station.cycle();
+    station.printRooms();
+}, 1000);
