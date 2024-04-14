@@ -27,17 +27,17 @@ export class Room {
     }
 
     updateWindFromPassages(){
-        let averageStrengthInPassages = 0;
+        let totalWindInPassages = 0;
         for(let i = 0; i < this.passages.length; i++){
-            if(this.passages[i].endRoom === this){
-                averageStrengthInPassages += this.passages[i].windStrength;
-            }
+            totalWindInPassages += this.passages[i].windStrength;
         }
-        if(this.passages.length > 0){
-            averageStrengthInPassages /= this.passages.length;
-        }
+        let averageStrengthInPassages = 0;
+        this.passages.forEach((passage) => {
+            averageStrengthInPassages += ((passage.windStrength * passage.windStrength) / totalWindInPassages);
+        });
         if(averageStrengthInPassages > this.windStrength) {
             this.windStrength = averageStrengthInPassages;
         }
     }
+
 }

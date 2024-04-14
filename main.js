@@ -17,12 +17,15 @@ app.get("/", (req, res) => {
 });
 
 var station = new Station();
-station.addRoomWithName("RoomA");
-station.addRoomWithName("RoomB");
-station.addPassage("RoomA", "RoomB");
-station.printRooms();
-station.findRoomName("RoomA").windStrength = 80;
-station.cycle();
+station.addNamedRoom("RoomA");
+station.addNamedRoom("RoomB");
+station.addPassageWithFactor("RoomA", "RoomB", 100, false);
+station.addNamedRoom("RoomC");
+//station.addPassageWithFactor("RoomC", "RoomB", 75);
+station.addNamedRoom("TunnelToC");
+station.addPassage("TunnelToC", "RoomC");
+station.findRoomName("RoomA").windStrength = 0;
+station.findRoomName("RoomC").windStrength = 0;
 station.printRooms();
 
 const PORT = process.env.PORT || 3000;

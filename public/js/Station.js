@@ -1,10 +1,11 @@
 import { Room } from "./Room.js";
 import { Passage } from "./Passage.js";
-import endRoom from "express/lib/view.js";
+
 
 export class Station {
     rooms = []
     passages = []
+    incomingTrains = []
 
     constructor() {
         //console.log("New Station");
@@ -12,7 +13,9 @@ export class Station {
 
     printRooms(){
         this.rooms.forEach(room =>{
-           console.log(room.name + " " + room.windStrength);
+            if(!room.name.startsWith("Tunnel")){
+                console.log(room.name + " " + room.windStrength);
+            }
         });
     }
 
@@ -20,7 +23,7 @@ export class Station {
         this.rooms.push(new Room("default"));
     }
 
-    addRoomWithName(name){
+    addNamedRoom(name){
         this.rooms.push(new Room(name));
     }
 
@@ -38,7 +41,25 @@ export class Station {
     addPassage(startRoom, endRoom){
         let room1 = this.findRoomName(startRoom);
         let room2 = this.findRoomName(endRoom);
-        let passage = new Passage(room1, room2);
+        let passage = new Passage(room1, room2, 100, false);
+        this.passages.push(passage);
+        room1.addPassage(passage);
+        room2.addPassage(passage);
+    }
+
+    addPassageWithFactor(startRoom, endRoom, factor){
+        let room1 = this.findRoomName(startRoom);
+        let room2 = this.findRoomName(endRoom);
+        let passage = new Passage(room1, room2, factor, false);
+        this.passages.push(passage);
+        room1.addPassage(passage);
+        room2.addPassage(passage);
+    }
+
+    addTunnelWithFactor(startRoom, endRoom){
+        let room1 = this.findRoomName(startRoom);
+        let room2 = this.findRoomName(endRoom);
+        let passage = new Passage(room1, room2, 100, true);
         this.passages.push(passage);
         room1.addPassage(passage);
         room2.addPassage(passage);
@@ -46,16 +67,30 @@ export class Station {
 
     //Wind Management
 
-    cycle(){
+    cycle() {
+        this.setTunnelWindStrength();
         this.setPassageTempWind();
         this.decreaseWindStrength(1);
         this.setRoomWindWithPassages();
     }
 
-    setPassageTempWind(){
-        for(let i = 0; i < this.passages.length; i++){
-            this.passages[i].setWindStrengthFromStartRoom();
+    setTunnelWindStrength() {
+        let date = new Date();
+        if((date.getSeconds() % 5) === 0){
+            console.log("Trains arrive");
+            this.rooms.forEach(room => {
+                if(room.name.startsWith("Tunnel")){
+                    console.log("Incoming train to " + room.name);
+                    room.windStrength = 69;
+                }
+            });
         }
+    }
+
+    setPassageTempWind(){
+        this.passages.forEach((passage) => {
+            passage.setStrengthFromRoomWithFactor();
+        });
     }
 
     decreaseWindStrength(number){
@@ -65,6 +100,16 @@ export class Station {
                 this.rooms[i].windStrength = 0;
             }
         }
+        this.rooms.forEach(room =>{
+            if(!room.name.startsWith("Tunnel")){
+                room.windStrength -= number;
+                if(room.windStrength < 0){
+                    room.windStrength = 0;
+                }
+            } else {
+                room.windStrength = 0;
+            }
+        });
     }
 
     setRoomWindWithPassages(){
@@ -72,11 +117,6 @@ export class Station {
             this.rooms[i].updateWindFromPassages();
         }
     }
-
-
-
-
-
 
 }
 

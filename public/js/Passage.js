@@ -1,18 +1,20 @@
 
 
 export class Passage {
-
+    name;
     startRoom = null;
     endRoom = null;
-    factor = 50;
+    oneDir = false;
+    factor = 100;
     direction = 0;
     windStrength = 0;
 
-
-    constructor(startRoom, endRoom, factor) {
+    constructor(startRoom, endRoom, factor, oneDir) {
         this.startRoom = startRoom;
         this.endRoom = endRoom;
         this.factor = factor;
+        this.oneDir = oneDir;
+        this.name = startRoom.name + "->" + endRoom.name;
     }
 
     get windStrength() {
@@ -27,12 +29,23 @@ export class Passage {
         this.factor = factor;
     }
 
-    setWindStrengthFromStartRoom(){
-        this.windStrength = this.startRoom.windStrength;
+    get oneDir(){
+        return this.oneDir;
     }
 
     setStrengthFromRoomWithFactor(){
-        this.windStrength = Math.round(this.startRoom.windStrength * (this.factor / 100));
+        let startStr = this.startRoom.windStrength;
+        let endStr = this.endRoom.windStrength;
+        let totalStr = startStr + endStr
+
+        //console.log(this.name + ": " + startStr + ", " + endStr + ", " + totalStr);
+
+        let avgStrength = ((startStr * startStr) / totalStr) + ((endStr * endStr) / totalStr);
+
+        this.windStrength = Math.round((this.factor / 100) * avgStrength);
+
+        //console.log(this.name + ": " + this.windStrength);
+
     }
 
 }
