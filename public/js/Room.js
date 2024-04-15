@@ -1,13 +1,19 @@
 export class Room {
     type = "simple";
     name = "default";
+    level = "0";
+    xCoord = 0;
+    yCoord = 0;
     windDirection = 0;
     windStrength = 0;
     passages = [];
 
-    constructor(inType, inName) {
+    constructor(inType, inName, inLevel, inXCoord, inYCoord) {
         this.type = inType;
         this.name = inName;
+        this.level = inLevel;
+        this.xCoord = inXCoord;
+        this.yCoord = inYCoord;
         //console.log("Created " + inName + ".");
     }
 
@@ -21,6 +27,18 @@ export class Room {
 
     get name(){
         return this.name;
+    }
+
+    get level(){
+        return this.level;
+    }
+
+    get xCoord(){
+        return this.xCoord;
+    }
+
+    get yCoord(){
+        return this.yCoord;
     }
 
     get windStrength(){

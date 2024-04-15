@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wind Maps</title>
+    <link rel="stylesheet" href="css/windMap.css">
+</head>
+<body>
+<h2 id="station-data">Station-Data</h2>
+<div class="buttons">
+    <button data-floor="0">Floor 0</button>
+    <button data-floor="1">Floor 1</button>
+    <button data-floor="2">Floor 2</button>
+    <button data-floor="3">Floor 3</button>
+</div>
+<div class="map floor-0"></div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- Include jQuery if it's not already included -->
+<script>
+    document.querySelectorAll('.buttons button').forEach(button => {
+        button.addEventListener('click', () => {
+            const map = $('.map');
+            const floor = button.dataset.floor;
+            console.log("Setting floor to: " + floor);
+            map.removeClass('floor-0 floor-1 floor-2 floor-3');
+            map.addClass('floor-' + floor);
+        });
+    });
+</script>
+<script type="module">
+    import { updateWindMaps } from './js/updateMaps.js';
+    updateWindMaps();
+    setInterval(function()  {
+        updateWindMaps();
+    }, 2000);
+</script>
+</html>

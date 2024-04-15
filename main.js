@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { Station } from './public/js/Station.js'
+import { saveStationData } from './public/js/stationManagement.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
@@ -17,16 +18,15 @@ app.get("/", (req, res) => {
 });
 
 let station = new Station();
-station.addNamedRoom("RoomA");
-station.addNamedRoom("RoomB");
+station.addParameteredRoom("RoomA", "0", 10, 10);
+station.addParameteredRoom("RoomB", "0", 20, 20);
 station.addPassageWithFactor("RoomA", "RoomB", 50);
-station.addNamedRoom("RoomC");
+station.addParameteredRoom("RoomC", "0", 30, 30);
 station.addPassageWithFactor("RoomC", "RoomB", 15);
-station.addNamedTunnel("TunnelToC");
+station.addParameteredTunnel("TunnelToC", "0", 40, 40);
 station.addOneDirPassage("TunnelToC", "RoomC");
 //station.findRoomName("RoomA").windStrength = 0;
 //station.findRoomName("RoomC").windStrength = 0;
-station.printRooms();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -36,4 +36,6 @@ app.listen(PORT, () => {
 setInterval(function() {
     station.cycle();
     station.printRooms();
+
+    saveStationData(station);
 }, 1000);

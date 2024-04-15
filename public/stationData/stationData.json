@@ -1,0 +1,41 @@
+{
+  "name": "34StHrldSq",
+  "rooms": [
+    {
+      "type": "simple",
+      "name": "RoomA",
+      "level": "0",
+      "xCoord": 10,
+      "yCoord": 10,
+      "windDirection": 0,
+      "windStrength": 2
+    },
+    {
+      "type": "simple",
+      "name": "RoomB",
+      "level": "0",
+      "xCoord": 20,
+      "yCoord": 20,
+      "windDirection": 0,
+      "windStrength": 3
+    },
+    {
+      "type": "simple",
+      "name": "RoomC",
+      "level": "0",
+      "xCoord": 30,
+      "yCoord": 30,
+      "windDirection": 0,
+      "windStrength": 21
+    },
+    {
+      "type": "tunnel",
+      "name": "TunnelToC",
+      "level": "0",
+      "xCoord": 40,
+      "yCoord": 40,
+      "windDirection": 0,
+      "windStrength": 0
+    }
+  ]
+}

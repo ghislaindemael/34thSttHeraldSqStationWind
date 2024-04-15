@@ -16,7 +16,9 @@ export class Station {
     printRooms(){
         let rooms = "";
         this.rooms.forEach(room =>{
-            rooms = rooms + room.name + ": " + room.windStrength + ", ";
+            if(room.type === "simple"){
+                rooms = rooms + room.name + ": " + room.windStrength + ", ";
+            }
             //console.log(room.name + " " + room.windStrength);
         });
         console.log("-------" + this.name + "-------");
@@ -28,12 +30,12 @@ export class Station {
         this.rooms.push(new Room("simple", "default"));
     }
 
-    addNamedRoom(name){
-        this.rooms.push(new Room("simple", name));
+    addParameteredRoom(name, level, xCoord, yCoord){
+        this.rooms.push(new Room("simple", name, level, xCoord, yCoord));
     }
 
-    addNamedTunnel(name){
-        this.rooms.push(new Tunnel(name));
+    addParameteredTunnel(name, level, xCoord, yCoord){
+        this.rooms.push(new Tunnel(name, level, xCoord, yCoord));
     }
 
     findRoomName(name) {
@@ -73,6 +75,8 @@ export class Station {
         //room1.addPassage(passage);
         room2.addPassage(passage);
     }
+
+
 
     //Wind Management
 
