@@ -22,7 +22,7 @@ export class Passage {
     }
 
     set windStrength(inStrength) {
-
+        this.windStrength = inStrength;
     }
 
     set factor(factor) {
@@ -34,18 +34,22 @@ export class Passage {
     }
 
     setStrengthFromRoomWithFactor(){
-        let startStr = this.startRoom.windStrength;
-        let endStr = this.endRoom.windStrength;
-        let totalStr = startStr + endStr
+        if(this.oneDir){
+            this.windStrength = Math.round((this.factor / 100) * this.startRoom.windStrength);
+        } else {
+            let startStr = Math.round((this.factor / 100) * this.startRoom.windStrength);
+            let endStr = Math.round((this.factor / 100) * this.endRoom.windStrength);
+            let totalStr = startStr + endStr
+            let avgStrength = ((startStr * startStr) / totalStr) + ((endStr * endStr) / totalStr);
+            if(isNaN(avgStrength)){
+                avgStrength = 0;
+            }
+            this.windStrength = Math.round(avgStrength);
+        }
+    }
 
-        //console.log(this.name + ": " + startStr + ", " + endStr + ", " + totalStr);
-
-        let avgStrength = ((startStr * startStr) / totalStr) + ((endStr * endStr) / totalStr);
-
-        this.windStrength = Math.round((this.factor / 100) * avgStrength);
-
-        //console.log(this.name + ": " + this.windStrength);
-
+    isStartRoomOf1DPassage(room){
+        return this.oneDir && room === this.startRoom;
     }
 
 }

@@ -16,16 +16,16 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-var station = new Station();
+let station = new Station();
 station.addNamedRoom("RoomA");
 station.addNamedRoom("RoomB");
-station.addPassageWithFactor("RoomA", "RoomB", 100, false);
+station.addPassageWithFactor("RoomA", "RoomB", 50);
 station.addNamedRoom("RoomC");
-//station.addPassageWithFactor("RoomC", "RoomB", 75);
-station.addNamedRoom("TunnelToC");
-station.addPassage("TunnelToC", "RoomC");
-station.findRoomName("RoomA").windStrength = 0;
-station.findRoomName("RoomC").windStrength = 0;
+station.addPassageWithFactor("RoomC", "RoomB", 15);
+station.addNamedTunnel("TunnelToC");
+station.addOneDirPassage("TunnelToC", "RoomC");
+//station.findRoomName("RoomA").windStrength = 0;
+//station.findRoomName("RoomC").windStrength = 0;
 station.printRooms();
 
 const PORT = process.env.PORT || 3000;

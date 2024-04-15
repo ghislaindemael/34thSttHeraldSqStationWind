@@ -1,13 +1,22 @@
-
 export class Room {
+    type = "simple";
     name = "default";
     windDirection = 0;
     windStrength = 0;
     passages = [];
 
-    constructor(inName) {
+    constructor(inType, inName) {
+        this.type = inType;
         this.name = inName;
-        console.log("Created " + inName + ".");
+        //console.log("Created " + inName + ".");
+    }
+
+    get type(){
+        return this.type;
+    }
+
+    set type(inType) {
+        this.type = inType;
     }
 
     get name(){
@@ -28,16 +37,22 @@ export class Room {
 
     updateWindFromPassages(){
         let totalWindInPassages = 0;
-        for(let i = 0; i < this.passages.length; i++){
-            totalWindInPassages += this.passages[i].windStrength;
-        }
-        let averageStrengthInPassages = 0;
-        this.passages.forEach((passage) => {
-            averageStrengthInPassages += ((passage.windStrength * passage.windStrength) / totalWindInPassages);
+        this.passages.forEach(passage => {
+            totalWindInPassages += passage.windStrength;
         });
-        if(averageStrengthInPassages > this.windStrength) {
-            this.windStrength = averageStrengthInPassages;
+        let avgPassStr = 0;
+        if(totalWindInPassages > 0){
+            this.passages.forEach((passage) => {
+                avgPassStr += ((passage.windStrength * passage.windStrength) / totalWindInPassages);
+            });
         }
+
+        let ws = this.windStrength;
+        let newWS = Math.round(((ws*ws)/(ws + avgPassStr)) + ((avgPassStr*avgPassStr)/(ws + avgPassStr)));
+        if(isNaN(newWS)){
+            newWS = 0;
+        }
+        this.windStrength = newWS;
     }
 
 }
