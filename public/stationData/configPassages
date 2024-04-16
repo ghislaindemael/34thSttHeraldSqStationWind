@@ -1,0 +1,5 @@
+RoomA RoomB false 90 0
+RoomB RoomC false 90 0
+RoomC RoomD false 90 0
+RoomD RoomE false 90 0
+TunnelBU RoomE true 90 0

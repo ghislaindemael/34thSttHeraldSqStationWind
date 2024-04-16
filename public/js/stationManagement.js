@@ -2,21 +2,21 @@ import fs from "fs";
 
 function extractStationData(station) {
 
-    function extractRoomData(room) {
+    function extractRoomData(measPoint) {
         return {
-            type: room.type,
-            name: room.name,
-            level: room.level,
-            xCoord: room.xCoord,
-            yCoord: room.yCoord,
-            windDirection: room.windDirection,
-            windStrength: room.windStrength,
+            type: measPoint.type,
+            name: measPoint.name,
+            level: measPoint.level,
+            xCoord: measPoint.xCoord,
+            yCoord: measPoint.yCoord,
+            windDirection: measPoint.windDirection,
+            windStrength: measPoint.windStrength,
         };
     }
 
     return {
         name: station.name,
-        rooms: station.rooms.map(extractRoomData),
+        measurePoints: station.measurePoints.map(extractRoomData),
     };
 }
 

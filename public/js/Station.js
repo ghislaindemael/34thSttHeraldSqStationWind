@@ -1,6 +1,8 @@
 import { MeasurePoint } from "./MeasurePoint.js";
 import { Passage } from "./Passage.js";
 import {Tunnel} from "./Tunnel.js";
+import fs from "fs";
+import readline from "node:readline";
 
 
 export class Station {
@@ -19,7 +21,7 @@ export class Station {
             if(point.type === "simple"){
                 points = points + point.name + ": " + point.windStrength + ", ";
             }
-            //console.log(point.name + " " + point.windStrength);
+
         });
         console.log("-------" + this.name + "-------");
         console.log(points);
@@ -27,11 +29,58 @@ export class Station {
     }
 
     configurePoints(){
+        const fileStream = fs.createReadStream('./public/stationData/configPoints');
 
+        const rl = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+        });
+
+        rl.on('line', (line) => {
+            const params = line.split(' '); // assuming parameters are separated by a space
+            if (params.length === 5) {
+                const [type, name, level, xCoord, yCoord] = params;
+                this.addParameteredPoint(type, name, level, xCoord, yCoord);
+            }
+        });
     }
 
-    addRoom(){
-        this.measurePoints.push(new MeasurePoint("simple", "default"));
+    configurePassages(){
+        const fileStream = fs.createReadStream('./public/stationData/configPassages');
+
+        const rl = readline.createInterface({
+            input: fileStream,
+            crlfDelay: Infinity
+        });
+
+        rl.on('line', (line) => {
+            const params = line.split(' '); // assuming parameters are separated by a space
+            if (params.length === 5) {
+                const [startRoomName, endRoomName, oneDir, factor, direction] = params;
+
+                const startRoom = this.findRoomName(startRoomName);
+                const endRoom = this.findRoomName(endRoomName);
+
+                if (startRoom && endRoom) {
+                    this.addParameteredPassage(startRoom, endRoom, oneDir, factor, direction);
+                }
+            }
+        });
+    }
+
+    addParameteredPoint(type, name, level, xCoord, yCoord){
+        this.measurePoints.push(new MeasurePoint(type, name, level, xCoord, yCoord));
+    }
+
+    addParameteredPassage(startRoom, endRoom, oneDir, factor, direction){
+        let pass = new Passage(startRoom, endRoom, oneDir, factor, direction);
+        this.passages.push(pass);
+        if(oneDir === "false"){
+            console.log("Pass " + pass + " is bidirectional");
+            startRoom.passages.push(pass);
+        }
+        endRoom.passages.push(pass);
+
     }
 
     addParameteredRoom(name, level, xCoord, yCoord){
@@ -95,10 +144,10 @@ export class Station {
     setTunnelWindStrength() {
         let date = new Date();
         if((date.getSeconds() % 10) === 0){
-            this.measurePoints.forEach(room => {
-                if(room.type === "tunnel"){
-                    console.log("Incoming train to " + room.name);
-                    room.windStrength = 69;
+            this.measurePoints.forEach(measPoint => {
+                if(measPoint.type === "tunnel"){
+                    console.log("Incoming train to " + measPoint.name);
+                    measPoint.windStrength = 69;
                 }
             });
         }

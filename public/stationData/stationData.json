@@ -1,39 +1,57 @@
 {
   "name": "34StHrldSq",
-  "rooms": [
+  "measurePoints": [
     {
       "type": "simple",
       "name": "RoomA",
       "level": "0",
-      "xCoord": 10,
-      "yCoord": 10,
+      "xCoord": "10",
+      "yCoord": "10",
       "windDirection": 0,
-      "windStrength": 2
+      "windStrength": 6
     },
     {
       "type": "simple",
       "name": "RoomB",
       "level": "0",
-      "xCoord": 20,
-      "yCoord": 20,
+      "xCoord": "20",
+      "yCoord": "20",
       "windDirection": 0,
-      "windStrength": 3
+      "windStrength": 8
     },
     {
       "type": "simple",
       "name": "RoomC",
       "level": "0",
-      "xCoord": 30,
-      "yCoord": 30,
+      "xCoord": "30",
+      "yCoord": "30",
       "windDirection": 0,
-      "windStrength": 29
+      "windStrength": 13
+    },
+    {
+      "type": "simple",
+      "name": "RoomD",
+      "level": "0",
+      "xCoord": "40",
+      "yCoord": "40",
+      "windDirection": 0,
+      "windStrength": 19
+    },
+    {
+      "type": "simple",
+      "name": "RoomE",
+      "level": "0",
+      "xCoord": "50",
+      "yCoord": "50",
+      "windDirection": 0,
+      "windStrength": 22
     },
     {
       "type": "tunnel",
-      "name": "TunnelToC",
+      "name": "TunnelBU",
       "level": "0",
-      "xCoord": 40,
-      "yCoord": 40,
+      "xCoord": "60",
+      "yCoord": "60",
       "windDirection": 0,
       "windStrength": 0
     }

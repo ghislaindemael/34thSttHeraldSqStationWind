@@ -18,15 +18,9 @@ app.get("/", (req, res) => {
 });
 
 let station = new Station();
-station.addParameteredRoom("RoomA", "0", 10, 10);
-station.addParameteredRoom("RoomB", "0", 20, 20);
-station.addPassageWithFactor("RoomA", "RoomB", 50);
-station.addParameteredRoom("RoomC", "0", 30, 30);
-station.addPassageWithFactor("RoomC", "RoomB", 15);
-station.addParameteredTunnel("TunnelToC", "0", 40, 40);
-station.addOneDirPassage("TunnelToC", "RoomC");
-//station.findRoomName("RoomA").windStrength = 0;
-//station.findRoomName("RoomC").windStrength = 0;
+station.configurePoints();
+station.configurePassages();
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

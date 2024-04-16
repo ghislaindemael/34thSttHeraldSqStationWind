@@ -9,8 +9,7 @@ export function updateWindMaps() {
             const backgroundImage = `./images/FLOOR_${desiredFloor}.png`;
             map.css('background-image', `url(${backgroundImage})`);
 
-            let filteredRooms = data.rooms.filter((room) => room.level === desiredFloor);
-            console.log("Num of rooms at floor " + desiredFloor + ": " + filteredRooms.length);
+            let filteredRooms = data.measurePoints.filter((measPoint) => measPoint.level === desiredFloor);
             $('.plotted-image').remove();
 
             filteredRooms.forEach(room => {

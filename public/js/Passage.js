@@ -2,19 +2,25 @@
 
 export class Passage {
     name;
-    startRoom = null;
-    endRoom = null;
-    oneDir = false;
+    startPoint = null;
+    endPoint = null;
+    oneDir = "false";
     factor = 100;
     direction = 0;
     windStrength = 0;
 
-    constructor(startRoom, endRoom, factor, oneDir) {
-        this.startRoom = startRoom;
-        this.endRoom = endRoom;
-        this.factor = factor;
+    constructor(startRoom, endRoom, oneDir, factor, direction) {
+        this.startPoint = startRoom;
+        this.endPoint = endRoom;
         this.oneDir = oneDir;
-        this.name = startRoom.name + "->" + endRoom.name;
+        this.factor = factor;
+        this.direction = direction;
+        if(oneDir === "true"){
+            this.name = startRoom.name + "-->" + endRoom.name;
+        } else {
+            this.name = startRoom.name + "<->" + endRoom.name;
+        }
+
     }
 
     get windStrength() {
@@ -34,11 +40,11 @@ export class Passage {
     }
 
     setStrengthFromRoomWithFactor(){
-        if(this.oneDir){
-            this.windStrength = Math.round((this.factor / 100) * this.startRoom.windStrength);
+        if(this.oneDir === "true"){
+            this.windStrength = Math.round((this.factor / 100) * this.startPoint.windStrength);
         } else {
-            let startStr = Math.round((this.factor / 100) * this.startRoom.windStrength);
-            let endStr = Math.round((this.factor / 100) * this.endRoom.windStrength);
+            let startStr = Math.round((this.factor / 100) * this.startPoint.windStrength);
+            let endStr = Math.round((this.factor / 100) * this.endPoint.windStrength);
             let totalStr = startStr + endStr
             let avgStrength = ((startStr * startStr) / totalStr) + ((endStr * endStr) / totalStr);
             if(isNaN(avgStrength)){
@@ -49,7 +55,7 @@ export class Passage {
     }
 
     isStartRoomOf1DPassage(room){
-        return this.oneDir && room === this.startRoom;
+        return this.oneDir && room === this.startPoint;
     }
 
 }
