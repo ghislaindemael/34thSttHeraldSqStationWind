@@ -7,6 +7,7 @@ export class MeasurePoint {
     windDirection = 0;
     windStrength = 0;
     passages = [];
+    incomingTrains = []
 
     constructor(inType, inName, inLevel, inXCoord, inYCoord) {
         this.type = inType;

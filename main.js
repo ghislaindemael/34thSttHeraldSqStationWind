@@ -18,9 +18,7 @@ app.get("/", (req, res) => {
 });
 
 let station = new Station();
-station.configurePoints();
-station.configurePassages();
-
+station.configure();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -33,3 +31,11 @@ setInterval(function() {
 
     saveStationData(station);
 }, 1000);
+
+
+
+/*
+setInterval(function() {
+    station.refillTrains()
+}, 900000);
+*/

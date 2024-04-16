@@ -1,8 +1,10 @@
 import { MeasurePoint } from "./MeasurePoint.js";
 import { Passage } from "./Passage.js";
-import {Tunnel} from "./Tunnel.js";
 import fs from "fs";
 import readline from "node:readline";
+import path from "path";
+import {createInterface} from "readline";
+import { minutesSinceMondayMidnight } from "./Utils.js";
 
 
 export class Station {
@@ -21,7 +23,6 @@ export class Station {
             if(point.type === "simple"){
                 points = points + point.name + ": " + point.windStrength + ", ";
             }
-
         });
         console.log("-------" + this.name + "-------");
         console.log(points);
@@ -29,48 +30,115 @@ export class Station {
     }
 
     configurePoints(){
-        const fileStream = fs.createReadStream('./public/stationData/configPoints');
+        return new Promise((resolve, reject) => {
+            const fileStream = fs.createReadStream(path.join(process.cwd(), './public/stationData/configPoints.txt'));
 
-        const rl = readline.createInterface({
-            input: fileStream,
-            crlfDelay: Infinity
-        });
+            const rl = readline.createInterface({
+                input: fileStream,
+                crlfDelay: Infinity
+            });
 
-        rl.on('line', (line) => {
-            const params = line.split(' '); // assuming parameters are separated by a space
-            if (params.length === 5) {
-                const [type, name, level, xCoord, yCoord] = params;
-                this.addParameteredPoint(type, name, level, xCoord, yCoord);
-            }
-        });
-    }
-
-    configurePassages(){
-        const fileStream = fs.createReadStream('./public/stationData/configPassages');
-
-        const rl = readline.createInterface({
-            input: fileStream,
-            crlfDelay: Infinity
-        });
-
-        rl.on('line', (line) => {
-            const params = line.split(' '); // assuming parameters are separated by a space
-            if (params.length === 5) {
-                const [startRoomName, endRoomName, oneDir, factor, direction] = params;
-
-                const startRoom = this.findRoomName(startRoomName);
-                const endRoom = this.findRoomName(endRoomName);
-
-                if (startRoom && endRoom) {
-                    this.addParameteredPassage(startRoom, endRoom, oneDir, factor, direction);
+            rl.on('line', (line) => {
+                if (line.trim() === 'END') {
+                    rl.close();
+                    resolve();
                 }
-            }
+                const params = line.split(' '); // assuming parameters are separated by a space
+                if (params.length === 5) {
+                    const [type, name, level, xCoord, yCoord] = params;
+                    this.measurePoints.push(new MeasurePoint(type, name, level, xCoord, yCoord));
+                }
+            });
+
+            rl.on('close', () => {
+                resolve();
+            });
         });
     }
 
-    addParameteredPoint(type, name, level, xCoord, yCoord){
-        this.measurePoints.push(new MeasurePoint(type, name, level, xCoord, yCoord));
+    configurePassages() {
+        return new Promise((resolve, reject) => {
+            const fileStream = fs.createReadStream(path.join(process.cwd(),'./public/stationData/configPassages.txt'));
+
+            const rl = readline.createInterface({
+                input: fileStream,
+                crlfDelay: Infinity
+            });
+
+            rl.on('line', (line) => {
+                const params = line.split(' '); // assuming parameters are separated by a space
+                if (params.length === 5) {
+                    const [startRoomName, endRoomName, oneDir, factor, direction] = params;
+
+                    const startRoom = this.findRoomName(startRoomName);
+                    const endRoom = this.findRoomName(endRoomName);
+
+                    if (startRoom && endRoom) {
+                        this.addParameteredPassage(startRoom, endRoom, oneDir, factor, direction);
+                    }
+                }
+            });
+
+            rl.on('close', () => {
+                resolve();
+            });
+        });
     }
+
+    refillTrains() {
+        let date = new Date();
+        let minutesSinceMM = minutesSinceMondayMidnight(date);
+        minutesSinceMM -= 2700;
+
+        const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
+        for (const line of ['BDFM', 'NQRW']){
+            for (const dir of ['UP', 'DOWN']){
+                const inputFile = path.join(outputDir, `${line}_${dir}_Times.txt`);
+                const readStream = fs.createReadStream(inputFile);
+                const readInterface = createInterface({ input: readStream });
+                let index = 0;
+                let tunnels = [];
+                tunnels.push(this.findRoomName(line + ((dir === "UP" ? "_W" : "_E") + "1")));
+                tunnels.push(this.findRoomName(line + ((dir === "UP" ? "_W" : "_E") + "2")));
+
+                readInterface.on('line', line => {
+                    const departureTime = parseInt(line.split(':')[0]);
+
+                    if(departureTime > minutesSinceMM){
+                        tunnels[index].incomingTrains.push(departureTime);
+                        if(index === 0){
+                            index++;
+                        } else {
+                            index = 0;
+                        }
+                    }
+
+                });
+
+            }
+        }
+    }
+
+    configure() {
+        this.configurePoints()
+            .then(() => {
+                console.log("Points configured.");
+                this.configurePassages()
+                    .then(() => {
+                        console.log("Passages configured.");
+                        console.log("No of rooms : " + this.measurePoints.length);
+                        this.refillTrains();
+                    })
+                    .catch((error) => {
+                        console.error("An error occurred during passage configuration:", error);
+                    });
+            })
+            .catch((error) => {
+                console.error("An error occurred during point configuration:", error);
+            });
+    }
+
+    addParameteredPoint(type, name, level, xCoord, yCoord){}
 
     addParameteredPassage(startRoom, endRoom, oneDir, factor, direction){
         let pass = new Passage(startRoom, endRoom, oneDir, factor, direction);
@@ -81,14 +149,6 @@ export class Station {
         }
         endRoom.passages.push(pass);
 
-    }
-
-    addParameteredRoom(name, level, xCoord, yCoord){
-        this.measurePoints.push(new MeasurePoint("simple", name, level, xCoord, yCoord));
-    }
-
-    addParameteredTunnel(name, level, xCoord, yCoord){
-        this.measurePoints.push(new Tunnel(name, level, xCoord, yCoord));
     }
 
     findRoomName(name) {
@@ -102,32 +162,7 @@ export class Station {
         return toFind;
     }
 
-    addPassage(startRoom, endRoom){
-        let room1 = this.findRoomName(startRoom);
-        let room2 = this.findRoomName(endRoom);
-        let passage = new Passage(room1, room2, 100, false);
-        this.passages.push(passage);
-        room1.addPassage(passage);
-        room2.addPassage(passage);
-    }
-
-    addPassageWithFactor(startRoom, endRoom, factor){
-        let room1 = this.findRoomName(startRoom);
-        let room2 = this.findRoomName(endRoom);
-        let passage = new Passage(room1, room2, factor, false);
-        this.passages.push(passage);
-        room1.addPassage(passage);
-        room2.addPassage(passage);
-    }
-
-    addOneDirPassage(startRoom, endRoom){
-        let room1 = this.findRoomName(startRoom);
-        let room2 = this.findRoomName(endRoom);
-        let passage = new Passage(room1, room2, 100, true);
-        this.passages.push(passage);
-        //room1.addPassage(passage);
-        room2.addPassage(passage);
-    }
+    //Train management
 
 
 
@@ -142,7 +177,19 @@ export class Station {
     }
 
     setTunnelWindStrength() {
-        let date = new Date();
+        let curDate = new Date();
+        let minutesSinceMM = minutesSinceMondayMidnight(curDate);
+
+        this.measurePoints.forEach((point) => {
+            if(point.type === "tunnel"){
+                if(parseInt(point.incomingTrains.at(0)) <= minutesSinceMM){
+                    console.log("Incoming train to " + point.name);
+                    point.windStrength = 99;
+                    point.incomingTrains.shift();
+                }
+            }
+        });
+        /*
         if((date.getSeconds() % 10) === 0){
             this.measurePoints.forEach(measPoint => {
                 if(measPoint.type === "tunnel"){
@@ -151,6 +198,8 @@ export class Station {
                 }
             });
         }
+        */
+
     }
 
     setPassageTempWind(){
@@ -183,5 +232,7 @@ export class Station {
             passage.windStrength = 0;
         });
     }
+
+
 }
 

@@ -1,18 +1,9 @@
-simple RoomA 0 10 10
-simple RoomB 0 20 20
-simple RoomC 0 30 30
-simple RoomD 0 40 40
-simple RoomE 0 50 50
-tunnel TunnelBU 0 60 60
-
 //FLOOR -3 (BDFM)
 
 tunnel BDFM_W1 3 3 40
 tunnel BDFM_W2 3 3 50.5
-tunnel BDFM_W3 3 3 60
-tunnel BDFM_E1 3 97 40
-tunnel BDFM_E2 3 97 50.5
-tunnel BDFM_E3 3 97 60
+tunnel BDFM_E1 3 97 50.5
+tunnel BDFM_E2 3 97 60
 
 simple BDFM_P1_1 3 10 46
 simple BDFM_P1_2 3 20 46
@@ -62,3 +53,28 @@ simple NQRW_P2_6 2 60 47.5
 simple NQRW_P2_7 2 70 41.8
 simple NQRW_P2_8 2 80 36.1
 simple NQRW_P2_9 2 90 30.4
+
+//Floor -1 (Hall)
+
+simple HALL_1 1 7 83
+simple HALL_2 1 14 75
+simple HALL_3 1 13 69
+simple HALL_4 1 14 57
+simple HALL_5 1 15 48
+simple HALL_6 1 18 46
+simple HALL_7 1 25 46
+simple HALL_8 1 32 46
+simple HALL_9 1 37 46
+simple HALL_10 1 50 42
+simple HALL_11 1 60 42
+simple HALL_12 1 60 59
+simple HALL_13 1 53 60
+simple HALL_14 1 75 48
+simple HALL_15 1 75 56
+simple HALL_16 1 88 48
+simple HALL_17 1 88 56
+simple HALL_18 1 88 40
+simple HALL_19 1 88 31
+simple HALL_20 1 88 18
+
+END
