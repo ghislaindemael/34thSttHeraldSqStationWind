@@ -1,11 +1,11 @@
-import { Room } from "./Room.js";
+import { MeasurePoint } from "./MeasurePoint.js";
 import { Passage } from "./Passage.js";
 import {Tunnel} from "./Tunnel.js";
 
 
 export class Station {
     name = "34StHrldSq";
-    rooms = []
+    measurePoints = []
     passages = []
     incomingTrains = []
 
@@ -14,35 +14,39 @@ export class Station {
     };
 
     printRooms(){
-        let rooms = "";
-        this.rooms.forEach(room =>{
-            if(room.type === "simple"){
-                rooms = rooms + room.name + ": " + room.windStrength + ", ";
+        let points = "";
+        this.measurePoints.forEach(point =>{
+            if(point.type === "simple"){
+                points = points + point.name + ": " + point.windStrength + ", ";
             }
-            //console.log(room.name + " " + room.windStrength);
+            //console.log(point.name + " " + point.windStrength);
         });
         console.log("-------" + this.name + "-------");
-        console.log(rooms);
+        console.log(points);
         console.log("------------------------")
     }
 
+    configurePoints(){
+
+    }
+
     addRoom(){
-        this.rooms.push(new Room("simple", "default"));
+        this.measurePoints.push(new MeasurePoint("simple", "default"));
     }
 
     addParameteredRoom(name, level, xCoord, yCoord){
-        this.rooms.push(new Room("simple", name, level, xCoord, yCoord));
+        this.measurePoints.push(new MeasurePoint("simple", name, level, xCoord, yCoord));
     }
 
     addParameteredTunnel(name, level, xCoord, yCoord){
-        this.rooms.push(new Tunnel(name, level, xCoord, yCoord));
+        this.measurePoints.push(new Tunnel(name, level, xCoord, yCoord));
     }
 
     findRoomName(name) {
         let toFind = null;
-        for (let i = 0; i < this.rooms.length; i++) {
-            if (this.rooms[i].name.localeCompare(name) === 0) {
-                toFind = this.rooms[i];
+        for (let i = 0; i < this.measurePoints.length; i++) {
+            if (this.measurePoints[i].name.localeCompare(name) === 0) {
+                toFind = this.measurePoints[i];
                 break;
             }
         }
@@ -91,7 +95,7 @@ export class Station {
     setTunnelWindStrength() {
         let date = new Date();
         if((date.getSeconds() % 10) === 0){
-            this.rooms.forEach(room => {
+            this.measurePoints.forEach(room => {
                 if(room.type === "tunnel"){
                     console.log("Incoming train to " + room.name);
                     room.windStrength = 69;
@@ -107,7 +111,7 @@ export class Station {
     }
 
     decreaseWindStrength(number){
-        this.rooms.forEach(room =>{
+        this.measurePoints.forEach(room =>{
             if(room.type === "tunnel"){
                 room.windStrength = 0;
             } else {
@@ -120,7 +124,7 @@ export class Station {
     }
 
     setRoomWindWithPassages(){
-        this.rooms.forEach((room) => {
+        this.measurePoints.forEach((room) => {
             room.updateWindFromPassages();
         });
     }

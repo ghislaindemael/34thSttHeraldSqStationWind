@@ -1,4 +1,4 @@
-export class Room {
+export class MeasurePoint {
     type = "simple";
     name = "default";
     level = "0";

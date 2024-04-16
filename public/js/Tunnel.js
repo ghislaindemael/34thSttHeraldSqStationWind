@@ -1,7 +1,7 @@
-import { Room } from "./Room.js";
+import { MeasurePoint } from "./MeasurePoint.js";
 
 
-export class Tunnel extends Room {
+export class Tunnel extends MeasurePoint {
     name = "default"
     incomingTrains = []
 

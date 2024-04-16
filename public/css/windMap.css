@@ -22,7 +22,7 @@ h2 {
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 0.67;
-    background-size: contain; /* Scale the image down while maintaining its aspect ratio */
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
