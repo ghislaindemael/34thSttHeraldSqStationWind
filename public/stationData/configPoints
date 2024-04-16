@@ -5,4 +5,60 @@ simple RoomD 0 40 40
 simple RoomE 0 50 50
 tunnel TunnelBU 0 60 60
 
-simple
+//FLOOR -3 (BDFM)
+
+tunnel BDFM_W1 3 3 40
+tunnel BDFM_W2 3 3 50.5
+tunnel BDFM_W3 3 3 60
+tunnel BDFM_E1 3 97 40
+tunnel BDFM_E2 3 97 50.5
+tunnel BDFM_E3 3 97 60
+
+simple BDFM_P1_1 3 10 46
+simple BDFM_P1_2 3 20 46
+simple BDFM_P1_3 3 30 46
+simple BDFM_P1_4 3 40 46
+simple BDFM_P1_5 3 50 46
+simple BDFM_P1_6 3 60 46
+simple BDFM_P1_7 3 70 46
+simple BDFM_P1_8 3 80 46
+simple BDFM_P1_9 3 90 46
+
+simple BDFM_P2_1 3 10 54
+simple BDFM_P2_2 3 20 54
+simple BDFM_P2_3 3 30 54
+simple BDFM_P2_4 3 40 54
+simple BDFM_P2_5 3 50 54
+simple BDFM_P2_6 3 60 54
+simple BDFM_P2_7 3 70 54
+simple BDFM_P2_8 3 80 54
+simple BDFM_P2_9 3 90 54
+
+//FLOOR -2 (NQRW)
+
+tunnel NQRW_W1 2 3 65
+tunnel NQRW_W1 2 3 75
+tunnel NQRW_W1 2 3 85
+tunnel NQRW_E1 2 97 11
+tunnel NQRW_E1 2 97 21
+tunnel NQRW_E1 2 97 31
+
+simple NQRW_P1_1 2 10 66
+simple NQRW_P1_2 2 20 60.3
+simple NQRW_P1_3 2 30 54.6
+simple NQRW_P1_4 2 40 48.9
+simple NQRW_P1_5 2 50 43.2
+simple NQRW_P1_6 2 60 37.5
+simple NQRW_P1_7 2 70 31.8
+simple NQRW_P1_8 2 80 26.1
+simple NQRW_P1_9 2 90 20.4
+
+simple NQRW_P2_1 2 10 76
+simple NQRW_P2_2 2 20 70.3
+simple NQRW_P2_3 2 30 64.6
+simple NQRW_P2_4 2 40 58.9
+simple NQRW_P2_5 2 50 53.2
+simple NQRW_P2_6 2 60 47.5
+simple NQRW_P2_7 2 70 41.8
+simple NQRW_P2_8 2 80 36.1
+simple NQRW_P2_9 2 90 30.4

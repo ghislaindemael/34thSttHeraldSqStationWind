@@ -29,7 +29,7 @@ app.listen(PORT, () => {
 
 setInterval(function() {
     station.cycle();
-    station.printRooms();
+    //station.printRooms();
 
     saveStationData(station);
 }, 1000);
