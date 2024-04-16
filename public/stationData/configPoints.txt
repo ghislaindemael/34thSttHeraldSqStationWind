@@ -1,9 +1,9 @@
 //FLOOR -3 (BDFM)
 
-tunnel BDFM_W1 3 3 40
-tunnel BDFM_W2 3 3 50.5
-tunnel BDFM_E1 3 97 50.5
-tunnel BDFM_E2 3 97 60
+tunnel BDFM_UP_T1 3 3 40
+tunnel BDFM_UP_T2 3 3 50.5
+tunnel BDFM_DOWN_T1 3 97 50.5
+tunnel BDFM_DOWN_T2 3 97 60
 
 simple BDFM_P1_1 3 10 46
 simple BDFM_P1_2 3 20 46
@@ -27,12 +27,10 @@ simple BDFM_P2_9 3 90 54
 
 //FLOOR -2 (NQRW)
 
-tunnel NQRW_W1 2 3 65
-tunnel NQRW_W1 2 3 75
-tunnel NQRW_W1 2 3 85
-tunnel NQRW_E1 2 97 11
-tunnel NQRW_E1 2 97 21
-tunnel NQRW_E1 2 97 31
+tunnel NQRW_UP_T1 2 3 65
+tunnel NQRW_UP_T2 2 3 75
+tunnel NQRW_DOWN_T1 2 97 21
+tunnel NQRW_DOWN_T2 2 97 31
 
 simple NQRW_P1_1 2 10 66
 simple NQRW_P1_2 2 20 60.3

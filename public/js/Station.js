@@ -86,38 +86,66 @@ export class Station {
     }
 
     refillTrains() {
-        let date = new Date();
-        let minutesSinceMM = minutesSinceMondayMidnight(date);
-        minutesSinceMM -= 2700;
+        return new Promise((resolve, reject) => {
+            let date = new Date();
+            let minutesSinceMM = minutesSinceMondayMidnight(date);
+            minutesSinceMM -= 2700;
 
-        const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
-        for (const line of ['BDFM', 'NQRW']){
-            for (const dir of ['UP', 'DOWN']){
-                const inputFile = path.join(outputDir, `${line}_${dir}_Times.txt`);
+            const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
+            let promises = []; // Array to hold promises for each case
+
+            const lineDirs = [ "BDFM_UP", "BDFM_DOWN", "NQRW_UP", "NQRW_DOWN"];
+
+            for (const lineDir of lineDirs) {
+                const inputFile = path.join(outputDir, `${lineDir}_Times.txt`);
                 const readStream = fs.createReadStream(inputFile);
-                const readInterface = createInterface({ input: readStream });
+                const readInterface = readline.createInterface({ input: readStream });
                 let index = 0;
                 let tunnels = [];
-                tunnels.push(this.findRoomName(line + ((dir === "UP" ? "_W" : "_E") + "1")));
-                tunnels.push(this.findRoomName(line + ((dir === "UP" ? "_W" : "_E") + "2")));
+                tunnels.push(this.findRoomName(lineDir + "_T1"));
+                tunnels.push(this.findRoomName(lineDir + "_T2"));
 
-                readInterface.on('line', line => {
-                    const departureTime = parseInt(line.split(':')[0]);
-
-                    if(departureTime > minutesSinceMM){
-                        tunnels[index].incomingTrains.push(departureTime);
-                        if(index === 0){
-                            index++;
-                        } else {
-                            index = 0;
+                const promise = new Promise((resolve, reject) => {
+                    readInterface.on('line', line => {
+                        const departureTime = parseInt(line.split(':')[0]);
+                        if (line !== "") {
+                            if (departureTime > minutesSinceMM) {
+                                tunnels[index].incomingTrains.push(departureTime);
+                                if (index === 0) {
+                                    index++;
+                                } else {
+                                    index = 0;
+                                }
+                            }
                         }
-                    }
+                    });
 
+                    readInterface.on('close', () => {
+                        console.log(`Trains refilled for ${lineDir}.`);
+                        resolve(); // Resolve the promise when processing is complete
+                    });
+
+                    readInterface.on('error', (error) => {
+                        reject(error); // Reject the promise if there's an error
+                    });
                 });
 
+                promises.push(promise); // Push each promise into the array
             }
-        }
+
+            // Chain promises to ensure sequential execution
+            Promise.all(promises)
+                .then(() => {
+                    console.log("All trains refilled.");
+                    resolve(); // Resolve the main promise when all cases are completed
+                })
+                .catch((error) => {
+                    console.error("An error occurred during train refill:", error);
+                    reject(error); // Reject the main promise if there's an error in any case
+                });
+        });
     }
+
 
     configure() {
         this.configurePoints()
