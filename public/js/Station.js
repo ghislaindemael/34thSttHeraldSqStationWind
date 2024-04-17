@@ -21,7 +21,7 @@ export class Station {
     printRooms(){
         let points = "";
         this.measurePoints.forEach(point =>{
-            if(point.type === "simple"){
+            if(point.type === "S"){
                 points = points + point.name + ": " + point.windStrength + ", ";
             }
         });
@@ -68,14 +68,14 @@ export class Station {
 
             rl.on('line', (line) => {
                 const params = line.split(' '); // assuming parameters are separated by a space
-                if (params.length === 5) {
-                    const [startRoomName, endRoomName, oneDir, factor, direction] = params;
+                if (params.length === 4) {
+                    const [startRoomName, endRoomName, oneDir, factor] = params;
 
                     const startRoom = this.findRoomName(startRoomName);
                     const endRoom = this.findRoomName(endRoomName);
 
                     if (startRoom && endRoom) {
-                        this.addParameteredPassage(startRoom, endRoom, oneDir, factor, direction);
+                        this.addParameteredPassage(startRoom, endRoom, oneDir, factor);
                     }
                 }
             });
@@ -165,8 +165,8 @@ export class Station {
 
     }
 
-    addParameteredPassage(startRoom, endRoom, oneDir, factor, direction){
-        let pass = new Passage(startRoom, endRoom, oneDir, factor, direction);
+    addParameteredPassage(startRoom, endRoom, oneDir, factor){
+        let pass = new Passage(startRoom, endRoom, oneDir, factor);
         this.passages.push(pass);
         if(oneDir === "false"){
             //console.log("Pass " + pass + " is bidirectional");
@@ -202,7 +202,7 @@ export class Station {
         let minutesSinceMM = minutesSinceMondayMidnight(curDate);
 
         this.measurePoints.forEach((point) => {
-            if(point.type === "tunnel"){
+            if(point.type === "T"){
                 if(parseInt(point.incomingTrains.at(0)) <= minutesSinceMM){
                     console.log("Incoming train to " + point.name);
                     point.windStrength = 99;
@@ -210,16 +210,6 @@ export class Station {
                 }
             }
         });
-        /*
-        if((date.getSeconds() % 10) === 0){
-            this.measurePoints.forEach(measPoint => {
-                if(measPoint.type === "tunnel"){
-                    console.log("Incoming train to " + measPoint.name);
-                    measPoint.windStrength = 69;
-                }
-            });
-        }
-        */
 
     }
 
@@ -231,7 +221,7 @@ export class Station {
 
     decreaseWindStrength(number){
         this.measurePoints.forEach(room =>{
-            if(room.type === "tunnel"){
+            if(room.type === "T"){
                 room.windStrength = 0;
             } else {
                 room.windStrength -= number;

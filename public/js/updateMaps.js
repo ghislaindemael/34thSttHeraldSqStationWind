@@ -22,10 +22,10 @@ export function updateWindMaps() {
                     src: imageSrc,
                     class: 'plotted-image'
                 }).css({
-                    top: room.yCoord + '%',
-                    left: room.xCoord + '%'
+                    top: ((20.4 * room.yCoord) / 33)  + '%',
+                    left: ((20.4 * room.xCoord) / 51) + '%',
+                    transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
                 });
-
 
                 $('.map').append(image);
             });

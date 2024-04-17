@@ -1,4 +1,4 @@
-import {distanceBetweenRooms} from "./Utils.js";
+import {distanceBetweenRooms, findAngleBetweenPoints} from "./Utils.js";
 
 export class Passage {
     name;
@@ -10,13 +10,13 @@ export class Passage {
     direction = 0;
     windStrength = 0;
 
-    constructor(startRoom, endRoom, oneDir, factor, direction) {
+    constructor(startRoom, endRoom, oneDir, factor) {
         this.startPoint = startRoom;
         this.endPoint = endRoom;
         this.oneDir = oneDir;
         this.roomDistance = distanceBetweenRooms(startRoom, endRoom);
         this.factor = factor / 100;
-        this.direction = direction;
+        this.direction = findAngleBetweenPoints(startRoom, endRoom);
         if(oneDir === "true"){
             this.name = startRoom.name + "-->" + endRoom.name;
         } else {
@@ -42,7 +42,7 @@ export class Passage {
     }
 
     setStrengthFromRoomWithFactor(){
-        let distanceFactor = 1 - (this.roomDistance / 200);
+        let distanceFactor = 1 - (this.roomDistance / 500);
         if(this.oneDir === "true"){
             this.windStrength = Math.round( distanceFactor * this.factor * this.startPoint.windStrength);
         } else {

@@ -1,6 +1,7 @@
 h2 {
     margin: 0;
     display: inline-block;
+    font-family: 'Helvetica', serif;
 }
 
 .buttons {
@@ -28,8 +29,8 @@ h2 {
 
 .plotted-image {
     position: absolute;
-    width: 1%;
-    height: 1.6%;
-    transform: translate(-50%, -50%);
+    width: 2%;
+    height: 3.2%;
+
 }
 
