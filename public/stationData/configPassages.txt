@@ -1,5 +1,9 @@
-RoomA RoomB false 90 0
-RoomB RoomC false 90 0
-RoomC RoomD false 90 0
-RoomD RoomE false 90 0
-TunnelBU RoomE true 90 0
+BDFM_UP_T1 BDFM_P1_1 true 95 0
+BDFM_P1_1 BDFM_P1_2 false 95 0
+BDFM_P1_2 BDFM_P1_3 false 95 0
+BDFM_P1_3 BDFM_P1_4 false 95 0
+BDFM_P1_4 BDFM_P1_5 false 95 0
+BDFM_P1_5 BDFM_P1_6 false 95 0
+BDFM_P1_6 BDFM_P1_7 false 95 0
+BDFM_P1_7 BDFM_P1_8 false 95 0
+BDFM_P1_8 BDFM_P1_9 false 95 0

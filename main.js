@@ -18,7 +18,6 @@ app.get("/", (req, res) => {
 });
 
 let station = new Station();
-station.configure();
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {

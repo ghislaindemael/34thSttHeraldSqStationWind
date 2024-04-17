@@ -15,6 +15,7 @@ export class Station {
 
     constructor() {
         //console.log("New Station");
+        this.configure();
     };
 
     printRooms(){
@@ -89,10 +90,10 @@ export class Station {
         return new Promise((resolve, reject) => {
             let date = new Date();
             let minutesSinceMM = minutesSinceMondayMidnight(date);
-            minutesSinceMM -= 2700;
+            //minutesSinceMM -= 3200;
 
             const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
-            let promises = []; // Array to hold promises for each case
+            let promises = [];
 
             const lineDirs = [ "BDFM_UP", "BDFM_DOWN", "NQRW_UP", "NQRW_DOWN"];
 
@@ -108,40 +109,36 @@ export class Station {
                 const promise = new Promise((resolve, reject) => {
                     readInterface.on('line', line => {
                         const departureTime = parseInt(line.split(':')[0]);
-                        if (line !== "") {
-                            if (departureTime > minutesSinceMM) {
-                                tunnels[index].incomingTrains.push(departureTime);
-                                if (index === 0) {
-                                    index++;
-                                } else {
-                                    index = 0;
-                                }
+                        if (departureTime > minutesSinceMM) {
+                            tunnels[index].incomingTrains.push(departureTime);
+                            if (index === 0) {
+                                index++;
+                            } else {
+                                index = 0;
                             }
                         }
                     });
 
                     readInterface.on('close', () => {
-                        console.log(`Trains refilled for ${lineDir}.`);
-                        resolve(); // Resolve the promise when processing is complete
+                        resolve();
                     });
 
                     readInterface.on('error', (error) => {
-                        reject(error); // Reject the promise if there's an error
+                        reject(error);
                     });
                 });
 
-                promises.push(promise); // Push each promise into the array
+                promises.push(promise);
             }
 
-            // Chain promises to ensure sequential execution
             Promise.all(promises)
                 .then(() => {
                     console.log("All trains refilled.");
-                    resolve(); // Resolve the main promise when all cases are completed
+                    resolve();
                 })
                 .catch((error) => {
                     console.error("An error occurred during train refill:", error);
-                    reject(error); // Reject the main promise if there's an error in any case
+                    reject(error);
                 });
         });
     }
@@ -154,8 +151,7 @@ export class Station {
                 this.configurePassages()
                     .then(() => {
                         console.log("Passages configured.");
-                        console.log("No of rooms : " + this.measurePoints.length);
-                        this.refillTrains();
+                        this.refillTrains().then();
                     })
                     .catch((error) => {
                         console.error("An error occurred during passage configuration:", error);
@@ -172,7 +168,7 @@ export class Station {
         let pass = new Passage(startRoom, endRoom, oneDir, factor, direction);
         this.passages.push(pass);
         if(oneDir === "false"){
-            console.log("Pass " + pass + " is bidirectional");
+            //console.log("Pass " + pass + " is bidirectional");
             startRoom.passages.push(pass);
         }
         endRoom.passages.push(pass);

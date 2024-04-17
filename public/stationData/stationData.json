@@ -44,7 +44,7 @@
       "xCoord": "10",
       "yCoord": "46",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 88
     },
     {
       "type": "simple",
@@ -53,7 +53,7 @@
       "xCoord": "20",
       "yCoord": "46",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 87
     },
     {
       "type": "simple",
@@ -62,7 +62,7 @@
       "xCoord": "30",
       "yCoord": "46",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 85
     },
     {
       "type": "simple",
