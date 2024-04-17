@@ -77,7 +77,7 @@
       "type": "simple",
       "name": "BDFM_P1_5",
       "level": "3",
-      "xCoord": "50",
+      "xCoord": "48",
       "yCoord": "46",
       "windDirection": 0,
       "windStrength": 0
@@ -95,8 +95,8 @@
       "type": "simple",
       "name": "BDFM_P1_7",
       "level": "3",
-      "xCoord": "70",
-      "yCoord": "46",
+      "xCoord": "68",
+      "yCoord": "48",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -242,79 +242,79 @@
       "xCoord": "10",
       "yCoord": "66",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
       "name": "NQRW_P1_2",
       "level": "2",
       "xCoord": "20",
-      "yCoord": "60.3",
+      "yCoord": "60",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
       "name": "NQRW_P1_3",
       "level": "2",
       "xCoord": "30",
-      "yCoord": "54.6",
+      "yCoord": "54",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 37
     },
     {
       "type": "simple",
       "name": "NQRW_P1_4",
       "level": "2",
       "xCoord": "40",
-      "yCoord": "48.9",
+      "yCoord": "48",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 38
     },
     {
       "type": "simple",
       "name": "NQRW_P1_5",
       "level": "2",
-      "xCoord": "50",
-      "yCoord": "43.2",
+      "xCoord": "48.2",
+      "yCoord": "45.5",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 35
     },
     {
       "type": "simple",
       "name": "NQRW_P1_6",
       "level": "2",
       "xCoord": "60",
-      "yCoord": "37.5",
+      "yCoord": "37",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 35
     },
     {
       "type": "simple",
       "name": "NQRW_P1_7",
       "level": "2",
-      "xCoord": "70",
-      "yCoord": "31.8",
+      "xCoord": "69.5",
+      "yCoord": "33.5",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 33
     },
     {
       "type": "simple",
       "name": "NQRW_P1_8",
       "level": "2",
       "xCoord": "80",
-      "yCoord": "26.1",
+      "yCoord": "26",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
       "name": "NQRW_P1_9",
       "level": "2",
       "xCoord": "90",
-      "yCoord": "20.4",
+      "yCoord": "20",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
@@ -323,7 +323,7 @@
       "xCoord": "10",
       "yCoord": "76",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
@@ -332,7 +332,7 @@
       "xCoord": "20",
       "yCoord": "70.3",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
@@ -341,7 +341,7 @@
       "xCoord": "30",
       "yCoord": "64.6",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 36
     },
     {
       "type": "simple",
@@ -350,7 +350,7 @@
       "xCoord": "40",
       "yCoord": "58.9",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 37
     },
     {
       "type": "simple",
@@ -359,7 +359,7 @@
       "xCoord": "50",
       "yCoord": "53.2",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 35
     },
     {
       "type": "simple",
@@ -368,7 +368,7 @@
       "xCoord": "60",
       "yCoord": "47.5",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 35
     },
     {
       "type": "simple",
@@ -377,7 +377,7 @@
       "xCoord": "70",
       "yCoord": "41.8",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 33
     },
     {
       "type": "simple",
@@ -386,7 +386,7 @@
       "xCoord": "80",
       "yCoord": "36.1",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
@@ -395,11 +395,11 @@
       "xCoord": "90",
       "yCoord": "30.4",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
-      "name": "HALL_1",
+      "name": "WESTHALL_TUN2EXIT_S_1",
       "level": "1",
       "xCoord": "6.18",
       "yCoord": "82",
@@ -408,7 +408,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_2",
+      "name": "WESTHALL_TUN2EXIT_S_2",
       "level": "1",
       "xCoord": "6.18",
       "yCoord": "78.7",
@@ -417,7 +417,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_3",
+      "name": "WESTHALL_TUN2EXIT_S_3",
       "level": "1",
       "xCoord": "9",
       "yCoord": "76.6",
@@ -426,16 +426,16 @@
     },
     {
       "type": "simple",
-      "name": "HALL_4",
+      "name": "WESTHALL_EXIT_S",
       "level": "1",
-      "xCoord": "13.7",
-      "yCoord": "73.9",
+      "xCoord": "13.5",
+      "yCoord": "74",
       "windDirection": 0,
       "windStrength": 0
     },
     {
       "type": "simple",
-      "name": "HALL_5",
+      "name": "WESTHALL_CENTER_SOUTH",
       "level": "1",
       "xCoord": "12.8",
       "yCoord": "69.5",
@@ -444,16 +444,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_6",
-      "level": "1",
-      "xCoord": "15.3",
-      "yCoord": "71",
-      "windDirection": 0,
-      "windStrength": 0
-    },
-    {
-      "type": "simple",
-      "name": "HALL_7",
+      "name": "WESTHALL_EXIT_W",
       "level": "1",
       "xCoord": "10.8",
       "yCoord": "66.1",
@@ -462,16 +453,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_8",
-      "level": "1",
-      "xCoord": "13.7",
-      "yCoord": "65.3",
-      "windDirection": 0,
-      "windStrength": 0
-    },
-    {
-      "type": "simple",
-      "name": "HALL_10",
+      "name": "WESTHALL_CENTER_NORTH",
       "level": "1",
       "xCoord": "12.1",
       "yCoord": "61.5",
@@ -480,7 +462,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_11",
+      "name": "WESTHALL_EXIT_NNW",
       "level": "1",
       "xCoord": "10.8",
       "yCoord": "57.5",
@@ -489,7 +471,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_12",
+      "name": "WESTHALL_EXIT_NNE",
       "level": "1",
       "xCoord": "13.55",
       "yCoord": "57.5",
@@ -498,7 +480,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_14",
+      "name": "WESTTUN_1",
       "level": "1",
       "xCoord": "13.55",
       "yCoord": "51.5",
@@ -507,16 +489,16 @@
     },
     {
       "type": "simple",
-      "name": "HALL_15",
+      "name": "WESTTUN_2",
       "level": "1",
       "xCoord": "13.55",
-      "yCoord": "46",
+      "yCoord": "45.6",
       "windDirection": 0,
       "windStrength": 0
     },
     {
       "type": "simple",
-      "name": "HALL_17",
+      "name": "WESTTUN_3",
       "level": "1",
       "xCoord": "20",
       "yCoord": "45.6",
@@ -525,7 +507,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_19",
+      "name": "WESTTUN_4",
       "level": "1",
       "xCoord": "26",
       "yCoord": "45.6",
@@ -534,7 +516,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_21",
+      "name": "WESTTUN_5",
       "level": "1",
       "xCoord": "32",
       "yCoord": "45.6",
@@ -543,7 +525,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_23",
+      "name": "WESTTUN_6",
       "level": "1",
       "xCoord": "38",
       "yCoord": "45.6",
@@ -552,7 +534,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_25",
+      "name": "WESTTUN_7",
       "level": "1",
       "xCoord": "43.6",
       "yCoord": "45.6",
@@ -561,7 +543,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_26",
+      "name": "WESTTUN_8",
       "level": "1",
       "xCoord": "47.5",
       "yCoord": "43",
@@ -638,7 +620,7 @@
       "xCoord": "51.7",
       "yCoord": "43.5",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 33
     },
     {
       "type": "simple",
@@ -647,7 +629,7 @@
       "xCoord": "53.5",
       "yCoord": "50",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 32
     },
     {
       "type": "simple",
@@ -656,7 +638,7 @@
       "xCoord": "65.9",
       "yCoord": "35.7",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 30
     },
     {
       "type": "simple",
@@ -665,7 +647,25 @@
       "xCoord": "67.5",
       "yCoord": "41.8",
       "windDirection": 0,
-      "windStrength": 0
+      "windStrength": 30
+    },
+    {
+      "type": "simple",
+      "name": "WESTHALL_STAIRS2_M2_1",
+      "level": "1",
+      "xCoord": "13.7",
+      "yCoord": "65.3",
+      "windDirection": 0,
+      "windStrength": 28
+    },
+    {
+      "type": "simple",
+      "name": "WESTHALL_STAIRS2_M2_2",
+      "level": "1",
+      "xCoord": "15.3",
+      "yCoord": "71",
+      "windDirection": 0,
+      "windStrength": 29
     },
     {
       "type": "simple",
@@ -858,7 +858,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_69",
+      "name": "SECHALL_EAST_1",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "54",
@@ -867,7 +867,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_70",
+      "name": "SECHALL_EAST_2",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "50.5",
@@ -876,7 +876,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_71",
+      "name": "SECHALL_EAST_3",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "47",
@@ -885,7 +885,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_72",
+      "name": "SECHALL_EXIT_NE",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "43.5",
@@ -894,7 +894,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_73",
+      "name": "EASTTUN_1",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "40",
@@ -903,7 +903,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_74",
+      "name": "EASTTUN_2",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "36.5",
@@ -912,7 +912,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_75",
+      "name": "EASTTUN_3",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "33",
@@ -921,7 +921,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_76",
+      "name": "EASTTUN_4",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "29.5",
@@ -930,7 +930,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_77",
+      "name": "EASTTUN_5",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "26",
@@ -939,7 +939,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_78",
+      "name": "EASTTUN_6",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "22.5",
@@ -948,7 +948,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_79",
+      "name": "EASTTUN_7",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "19",
@@ -957,16 +957,16 @@
     },
     {
       "type": "simple",
-      "name": "HALL_80",
+      "name": "NEHALL_SOUTH",
       "level": "1",
-      "xCoord": "88.5",
+      "xCoord": "89",
       "yCoord": "15.5",
       "windDirection": 0,
       "windStrength": 0
     },
     {
       "type": "simple",
-      "name": "HALL_81",
+      "name": "NEHALL_CENTER",
       "level": "1",
       "xCoord": "88.5",
       "yCoord": "12",
@@ -975,7 +975,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_83",
+      "name": "NEHALL_EXIT_W",
       "level": "1",
       "xCoord": "86",
       "yCoord": "11",
@@ -984,7 +984,7 @@
     },
     {
       "type": "simple",
-      "name": "HALL_84",
+      "name": "NEHALL_EXIT_E",
       "level": "1",
       "xCoord": "90.7",
       "yCoord": "11",

@@ -10,9 +10,9 @@ simple BDFM_P1_1 3 10 46
 simple BDFM_P1_2 3 20 46
 simple BDFM_P1_3 3 30 46
 simple BDFM_P1_4 3 40 46
-simple BDFM_P1_5 3 50 46
+simple BDFM_P1_5 3 48 46
 simple BDFM_P1_6 3 60 46
-simple BDFM_P1_7 3 70 46
+simple BDFM_P1_7 3 68 48
 simple BDFM_P1_8 3 80 46
 simple BDFM_P1_9 3 90 46
 
@@ -34,14 +34,14 @@ tunnel NQRW_DOWN_T1 2 97 21
 tunnel NQRW_DOWN_T2 2 97 31
 
 simple NQRW_P1_1 2 10 66
-simple NQRW_P1_2 2 20 60.3
-simple NQRW_P1_3 2 30 54.6
-simple NQRW_P1_4 2 40 48.9
-simple NQRW_P1_5 2 50 43.2
-simple NQRW_P1_6 2 60 37.5
-simple NQRW_P1_7 2 70 31.8
-simple NQRW_P1_8 2 80 26.1
-simple NQRW_P1_9 2 90 20.4
+simple NQRW_P1_2 2 20 60
+simple NQRW_P1_3 2 30 54
+simple NQRW_P1_4 2 40 48
+simple NQRW_P1_5 2 48.2 45.5
+simple NQRW_P1_6 2 60 37
+simple NQRW_P1_7 2 69.5 33.5
+simple NQRW_P1_8 2 80 26
+simple NQRW_P1_9 2 90 20
 
 simple NQRW_P2_1 2 10 76
 simple NQRW_P2_2 2 20 70.3
@@ -55,29 +55,28 @@ simple NQRW_P2_9 2 90 30.4
 
 //Floor -1 (Hall)
 
-simple HALL_1 1 6.18 82
-simple HALL_2 1 6.18 78.7
-simple HALL_3 1 9 76.6
-simple HALL_4 1 13.7 73.9
-simple HALL_5 1 12.8 69.5
-simple HALL_6 1 15.3 71
+simple WESTHALL_TUN2EXIT_S_1 1 6.18 82
+simple WESTHALL_TUN2EXIT_S_2 1 6.18 78.7
+simple WESTHALL_TUN2EXIT_S_3 1 9 76.6
+simple WESTHALL_EXIT_S 1 13.5 74
+simple WESTHALL_CENTER_SOUTH 1 12.8 69.5
 
-simple HALL_7 1 10.8 66.1
-simple HALL_8 1 13.7 65.3
-simple HALL_10 1 12.1 61.5
-simple HALL_11 1 10.8 57.5
-simple HALL_12 1 13.55 57.5
-simple HALL_14 1 13.55 51.5
-simple HALL_15 1 13.55 46
+simple WESTHALL_EXIT_W 1 10.8 66.1
 
-simple HALL_17 1 20 45.6
 
-simple HALL_19 1 26 45.6
+simple WESTHALL_CENTER_NORTH 1 12.1 61.5
 
-simple HALL_21 1 32 45.6
-simple HALL_23 1 38 45.6
-simple HALL_25 1 43.6 45.6
-simple HALL_26 1 47.5 43
+simple WESTHALL_EXIT_NNW 1 10.8 57.5
+simple WESTHALL_EXIT_NNE 1 13.55 57.5
+
+simple WESTTUN_1 1 13.55 51.5
+simple WESTTUN_2 1 13.55 45.6
+simple WESTTUN_3 1 20 45.6
+simple WESTTUN_4 1 26 45.6
+simple WESTTUN_5 1 32 45.6
+simple WESTTUN_6 1 38 45.6
+simple WESTTUN_7 1 43.6 45.6
+simple WESTTUN_8 1 47.5 43
 
 //Finished west tunnel
 
@@ -95,6 +94,8 @@ simple STAIRS2_M2_1 1 51.7 43.5
 simple STAIRS2_M2_2 1 53.5 50
 simple STAIRS2_M2_3 1 65.9 35.7
 simple STAIRS2_M2_4 1 67.5 41.8
+simple WESTHALL_STAIRS2_M2_1 1 13.7 65.3
+simple WESTHALL_STAIRS2_M2_2 1 15.3 71
 
 simple MAINHALL_CENTER_WEST 1 58 46
 simple MAINHALL_CENTER_NORTH 1 60 43
@@ -123,22 +124,25 @@ simple SECHALL_EXIT_SE 1 85.5 58.6
 simple SECHALL_EXIT_SEW 1 88.5 58.6
 simple SECHALL_EXIT_SEE 1 90.5 59.1
 
-simple HALL_69 1 88.5 54
-simple HALL_70 1 88.5 50.5
-simple HALL_71 1 88.5 47
-simple HALL_72 1 88.5 43.5
-simple HALL_73 1 88.5 40
-simple HALL_74 1 88.5 36.5
-simple HALL_75 1 88.5 33
-simple HALL_76 1 88.5 29.5
-simple HALL_77 1 88.5 26
-simple HALL_78 1 88.5 22.5
-simple HALL_79 1 88.5 19
-simple HALL_80 1 88.5 15.5
-simple HALL_81 1 88.5 12
+simple SECHALL_EAST_1 1 88.5 54
+simple SECHALL_EAST_2 1 88.5 50.5
+simple SECHALL_EAST_3 1 88.5 47
 
-simple HALL_83 1 86 11
-simple HALL_84 1 90.7 11
+simple SECHALL_EXIT_NE 1 88.5 43.5
+
+simple EASTTUN_1 1 88.5 40
+simple EASTTUN_2 1 88.5 36.5
+simple EASTTUN_3 1 88.5 33
+simple EASTTUN_4 1 88.5 29.5
+simple EASTTUN_5 1 88.5 26
+simple EASTTUN_6 1 88.5 22.5
+simple EASTTUN_7 1 88.5 19
+
+simple NEHALL_SOUTH 1 89 15.5
+simple NEHALL_CENTER 1 88.5 12
+
+simple NEHALL_EXIT_W 1 86 11
+simple NEHALL_EXIT_E 1 90.7 11
 
 
 
