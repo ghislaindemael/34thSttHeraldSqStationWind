@@ -3,7 +3,6 @@ import { Passage } from "./Passage.js";
 import fs from "fs";
 import readline from "node:readline";
 import path from "path";
-import {createInterface} from "readline";
 import { minutesSinceMondayMidnight } from "./Utils.js";
 
 
@@ -11,11 +10,12 @@ export class Station {
     name = "34StHrldSq";
     measurePoints = []
     passages = []
-    incomingTrains = []
+    //incomingTrains = []
 
     constructor() {
         //console.log("New Station");
         this.configure();
+        //Post config
     };
 
     printRooms(){
@@ -31,7 +31,7 @@ export class Station {
     }
 
     configurePoints(){
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const fileStream = fs.createReadStream(path.join(process.cwd(), './public/stationData/configPoints.txt'));
 
             const rl = readline.createInterface({
@@ -58,7 +58,7 @@ export class Station {
     }
 
     configurePassages() {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
             const fileStream = fs.createReadStream(path.join(process.cwd(),'./public/stationData/configPassages.txt'));
 
             const rl = readline.createInterface({
@@ -90,7 +90,6 @@ export class Station {
         return new Promise((resolve, reject) => {
             let date = new Date();
             let minutesSinceMM = minutesSinceMondayMidnight(date);
-            //minutesSinceMM -= 3200;
 
             const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
             let promises = [];
@@ -133,7 +132,7 @@ export class Station {
 
             Promise.all(promises)
                 .then(() => {
-                    console.log("All trains refilled.");
+                    console.log("Trains refilled.");
                     resolve();
                 })
                 .catch((error) => {
@@ -162,7 +161,9 @@ export class Station {
             });
     }
 
-    addParameteredPoint(type, name, level, xCoord, yCoord){}
+    addParameteredPoint(type, name, level, xCoord, yCoord){
+
+    }
 
     addParameteredPassage(startRoom, endRoom, oneDir, factor, direction){
         let pass = new Passage(startRoom, endRoom, oneDir, factor, direction);
@@ -186,16 +187,12 @@ export class Station {
         return toFind;
     }
 
-    //Train management
-
-
-
     //Wind Management
 
     cycle() {
+        this.decreaseWindStrength(2);
         this.setTunnelWindStrength();
         this.setPassageTempWind();
-        this.decreaseWindStrength(1);
         this.setRoomWindWithPassages();
         this.clearPassages();
     }

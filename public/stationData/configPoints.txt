@@ -55,25 +55,96 @@ simple NQRW_P2_9 2 90 30.4
 
 //Floor -1 (Hall)
 
-simple HALL_1 1 7 83
-simple HALL_2 1 14 75
-simple HALL_3 1 13 69
-simple HALL_4 1 14 57
-simple HALL_5 1 15 48
-simple HALL_6 1 18 46
-simple HALL_7 1 25 46
-simple HALL_8 1 32 46
-simple HALL_9 1 37 46
-simple HALL_10 1 50 42
-simple HALL_11 1 60 42
-simple HALL_12 1 60 59
-simple HALL_13 1 53 60
-simple HALL_14 1 75 48
-simple HALL_15 1 75 56
-simple HALL_16 1 88 48
-simple HALL_17 1 88 56
-simple HALL_18 1 88 40
-simple HALL_19 1 88 31
-simple HALL_20 1 88 18
+simple HALL_1 1 6.18 82
+simple HALL_2 1 6.18 78.7
+simple HALL_3 1 9 76.6
+simple HALL_4 1 13.7 73.9
+simple HALL_5 1 12.8 69.5
+simple HALL_6 1 15.3 71
+
+simple HALL_7 1 10.8 66.1
+simple HALL_8 1 13.7 65.3
+simple HALL_10 1 12.1 61.5
+simple HALL_11 1 10.8 57.5
+simple HALL_12 1 13.55 57.5
+simple HALL_14 1 13.55 51.5
+simple HALL_15 1 13.55 46
+
+simple HALL_17 1 20 45.6
+
+simple HALL_19 1 26 45.6
+
+simple HALL_21 1 32 45.6
+simple HALL_23 1 38 45.6
+simple HALL_25 1 43.6 45.6
+simple HALL_26 1 47.5 43
+
+//Finished west tunnel
+
+simple MAINHALL_EXIT_NWW 1 51 41
+simple MAINHALL_EXIT_NNE 1 63.6 32.7
+
+simple MAINHALL_EXIT_SWS 1 54.5 57.4
+simple MAINHALL_TUN2EXIT_SWS 1 54.5 60
+
+simple MAINHALL_TUN2EXIT_NWN 1 54.5 32
+simple MAINHALL_EXIT_NWN 1 54.5 38
+simple MAINHALL_EXIT_SES 1 64 57.4
+
+simple STAIRS2_M2_1 1 51.7 43.5
+simple STAIRS2_M2_2 1 53.5 50
+simple STAIRS2_M2_3 1 65.9 35.7
+simple STAIRS2_M2_4 1 67.5 41.8
+
+simple MAINHALL_CENTER_WEST 1 58 46
+simple MAINHALL_CENTER_NORTH 1 60 43
+simple MAINHALL_CENTER_EAST 1 62 46
+simple MAINHALL_CENTER_SOUTH 1 60 49
+
+simple MAINHALL_SOUTH 1 60 56
+simple MAINHALL_NORTH 1 60 36
+simple MAINHALL_EAST 1 66 46
+simple MAINHALL_SOUTHEAST 1 64 54
+simple MAINHALL_SOUTHWEST 1 56 54
+
+simple SECHALL_SOUTHWEST_1 1 67.5 54
+simple SECHALL_SOUTHWEST_2 1 70.5 54
+simple SECHALL_SOUTHWEST_3 1 73.5 54
+
+simple SECHALL_CENTER_SOUTH 1 76.5 54
+simple SECHALL_CENTER 1 76.5 50
+simple SECHALL_CENTER_NORTH 1 76.5 46.5
+
+simple SECHALL_SOUTHEAST_1 1 79.5 54
+simple SECHALL_SOUTHEAST_2 1 82.5 54
+simple SECHALL_SOUTHEAST_3 1 85.5 54
+
+simple SECHALL_EXIT_SE 1 85.5 58.6
+simple SECHALL_EXIT_SEW 1 88.5 58.6
+simple SECHALL_EXIT_SEE 1 90.5 59.1
+
+simple HALL_69 1 88.5 54
+simple HALL_70 1 88.5 50.5
+simple HALL_71 1 88.5 47
+simple HALL_72 1 88.5 43.5
+simple HALL_73 1 88.5 40
+simple HALL_74 1 88.5 36.5
+simple HALL_75 1 88.5 33
+simple HALL_76 1 88.5 29.5
+simple HALL_77 1 88.5 26
+simple HALL_78 1 88.5 22.5
+simple HALL_79 1 88.5 19
+simple HALL_80 1 88.5 15.5
+simple HALL_81 1 88.5 12
+
+simple HALL_83 1 86 11
+simple HALL_84 1 90.7 11
+
+
+
+
+
+
+
 
 END

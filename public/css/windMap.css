@@ -28,7 +28,8 @@ h2 {
 
 .plotted-image {
     position: absolute;
-    width: 30px;
-    height: 30px;
+    width: 1%;
+    height: 1.6%;
     transform: translate(-50%, -50%);
 }
+

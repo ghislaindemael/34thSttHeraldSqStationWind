@@ -1,10 +1,11 @@
-
+import {distanceBetweenRooms} from "./Utils.js";
 
 export class Passage {
     name;
     startPoint = null;
     endPoint = null;
     oneDir = "false";
+    roomDistance;
     factor = 100;
     direction = 0;
     windStrength = 0;
@@ -13,7 +14,8 @@ export class Passage {
         this.startPoint = startRoom;
         this.endPoint = endRoom;
         this.oneDir = oneDir;
-        this.factor = factor;
+        this.roomDistance = distanceBetweenRooms(startRoom, endRoom);
+        this.factor = factor / 100;
         this.direction = direction;
         if(oneDir === "true"){
             this.name = startRoom.name + "-->" + endRoom.name;
@@ -40,13 +42,15 @@ export class Passage {
     }
 
     setStrengthFromRoomWithFactor(){
+        let distanceFactor = 1 - (this.roomDistance / 200);
         if(this.oneDir === "true"){
-            this.windStrength = Math.round((this.factor / 100) * this.startPoint.windStrength);
+            this.windStrength = Math.round( distanceFactor * this.factor * this.startPoint.windStrength);
         } else {
-            let startStr = Math.round((this.factor / 100) * this.startPoint.windStrength);
-            let endStr = Math.round((this.factor / 100) * this.endPoint.windStrength);
+            let startStr = this.startPoint.windStrength;
+            let endStr = this.endPoint.windStrength;
             let totalStr = startStr + endStr
-            let avgStrength = ((startStr * startStr) / totalStr) + ((endStr * endStr) / totalStr);
+            let avgStrength = Math.round(((startStr * startStr) / totalStr) + ((endStr * endStr) / totalStr));
+            avgStrength = Math.round(this.factor * distanceFactor * avgStrength);
             if(isNaN(avgStrength)){
                 avgStrength = 0;
             }

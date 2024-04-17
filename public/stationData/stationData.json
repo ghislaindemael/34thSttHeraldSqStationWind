@@ -44,7 +44,7 @@
       "xCoord": "10",
       "yCoord": "46",
       "windDirection": 0,
-      "windStrength": 88
+      "windStrength": 0
     },
     {
       "type": "simple",
@@ -53,7 +53,7 @@
       "xCoord": "20",
       "yCoord": "46",
       "windDirection": 0,
-      "windStrength": 87
+      "windStrength": 0
     },
     {
       "type": "simple",
@@ -62,7 +62,7 @@
       "xCoord": "30",
       "yCoord": "46",
       "windDirection": 0,
-      "windStrength": 85
+      "windStrength": 0
     },
     {
       "type": "simple",
@@ -401,8 +401,8 @@
       "type": "simple",
       "name": "HALL_1",
       "level": "1",
-      "xCoord": "7",
-      "yCoord": "83",
+      "xCoord": "6.18",
+      "yCoord": "82",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -410,8 +410,8 @@
       "type": "simple",
       "name": "HALL_2",
       "level": "1",
-      "xCoord": "14",
-      "yCoord": "75",
+      "xCoord": "6.18",
+      "yCoord": "78.7",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -419,8 +419,8 @@
       "type": "simple",
       "name": "HALL_3",
       "level": "1",
-      "xCoord": "13",
-      "yCoord": "69",
+      "xCoord": "9",
+      "yCoord": "76.6",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -428,8 +428,8 @@
       "type": "simple",
       "name": "HALL_4",
       "level": "1",
-      "xCoord": "14",
-      "yCoord": "57",
+      "xCoord": "13.7",
+      "yCoord": "73.9",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -437,8 +437,8 @@
       "type": "simple",
       "name": "HALL_5",
       "level": "1",
-      "xCoord": "15",
-      "yCoord": "48",
+      "xCoord": "12.8",
+      "yCoord": "69.5",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -446,8 +446,8 @@
       "type": "simple",
       "name": "HALL_6",
       "level": "1",
-      "xCoord": "18",
-      "yCoord": "46",
+      "xCoord": "15.3",
+      "yCoord": "71",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -455,8 +455,8 @@
       "type": "simple",
       "name": "HALL_7",
       "level": "1",
-      "xCoord": "25",
-      "yCoord": "46",
+      "xCoord": "10.8",
+      "yCoord": "66.1",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -464,17 +464,8 @@
       "type": "simple",
       "name": "HALL_8",
       "level": "1",
-      "xCoord": "32",
-      "yCoord": "46",
-      "windDirection": 0,
-      "windStrength": 0
-    },
-    {
-      "type": "simple",
-      "name": "HALL_9",
-      "level": "1",
-      "xCoord": "37",
-      "yCoord": "46",
+      "xCoord": "13.7",
+      "yCoord": "65.3",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -482,8 +473,8 @@
       "type": "simple",
       "name": "HALL_10",
       "level": "1",
-      "xCoord": "50",
-      "yCoord": "42",
+      "xCoord": "12.1",
+      "yCoord": "61.5",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -491,8 +482,8 @@
       "type": "simple",
       "name": "HALL_11",
       "level": "1",
-      "xCoord": "60",
-      "yCoord": "42",
+      "xCoord": "10.8",
+      "yCoord": "57.5",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -500,17 +491,8 @@
       "type": "simple",
       "name": "HALL_12",
       "level": "1",
-      "xCoord": "60",
-      "yCoord": "59",
-      "windDirection": 0,
-      "windStrength": 0
-    },
-    {
-      "type": "simple",
-      "name": "HALL_13",
-      "level": "1",
-      "xCoord": "53",
-      "yCoord": "60",
+      "xCoord": "13.55",
+      "yCoord": "57.5",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -518,8 +500,8 @@
       "type": "simple",
       "name": "HALL_14",
       "level": "1",
-      "xCoord": "75",
-      "yCoord": "48",
+      "xCoord": "13.55",
+      "yCoord": "51.5",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -527,17 +509,8 @@
       "type": "simple",
       "name": "HALL_15",
       "level": "1",
-      "xCoord": "75",
-      "yCoord": "56",
-      "windDirection": 0,
-      "windStrength": 0
-    },
-    {
-      "type": "simple",
-      "name": "HALL_16",
-      "level": "1",
-      "xCoord": "88",
-      "yCoord": "48",
+      "xCoord": "13.55",
+      "yCoord": "46",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -545,17 +518,8 @@
       "type": "simple",
       "name": "HALL_17",
       "level": "1",
-      "xCoord": "88",
-      "yCoord": "56",
-      "windDirection": 0,
-      "windStrength": 0
-    },
-    {
-      "type": "simple",
-      "name": "HALL_18",
-      "level": "1",
-      "xCoord": "88",
-      "yCoord": "40",
+      "xCoord": "20",
+      "yCoord": "45.6",
       "windDirection": 0,
       "windStrength": 0
     },
@@ -563,17 +527,467 @@
       "type": "simple",
       "name": "HALL_19",
       "level": "1",
-      "xCoord": "88",
-      "yCoord": "31",
+      "xCoord": "26",
+      "yCoord": "45.6",
       "windDirection": 0,
       "windStrength": 0
     },
     {
       "type": "simple",
-      "name": "HALL_20",
+      "name": "HALL_21",
       "level": "1",
-      "xCoord": "88",
-      "yCoord": "18",
+      "xCoord": "32",
+      "yCoord": "45.6",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_23",
+      "level": "1",
+      "xCoord": "38",
+      "yCoord": "45.6",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_25",
+      "level": "1",
+      "xCoord": "43.6",
+      "yCoord": "45.6",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_26",
+      "level": "1",
+      "xCoord": "47.5",
+      "yCoord": "43",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_EXIT_NWW",
+      "level": "1",
+      "xCoord": "51",
+      "yCoord": "41",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_EXIT_NNE",
+      "level": "1",
+      "xCoord": "63.6",
+      "yCoord": "32.7",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_EXIT_SWS",
+      "level": "1",
+      "xCoord": "54.5",
+      "yCoord": "57.4",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_TUN2EXIT_SWS",
+      "level": "1",
+      "xCoord": "54.5",
+      "yCoord": "60",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_TUN2EXIT_NWN",
+      "level": "1",
+      "xCoord": "54.5",
+      "yCoord": "32",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_EXIT_NWN",
+      "level": "1",
+      "xCoord": "54.5",
+      "yCoord": "38",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_EXIT_SES",
+      "level": "1",
+      "xCoord": "64",
+      "yCoord": "57.4",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "STAIRS2_M2_1",
+      "level": "1",
+      "xCoord": "51.7",
+      "yCoord": "43.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "STAIRS2_M2_2",
+      "level": "1",
+      "xCoord": "53.5",
+      "yCoord": "50",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "STAIRS2_M2_3",
+      "level": "1",
+      "xCoord": "65.9",
+      "yCoord": "35.7",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "STAIRS2_M2_4",
+      "level": "1",
+      "xCoord": "67.5",
+      "yCoord": "41.8",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_CENTER_WEST",
+      "level": "1",
+      "xCoord": "58",
+      "yCoord": "46",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_CENTER_NORTH",
+      "level": "1",
+      "xCoord": "60",
+      "yCoord": "43",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_CENTER_EAST",
+      "level": "1",
+      "xCoord": "62",
+      "yCoord": "46",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_CENTER_SOUTH",
+      "level": "1",
+      "xCoord": "60",
+      "yCoord": "49",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_SOUTH",
+      "level": "1",
+      "xCoord": "60",
+      "yCoord": "56",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_NORTH",
+      "level": "1",
+      "xCoord": "60",
+      "yCoord": "36",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_EAST",
+      "level": "1",
+      "xCoord": "66",
+      "yCoord": "46",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_SOUTHEAST",
+      "level": "1",
+      "xCoord": "64",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "MAINHALL_SOUTHWEST",
+      "level": "1",
+      "xCoord": "56",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_SOUTHWEST_1",
+      "level": "1",
+      "xCoord": "67.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_SOUTHWEST_2",
+      "level": "1",
+      "xCoord": "70.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_SOUTHWEST_3",
+      "level": "1",
+      "xCoord": "73.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_CENTER_SOUTH",
+      "level": "1",
+      "xCoord": "76.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_CENTER",
+      "level": "1",
+      "xCoord": "76.5",
+      "yCoord": "50",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_CENTER_NORTH",
+      "level": "1",
+      "xCoord": "76.5",
+      "yCoord": "46.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_SOUTHEAST_1",
+      "level": "1",
+      "xCoord": "79.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_SOUTHEAST_2",
+      "level": "1",
+      "xCoord": "82.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_SOUTHEAST_3",
+      "level": "1",
+      "xCoord": "85.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_EXIT_SE",
+      "level": "1",
+      "xCoord": "85.5",
+      "yCoord": "58.6",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_EXIT_SEW",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "58.6",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "SECHALL_EXIT_SEE",
+      "level": "1",
+      "xCoord": "90.5",
+      "yCoord": "59.1",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_69",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "54",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_70",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "50.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_71",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "47",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_72",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "43.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_73",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "40",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_74",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "36.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_75",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "33",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_76",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "29.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_77",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "26",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_78",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "22.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_79",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "19",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_80",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "15.5",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_81",
+      "level": "1",
+      "xCoord": "88.5",
+      "yCoord": "12",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_83",
+      "level": "1",
+      "xCoord": "86",
+      "yCoord": "11",
+      "windDirection": 0,
+      "windStrength": 0
+    },
+    {
+      "type": "simple",
+      "name": "HALL_84",
+      "level": "1",
+      "xCoord": "90.7",
+      "yCoord": "11",
       "windDirection": 0,
       "windStrength": 0
     }
