@@ -17,7 +17,6 @@ export class Link {
         this.factor = factor / 100;
         this.direction = findAngleBetweenPoints(startRoom, endRoom);
         this.name = startRoom.name + "-->" + endRoom.name;
-
     }
 
     get windStrength() {

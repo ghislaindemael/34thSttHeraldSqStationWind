@@ -54,7 +54,7 @@
       "level": "3",
       "xCoord": 75,
       "yCoord": 74,
-      "windDirection": 262,
+      "windDirection": 352,
       "windStrength": 1
     },
     {
@@ -94,7 +94,7 @@
       "level": "3",
       "xCoord": 200,
       "yCoord": 74,
-      "windDirection": 351,
+      "windDirection": 350,
       "windStrength": 1
     },
     {
@@ -214,7 +214,7 @@
       "level": "2",
       "xCoord": 25,
       "yCoord": 107,
-      "windDirection": 162,
+      "windDirection": 164,
       "windStrength": 1
     },
     {
@@ -238,7 +238,7 @@
       "level": "2",
       "xCoord": 100,
       "yCoord": 78,
-      "windDirection": 262,
+      "windDirection": 254,
       "windStrength": 1
     },
     {
@@ -246,7 +246,7 @@
       "level": "2",
       "xCoord": 121,
       "yCoord": 74,
-      "windDirection": 165,
+      "windDirection": 155,
       "windStrength": 1
     },
     {
@@ -254,7 +254,7 @@
       "level": "2",
       "xCoord": 150,
       "yCoord": 60,
-      "windDirection": 165,
+      "windDirection": 167,
       "windStrength": 1
     },
     {
@@ -278,7 +278,7 @@
       "level": "2",
       "xCoord": 225,
       "yCoord": 32,
-      "windDirection": 163,
+      "windDirection": 169,
       "windStrength": 1
     },
     {
@@ -286,7 +286,7 @@
       "level": "2",
       "xCoord": 25,
       "yCoord": 123,
-      "windDirection": 8,
+      "windDirection": 7,
       "windStrength": 1
     },
     {
@@ -294,7 +294,7 @@
       "level": "2",
       "xCoord": 50,
       "yCoord": 114,
-      "windDirection": 346,
+      "windDirection": 345,
       "windStrength": 1
     },
     {
@@ -302,7 +302,7 @@
       "level": "2",
       "xCoord": 75,
       "yCoord": 105,
-      "windDirection": 343,
+      "windDirection": 341,
       "windStrength": 1
     },
     {
@@ -310,7 +310,7 @@
       "level": "2",
       "xCoord": 100,
       "yCoord": 95,
-      "windDirection": 337,
+      "windDirection": 248,
       "windStrength": 1
     },
     {
@@ -318,7 +318,7 @@
       "level": "2",
       "xCoord": 125,
       "yCoord": 86,
-      "windDirection": 339,
+      "windDirection": 161,
       "windStrength": 1
     },
     {
@@ -326,7 +326,7 @@
       "level": "2",
       "xCoord": 150,
       "yCoord": 77,
-      "windDirection": 266,
+      "windDirection": 161,
       "windStrength": 1
     },
     {
@@ -334,7 +334,7 @@
       "level": "2",
       "xCoord": 175,
       "yCoord": 68,
-      "windDirection": 196,
+      "windDirection": 159,
       "windStrength": 1
     },
     {
@@ -350,7 +350,7 @@
       "level": "2",
       "xCoord": 225,
       "yCoord": 49,
-      "windDirection": 165,
+      "windDirection": 170,
       "windStrength": 1
     },
     {
@@ -855,7 +855,7 @@
       "xCoord": 38,
       "yCoord": 32,
       "windDirection": 0,
-      "windStrength": 81
+      "windStrength": 83
     },
     {
       "name": "TEST_2",
@@ -863,14 +863,14 @@
       "xCoord": 50,
       "yCoord": 32,
       "windDirection": 4,
-      "windStrength": 77
+      "windStrength": 79
     },
     {
       "name": "TEST_3a",
       "level": "4",
       "xCoord": 38,
       "yCoord": 49,
-      "windDirection": 118,
+      "windDirection": 94,
       "windStrength": 1
     },
     {
@@ -903,7 +903,7 @@
       "xCoord": 63,
       "yCoord": 16,
       "windDirection": 309,
-      "windStrength": 41
+      "windStrength": 43
     },
     {
       "name": "TEST_5b",
@@ -919,7 +919,7 @@
       "xCoord": 63,
       "yCoord": 45,
       "windDirection": 45,
-      "windStrength": 55
+      "windStrength": 57
     },
     {
       "name": "TEST_6b",

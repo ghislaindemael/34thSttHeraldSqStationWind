@@ -5,7 +5,6 @@ import readline from "node:readline";
 import path from "path";
 import { minutesSinceMondayMidnight } from "./Utils.js";
 
-
 export class Station {
     name = "34StHrldSq";
     measurePoints = []
