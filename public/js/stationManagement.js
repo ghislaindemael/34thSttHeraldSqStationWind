@@ -4,7 +4,6 @@ function extractStationData(station) {
 
     function extractRoomData(measPoint) {
         return {
-            type: measPoint.type,
             name: measPoint.name,
             level: measPoint.level,
             xCoord: measPoint.xCoord,

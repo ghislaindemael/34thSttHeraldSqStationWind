@@ -16,19 +16,8 @@ export class Station {
         //console.log("New Station");
         this.configure();
         //Post config
-    };
 
-    printRooms(){
-        let points = "";
-        this.measurePoints.forEach(point =>{
-            if(point.type === "S"){
-                points = points + point.name + ": " + point.windStrength + ", ";
-            }
-        });
-        console.log("-------" + this.name + "-------");
-        console.log(points);
-        console.log("------------------------")
-    }
+    };
 
     configurePoints(){
         return new Promise((resolve) => {
@@ -46,8 +35,10 @@ export class Station {
                 }
                 const params = line.split(' '); // assuming parameters are separated by a space
                 if (params.length === 5) {
-                    const [type, name, level, xCoord, yCoord] = params;
-                    this.measurePoints.push(new MeasurePoint(type, name, level, xCoord, yCoord));
+                    if(params[0].startsWith("TEST")) {
+                        const [name, level, xCoord, yCoord, direction] = params;
+                        this.measurePoints.push(new MeasurePoint(name, level, xCoord, yCoord, direction));
+                    }
                 }
             });
 
@@ -89,14 +80,13 @@ export class Station {
     refillTrains() {
         return new Promise((resolve, reject) => {
             let date = new Date();
+            date.setHours(-6);
             let minutesSinceMM = minutesSinceMondayMidnight(date);
 
             const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
             let promises = [];
 
-            const lineDirs = [ "BDFM_UP", "BDFM_DOWN", "NQRW_UP", "NQRW_DOWN"];
-
-            for (const lineDir of lineDirs) {
+            for (const lineDir of [ "BDFM_UP", "BDFM_DOWN", "NQRW_UP", "NQRW_DOWN"]) {
                 const inputFile = path.join(outputDir, `${lineDir}_Times.txt`);
                 const readStream = fs.createReadStream(inputFile);
                 const readInterface = readline.createInterface({ input: readStream });
@@ -150,7 +140,7 @@ export class Station {
                 this.configurePassages()
                     .then(() => {
                         console.log("Passages configured.");
-                        this.refillTrains().then();
+                        //this.refillTrains().then();
                     })
                     .catch((error) => {
                         console.error("An error occurred during passage configuration:", error);
@@ -199,10 +189,11 @@ export class Station {
 
     setTunnelWindStrength() {
         let curDate = new Date();
+        curDate.setHours(-6);
         let minutesSinceMM = minutesSinceMondayMidnight(curDate);
 
         this.measurePoints.forEach((point) => {
-            if(point.type === "T"){
+            if(point.incomingTrains.length > 1){
                 if(parseInt(point.incomingTrains.at(0)) <= minutesSinceMM){
                     console.log("Incoming train to " + point.name);
                     point.windStrength = 99;
@@ -215,19 +206,16 @@ export class Station {
 
     setPassageTempWind(){
         this.passages.forEach((passage) => {
-            passage.setStrengthFromRoomWithFactor();
+            //passage.setStrengthFromRoomWithFactor();
+            passage.setWindStrengthAndDirection();
         });
     }
 
     decreaseWindStrength(number){
         this.measurePoints.forEach(room =>{
-            if(room.type === "T"){
-                room.windStrength = 0;
-            } else {
-                room.windStrength -= number;
-                if(room.windStrength < 0){
-                    room.windStrength = 0;
-                }
+            room.windStrength -= number;
+            if(room.windStrength < 1){
+                room.windStrength = 1;
             }
         });
     }

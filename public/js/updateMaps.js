@@ -13,16 +13,19 @@ export function updateWindMaps() {
             $('.plotted-image').remove();
 
             filteredRooms.forEach(room => {
-                var index = Math.round(room.windStrength / 10);
+                let index = Math.round(room.windStrength / 10);
+                if(index === 1){
+                    index = 0;
+                }
                 index = index.toString().padStart(2, '0');
 
-                var imageSrc = './images/FLECHES-' + index + '.png';
-                var image = $('<img>').attr({
+                const imageSrc = './images/FLECHES-' + index + '.png';
+                const image = $('<img>').attr({
                     alt: "",
                     src: imageSrc,
                     class: 'plotted-image'
                 }).css({
-                    top: ((20.4 * room.yCoord) / 33)  + '%',
+                    top: ((20.4 * room.yCoord) / 33) + '%',
                     left: ((20.4 * room.xCoord) / 51) + '%',
                     transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
                 });

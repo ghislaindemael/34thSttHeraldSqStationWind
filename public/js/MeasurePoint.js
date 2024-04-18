@@ -1,5 +1,4 @@
 export class MeasurePoint {
-    type = "S";
     name = "default";
     level = "0";
     xCoord = 0;
@@ -9,21 +8,13 @@ export class MeasurePoint {
     passages = [];
     incomingTrains = []
 
-    constructor(inType, inName, inLevel, inXCoord, inYCoord) {
-        this.type = inType;
+    constructor(inName, inLevel, inXCoord, inYCoord, direction) {
         this.name = inName;
         this.level = inLevel;
         this.xCoord = Math.round((inXCoord * 51) / 20.4);
         this.yCoord = Math.round((inYCoord * 33) / 20.4);
+        this.windDirection = direction;
         //console.log("Created " + inName + ".");
-    }
-
-    get type(){
-        return this.type;
-    }
-
-    set type(inType) {
-        this.type = inType;
     }
 
     get name(){
@@ -55,31 +46,19 @@ export class MeasurePoint {
     }
 
     updateWindFromPassages(){
-        let totalWindInPassages = 0;
+        let incomingWind = this.windStrength;
         this.passages.forEach(passage => {
-            totalWindInPassages += passage.windStrength;
+            incomingWind += passage.windStrength;
         });
-        let avgPassStr = 0;
-        let avgWindDir = 0;
-        if(totalWindInPassages > 0){
-            this.passages.forEach((passage) => {
-                avgPassStr += ((passage.windStrength * passage.windStrength) / totalWindInPassages);
-                avgWindDir += (passage.direction * (passage.windStrength / totalWindInPassages));
-            });
-        }
+        let avgWindStrength = this.windStrength * (this.windStrength / incomingWind);
+        let avgWindDir = this.windDirection * (this.windStrength / incomingWind);
+        this.passages.forEach((passage) => {
+            avgWindStrength += ((passage.windStrength * passage.windStrength) / incomingWind);
+            avgWindDir += (passage.direction * (passage.windStrength / incomingWind));
+        });
 
-        let ws = this.windStrength;
-        let wd = this.windDirection;
-        let newWS = Math.round(((ws*ws)/(ws + avgPassStr)) + ((avgPassStr*avgPassStr)/(ws + avgPassStr)));
-        let newWD = Math.round(((ws*wd)/(ws + avgPassStr)) + ((avgWindDir*avgPassStr)/(ws + avgPassStr)));
-        if(isNaN(newWS)){
-            newWS = 0;
-        }
-        if(isNaN(newWD)){
-            newWD = 0;
-        }
-        this.windStrength = newWS;
-        this.windDirection = newWD;
+        this.windStrength = Math.round(avgWindStrength);
+        this.windDirection = Math.round(avgWindDir);
 
     }
 

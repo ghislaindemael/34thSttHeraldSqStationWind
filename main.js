@@ -19,6 +19,8 @@ app.get("/", (req, res) => {
 
 let station = new Station();
 
+
+
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
@@ -31,6 +33,13 @@ setInterval(function() {
     saveStationData(station);
 }, 1000);
 
+setInterval(function() {
+    console.log("5s passed");
+    let test1 = station.findRoomName("TEST_1");
+    if(test1.windStrength < 60){
+        test1.windStrength = 95;
+    }
+}, 5000);
 
 
 /*

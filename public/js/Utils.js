@@ -29,3 +29,32 @@ export function findAngleBetweenPoints(point1, point2) {
 
     return Math.round(angleDeg);
 }
+
+export function setAngleTo360Interval(angle){
+    if(angle < 0){
+        angle += 360;
+    }
+    return angle;
+}
+
+function rad2Deg(radians) {
+    return radians * (180 / Math.PI);
+}
+
+function deg2Rad(degrees) {
+    return degrees * (Math.PI / 180);
+}
+
+export function angleDifference(angle1, angle2) {
+    let diff = Math.abs(angle1 - angle2) % 360;
+    return diff > 180 ? 360 - diff : diff;
+}
+
+export function factorOfAngleDifference(angle1, angle2) {
+    let angle = angleDifference(angle1, angle2);
+    if(angle > 90){
+        return 0;
+    } else {
+        return Math.cos(deg2Rad(angle));
+    }
+}
