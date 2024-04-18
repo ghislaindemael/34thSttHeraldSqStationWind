@@ -16,10 +16,14 @@ export async function readPointsFromImages(){
         const validCoordinates = await getValidMeasurePoint(floor, lowBound, highBound, increment, radius);
 
         const outputFilePath = path.join(
-            fileURLToPath(import.meta.url),'..', '..','stationData', `FLOOR_${floor}_Points.txt`
+            fileURLToPath(import.meta.url),'..', '..','temp', `FLOOR_${floor}_Points.txt`
         );
 
-        let outputContent = '';
+        let WHP = '';
+        let WTP = '';
+        let MHP = '';
+        let EHP = '';
+        let ETP = '';
         let westhallPoints = 0;
         let westTunnelPoints = 0;
         let mainHallPoints = 0;
@@ -30,27 +34,27 @@ export async function readPointsFromImages(){
 
             x = (x / 51).toFixed(1);
             y = (y / 33).toFixed(1);
-            console.log("x: " + x + ", y: " + y);
 
             if( x < 20 && y > 58){
-                outputContent += `WESTHALL_${westhallPoints} ${floor} ${x} ${y} 0\n`;
+                WHP += `WESTHALL_${westhallPoints} ${floor} ${x} ${y} 0\n`;
                 westhallPoints += 1;
             } else if( x < 48 ){
-                outputContent += `WESTTUNNEL_${westTunnelPoints} ${floor} ${x} ${y} 0\n`;
+                WTP += `WESTTUNNEL_${westTunnelPoints} ${floor} ${x} ${y} 0\n`;
                 westTunnelPoints += 1;
             } else if( x < 70 ){
-                outputContent += `MAINHALL_${mainHallPoints} ${floor} ${x} ${y} 0\n`;
+                MHP += `MAINHALL_${mainHallPoints} ${floor} ${x} ${y} 0\n`;
                 mainHallPoints += 1;
             } else if( y > 44 ){
-                outputContent += `EASTHALL_${eastHallPoints} ${floor} ${x} ${y} 0\n`;
+                EHP += `EASTHALL_${eastHallPoints} ${floor} ${x} ${y} 0\n`;
                 eastHallPoints += 1;
             } else {
-                outputContent += `EASTTUNNEL_${eastTunnelPoints} ${floor} ${x} ${y} 0\n`;
+                ETP += `EASTTUNNEL_${eastTunnelPoints} ${floor} ${x} ${y} 0\n`;
                 eastTunnelPoints += 1;
             }
+
         });
 
-        fs.writeFileSync(outputFilePath, outputContent);
+        fs.writeFileSync(outputFilePath, WHP + WTP + MHP + EHP + ETP);
     }
 }
 
