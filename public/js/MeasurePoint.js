@@ -5,7 +5,7 @@ export class MeasurePoint {
     yCoord = 0;
     windDirection = 0;
     windStrength = 0;
-    passages = [];
+    links = [];
     incomingTrains = []
 
     constructor(inName, inLevel, inXCoord, inYCoord, direction) {
@@ -42,17 +42,17 @@ export class MeasurePoint {
     }
 
     addPassage(passage){
-        this.passages.push(passage);
+        this.links.push(passage);
     }
 
     updateWindFromPassages(){
         let incomingWind = this.windStrength;
-        this.passages.forEach(passage => {
+        this.links.forEach(passage => {
             incomingWind += passage.windStrength;
         });
         let avgWindStrength = this.windStrength * (this.windStrength / incomingWind);
         let avgWindDir = this.windDirection * (this.windStrength / incomingWind);
-        this.passages.forEach((passage) => {
+        this.links.forEach((passage) => {
             avgWindStrength += ((passage.windStrength * passage.windStrength) / incomingWind);
             avgWindDir += (passage.direction * (passage.windStrength / incomingWind));
         });

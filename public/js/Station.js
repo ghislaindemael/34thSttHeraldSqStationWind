@@ -1,5 +1,5 @@
 import { MeasurePoint } from "./MeasurePoint.js";
-import { Passage } from "./Passage.js";
+import { Link } from "./Link.js";
 import fs from "fs";
 import readline from "node:readline";
 import path from "path";
@@ -9,7 +9,7 @@ import { minutesSinceMondayMidnight } from "./Utils.js";
 export class Station {
     name = "34StHrldSq";
     measurePoints = []
-    passages = []
+    links = []
     //incomingTrains = []
 
     constructor() {
@@ -33,13 +33,20 @@ export class Station {
                     rl.close();
                     resolve();
                 }
-                const params = line.split(' '); // assuming parameters are separated by a space
+                const params = line.split(' ');
+                if (params.length === 5) {
+                    const [name, level, xCoord, yCoord, direction] = params;
+                    this.measurePoints.push(new MeasurePoint(name, level, xCoord, yCoord, direction));
+                }
+
+                /*
                 if (params.length === 5) {
                     if(params[0].startsWith("TEST")) {
                         const [name, level, xCoord, yCoord, direction] = params;
                         this.measurePoints.push(new MeasurePoint(name, level, xCoord, yCoord, direction));
                     }
                 }
+                 */
             });
 
             rl.on('close', () => {
@@ -50,7 +57,7 @@ export class Station {
 
     configurePassages() {
         return new Promise((resolve) => {
-            const fileStream = fs.createReadStream(path.join(process.cwd(),'./public/stationData/configPassages.txt'));
+            const fileStream = fs.createReadStream(path.join(process.cwd(),'./public/stationData/configLinks.txt'));
 
             const rl = readline.createInterface({
                 input: fileStream,
@@ -155,14 +162,15 @@ export class Station {
 
     }
 
-    addParameteredPassage(startRoom, endRoom, oneDir, factor){
-        let pass = new Passage(startRoom, endRoom, oneDir, factor);
-        this.passages.push(pass);
+    addParameteredPassage(room1, room2, oneDir, factor){
+        let pass1 = new Link(room1, room2, oneDir, factor);
+        this.links.push(pass1);
         if(oneDir === "false"){
-            //console.log("Pass " + pass + " is bidirectional");
-            startRoom.passages.push(pass);
+            let pass2 = new Link(room2, room1, oneDir, factor);
+            this.links.push(pass2);
+            room1.links.push(pass2);
         }
-        endRoom.passages.push(pass);
+        room2.links.push(pass1);
 
     }
 
@@ -205,7 +213,7 @@ export class Station {
     }
 
     setPassageTempWind(){
-        this.passages.forEach((passage) => {
+        this.links.forEach((passage) => {
             //passage.setStrengthFromRoomWithFactor();
             passage.setWindStrengthAndDirection();
         });
@@ -227,7 +235,7 @@ export class Station {
     }
 
     clearPassages() {
-        this.passages.forEach((passage) => {
+        this.links.forEach((passage) => {
             passage.windStrength = 0;
         });
     }

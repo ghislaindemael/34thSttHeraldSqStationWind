@@ -2,36 +2,884 @@
   "name": "34StHrldSq",
   "measurePoints": [
     {
+      "name": "BDFM_UP_T1",
+      "level": "3",
+      "xCoord": 8,
+      "yCoord": 65,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_UP_T2",
+      "level": "3",
+      "xCoord": 8,
+      "yCoord": 82,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_DOWN_T1",
+      "level": "3",
+      "xCoord": 243,
+      "yCoord": 82,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_DOWN_T2",
+      "level": "3",
+      "xCoord": 243,
+      "yCoord": 97,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_1",
+      "level": "3",
+      "xCoord": 25,
+      "yCoord": 74,
+      "windDirection": 181,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_2",
+      "level": "3",
+      "xCoord": 50,
+      "yCoord": 74,
+      "windDirection": 180,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_3",
+      "level": "3",
+      "xCoord": 75,
+      "yCoord": 74,
+      "windDirection": 262,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_4",
+      "level": "3",
+      "xCoord": 100,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_5",
+      "level": "3",
+      "xCoord": 120,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_6",
+      "level": "3",
+      "xCoord": 150,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_7",
+      "level": "3",
+      "xCoord": 170,
+      "yCoord": 78,
+      "windDirection": 12,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_8",
+      "level": "3",
+      "xCoord": 200,
+      "yCoord": 74,
+      "windDirection": 351,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P1_9",
+      "level": "3",
+      "xCoord": 225,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_1",
+      "level": "3",
+      "xCoord": 25,
+      "yCoord": 87,
+      "windDirection": 16,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_2",
+      "level": "3",
+      "xCoord": 50,
+      "yCoord": 87,
+      "windDirection": 3,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_3",
+      "level": "3",
+      "xCoord": 75,
+      "yCoord": 87,
+      "windDirection": 2,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_4",
+      "level": "3",
+      "xCoord": 100,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_5",
+      "level": "3",
+      "xCoord": 125,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_6",
+      "level": "3",
+      "xCoord": 150,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_7",
+      "level": "3",
+      "xCoord": 175,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_8",
+      "level": "3",
+      "xCoord": 200,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "BDFM_P2_9",
+      "level": "3",
+      "xCoord": 225,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_UP_T1",
+      "level": "2",
+      "xCoord": 8,
+      "yCoord": 105,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_UP_T2",
+      "level": "2",
+      "xCoord": 8,
+      "yCoord": 121,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_DOWN_T1",
+      "level": "2",
+      "xCoord": 243,
+      "yCoord": 34,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_DOWN_T2",
+      "level": "2",
+      "xCoord": 243,
+      "yCoord": 50,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_1",
+      "level": "2",
+      "xCoord": 25,
+      "yCoord": 107,
+      "windDirection": 162,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_2",
+      "level": "2",
+      "xCoord": 50,
+      "yCoord": 97,
+      "windDirection": 339,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_3",
+      "level": "2",
+      "xCoord": 75,
+      "yCoord": 87,
+      "windDirection": 339,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_4",
+      "level": "2",
+      "xCoord": 100,
+      "yCoord": 78,
+      "windDirection": 262,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_5",
+      "level": "2",
+      "xCoord": 121,
+      "yCoord": 74,
+      "windDirection": 165,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_6",
+      "level": "2",
+      "xCoord": 150,
+      "yCoord": 60,
+      "windDirection": 165,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_7",
+      "level": "2",
+      "xCoord": 174,
+      "yCoord": 54,
+      "windDirection": 156,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_8",
+      "level": "2",
+      "xCoord": 200,
+      "yCoord": 42,
+      "windDirection": 159,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P1_9",
+      "level": "2",
+      "xCoord": 225,
+      "yCoord": 32,
+      "windDirection": 163,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_1",
+      "level": "2",
+      "xCoord": 25,
+      "yCoord": 123,
+      "windDirection": 8,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_2",
+      "level": "2",
+      "xCoord": 50,
+      "yCoord": 114,
+      "windDirection": 346,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_3",
+      "level": "2",
+      "xCoord": 75,
+      "yCoord": 105,
+      "windDirection": 343,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_4",
+      "level": "2",
+      "xCoord": 100,
+      "yCoord": 95,
+      "windDirection": 337,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_5",
+      "level": "2",
+      "xCoord": 125,
+      "yCoord": 86,
+      "windDirection": 339,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_6",
+      "level": "2",
+      "xCoord": 150,
+      "yCoord": 77,
+      "windDirection": 266,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_7",
+      "level": "2",
+      "xCoord": 175,
+      "yCoord": 68,
+      "windDirection": 196,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_8",
+      "level": "2",
+      "xCoord": 200,
+      "yCoord": 58,
+      "windDirection": 161,
+      "windStrength": 1
+    },
+    {
+      "name": "NQRW_P2_9",
+      "level": "2",
+      "xCoord": 225,
+      "yCoord": 49,
+      "windDirection": 165,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_TUN2EXIT_S_1",
+      "level": "1",
+      "xCoord": 15,
+      "yCoord": 133,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_TUN2EXIT_S_2",
+      "level": "1",
+      "xCoord": 15,
+      "yCoord": 127,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_TUN2EXIT_S_3",
+      "level": "1",
+      "xCoord": 23,
+      "yCoord": 124,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_CENTER_SOUTH",
+      "level": "1",
+      "xCoord": 32,
+      "yCoord": 112,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_EXIT_W",
+      "level": "1",
+      "xCoord": 27,
+      "yCoord": 107,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_CENTER_NORTH",
+      "level": "1",
+      "xCoord": 30,
+      "yCoord": 99,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_EXIT_NNW",
+      "level": "1",
+      "xCoord": 27,
+      "yCoord": 93,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_EXIT_NNE",
+      "level": "1",
+      "xCoord": 34,
+      "yCoord": 93,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_1",
+      "level": "1",
+      "xCoord": 34,
+      "yCoord": 83,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_2",
+      "level": "1",
+      "xCoord": 34,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_3",
+      "level": "1",
+      "xCoord": 50,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_4",
+      "level": "1",
+      "xCoord": 65,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_5",
+      "level": "1",
+      "xCoord": 80,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_6",
+      "level": "1",
+      "xCoord": 95,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_7",
+      "level": "1",
+      "xCoord": 109,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTTUN_8",
+      "level": "1",
+      "xCoord": 119,
+      "yCoord": 70,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_EXIT_NWW",
+      "level": "1",
+      "xCoord": 128,
+      "yCoord": 66,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_EXIT_NNE",
+      "level": "1",
+      "xCoord": 159,
+      "yCoord": 53,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_TUN2EXIT_NWN",
+      "level": "1",
+      "xCoord": 136,
+      "yCoord": 52,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_EXIT_NWN",
+      "level": "1",
+      "xCoord": 136,
+      "yCoord": 61,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "STAIRS2_M2_1",
+      "level": "1",
+      "xCoord": 129,
+      "yCoord": 70,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "STAIRS2_M2_2",
+      "level": "1",
+      "xCoord": 134,
+      "yCoord": 81,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "STAIRS2_M2_3",
+      "level": "1",
+      "xCoord": 165,
+      "yCoord": 58,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "STAIRS2_M2_4",
+      "level": "1",
+      "xCoord": 169,
+      "yCoord": 68,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_STAIRS2_M2_1",
+      "level": "1",
+      "xCoord": 34,
+      "yCoord": 106,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "WESTHALL_STAIRS2_M2_2",
+      "level": "1",
+      "xCoord": 38,
+      "yCoord": 115,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_CENTER_WEST",
+      "level": "1",
+      "xCoord": 145,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_CENTER_NORTH",
+      "level": "1",
+      "xCoord": 150,
+      "yCoord": 70,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_CENTER_EAST",
+      "level": "1",
+      "xCoord": 155,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_CENTER_SOUTH",
+      "level": "1",
+      "xCoord": 150,
+      "yCoord": 79,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_SOUTH",
+      "level": "1",
+      "xCoord": 150,
+      "yCoord": 91,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_NORTH",
+      "level": "1",
+      "xCoord": 150,
+      "yCoord": 58,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_EAST",
+      "level": "1",
+      "xCoord": 165,
+      "yCoord": 74,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_SOUTHEAST",
+      "level": "1",
+      "xCoord": 160,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "MAINHALL_SOUTHWEST",
+      "level": "1",
+      "xCoord": 140,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_SOUTHWEST_1",
+      "level": "1",
+      "xCoord": 169,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_SOUTHWEST_2",
+      "level": "1",
+      "xCoord": 176,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_SOUTHWEST_3",
+      "level": "1",
+      "xCoord": 184,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_CENTER_SOUTH",
+      "level": "1",
+      "xCoord": 191,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_CENTER",
+      "level": "1",
+      "xCoord": 191,
+      "yCoord": 81,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_CENTER_NORTH",
+      "level": "1",
+      "xCoord": 191,
+      "yCoord": 75,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_SOUTHEAST_1",
+      "level": "1",
+      "xCoord": 199,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_SOUTHEAST_2",
+      "level": "1",
+      "xCoord": 206,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_SOUTHEAST_3",
+      "level": "1",
+      "xCoord": 214,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EXIT_SE",
+      "level": "1",
+      "xCoord": 214,
+      "yCoord": 95,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EXIT_SEW",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 95,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EXIT_SEE",
+      "level": "1",
+      "xCoord": 226,
+      "yCoord": 96,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EAST_1",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 87,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EAST_2",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 82,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EAST_3",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 76,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "SECHALL_EXIT_NE",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 70,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_1",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 65,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_2",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 59,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_3",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 53,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_4",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 48,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_5",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 42,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_6",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 36,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "EASTTUN_7",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 31,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NEHALL_SOUTH",
+      "level": "1",
+      "xCoord": 223,
+      "yCoord": 25,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NEHALL_CENTER",
+      "level": "1",
+      "xCoord": 221,
+      "yCoord": 19,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NEHALL_EXIT_W",
+      "level": "1",
+      "xCoord": 215,
+      "yCoord": 18,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "NEHALL_EXIT_E",
+      "level": "1",
+      "xCoord": 227,
+      "yCoord": 18,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
       "name": "TEST_1",
       "level": "4",
       "xCoord": 38,
       "yCoord": 32,
       "windDirection": 0,
-      "windStrength": 71
+      "windStrength": 81
     },
     {
       "name": "TEST_2",
       "level": "4",
       "xCoord": 50,
       "yCoord": 32,
-      "windDirection": 128,
-      "windStrength": 43
+      "windDirection": 4,
+      "windStrength": 77
     },
     {
       "name": "TEST_3a",
       "level": "4",
       "xCoord": 38,
       "yCoord": 49,
-      "windDirection": 125,
-      "windStrength": 42
+      "windDirection": 118,
+      "windStrength": 1
     },
     {
       "name": "TEST_3b",
       "level": "4",
       "xCoord": 38,
       "yCoord": 45,
-      "windDirection": 312,
-      "windStrength": 33
+      "windDirection": 0,
+      "windStrength": 1
     },
     {
       "name": "TEST_4a",
@@ -46,24 +894,24 @@
       "level": "4",
       "xCoord": 38,
       "yCoord": 19,
-      "windDirection": 47,
-      "windStrength": 15
+      "windDirection": 0,
+      "windStrength": 1
     },
     {
       "name": "TEST_5a",
       "level": "4",
       "xCoord": 63,
       "yCoord": 16,
-      "windDirection": 308,
-      "windStrength": 28
+      "windDirection": 309,
+      "windStrength": 41
     },
     {
       "name": "TEST_5b",
       "level": "4",
       "xCoord": 63,
       "yCoord": 19,
-      "windDirection": 135,
-      "windStrength": 41
+      "windDirection": 0,
+      "windStrength": 1
     },
     {
       "name": "TEST_6a",
@@ -71,13 +919,21 @@
       "xCoord": 63,
       "yCoord": 45,
       "windDirection": 45,
-      "windStrength": 18
+      "windStrength": 55
     },
     {
       "name": "TEST_6b",
       "level": "4",
       "xCoord": 63,
       "yCoord": 49,
+      "windDirection": 0,
+      "windStrength": 1
+    },
+    {
+      "name": "TEST_8",
+      "level": "4",
+      "xCoord": 44,
+      "yCoord": 34,
       "windDirection": 0,
       "windStrength": 1
     }
