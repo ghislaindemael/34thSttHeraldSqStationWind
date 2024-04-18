@@ -3,6 +3,8 @@ export class MeasurePoint {
     level = "0";
     xCoord = 0;
     yCoord = 0;
+    xRelCoord = 0;
+    yRelCoord = 0;
     windDirection = 0;
     windStrength = 0;
     links = [];
@@ -13,6 +15,8 @@ export class MeasurePoint {
         this.level = inLevel;
         this.xCoord = Math.round((inXCoord * 51) / 20.4);
         this.yCoord = Math.round((inYCoord * 33) / 20.4);
+        this.xRelCoord = inXCoord;
+        this.yRelCoord = inYCoord;
         this.windDirection = direction;
         //console.log("Created " + inName + ".");
     }

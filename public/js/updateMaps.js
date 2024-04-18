@@ -25,15 +25,36 @@ export function updateWindMaps() {
                     src: imageSrc,
                     class: 'plotted-image'
                 }).css({
-                    top: ((20.4 * room.yCoord) / 33) + '%',
-                    left: ((20.4 * room.xCoord) / 51) + '%',
+                    top: room.yRelCoord + '%',
+                    left: room.xRelCoord + '%',
                     transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
                 });
 
                 $('.map').append(image);
             });
+
+            /*
+            data.links.filter((link) => link.level === desiredFloor).forEach((link) => {
+                const arrow = $('<img>').attr({
+                    alt: "",
+                    src: './images/FLECHES-07.png',
+                }).css({
+                    top: link.yRelCoord + '%',
+                    left: link.xRelCoord + '%',
+                    transform: `translate(-50%, -50%) rotate(${38 + link.direction}deg)`,
+                    width: `0.9%`,
+                    height: `1.44%`,
+                    position: 'absolute',
+                });
+                $('.map').append(arrow);
+            });
+            */
         })
         .catch((error) => {
             console.error('Error:', error);
         });
+
+
+
+
 }

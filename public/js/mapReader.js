@@ -32,23 +32,23 @@ export async function readPointsFromImages(){
 
         validCoordinates.forEach(({ x, y }) => {
 
-            x = (x / 51).toFixed(1);
-            y = (y / 33).toFixed(1);
+            x = (x / 51).toFixed(2);
+            y = ((y / 33) - 1.5).toFixed(2);
 
             if( x < 20 && y > 58){
-                WHP += `WESTHALL_${westhallPoints} ${floor} ${x} ${y} 0\n`;
+                WHP += `F1_WESTHALL_${westhallPoints} ${floor} ${x} ${y} 0\n`;
                 westhallPoints += 1;
-            } else if( x < 48 ){
-                WTP += `WESTTUNNEL_${westTunnelPoints} ${floor} ${x} ${y} 0\n`;
+            } else if( x <= 50 ){
+                WTP += `F1_WESTTUNNEL_${westTunnelPoints} ${floor} ${x} ${y} 0\n`;
                 westTunnelPoints += 1;
             } else if( x < 70 ){
-                MHP += `MAINHALL_${mainHallPoints} ${floor} ${x} ${y} 0\n`;
+                MHP += `F1_MAINHALL_${mainHallPoints} ${floor} ${x} ${y} 0\n`;
                 mainHallPoints += 1;
             } else if( y > 44 ){
-                EHP += `EASTHALL_${eastHallPoints} ${floor} ${x} ${y} 0\n`;
+                EHP += `F1_EASTHALL_${eastHallPoints} ${floor} ${x} ${y} 0\n`;
                 eastHallPoints += 1;
             } else {
-                ETP += `EASTTUNNEL_${eastTunnelPoints} ${floor} ${x} ${y} 0\n`;
+                ETP += `F1_EASTTUNNEL_${eastTunnelPoints} ${floor} ${x} ${y} 0\n`;
                 eastTunnelPoints += 1;
             }
 
@@ -75,13 +75,11 @@ export async function getValidMeasurePoint(floor, lowBound, highBound, increment
             let y = (yIncrement / 100) * img.height;
 
             if (isWhitePixel(x, y, radius, img, ctx)) {
-                x = Math.floor(x);
-                y = Math.floor(y);
                 validCoordinates.push({ x, y });
             }
         }
     }
-    console.log("Valid points : " + validCoordinates.length);
+    //console.log("Valid points : " + validCoordinates.length);
     return validCoordinates;
 }
 

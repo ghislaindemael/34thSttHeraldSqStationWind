@@ -5,16 +5,15 @@ export class Link {
     startPoint = null;
     endPoint = null;
     roomDistance = 0;
-    factor = 0;
+    factor = 1;
     direction = 0;
     windStrength = 0;
     windDirection = 0;
 
-    constructor(startRoom, endRoom, oneDir, factor) {
+    constructor(startRoom, endRoom, factor) {
         this.startPoint = startRoom;
         this.endPoint = endRoom;
         this.roomDistance = distanceBetweenRooms(startRoom, endRoom);
-        this.factor = factor / 100;
         this.direction = findAngleBetweenPoints(startRoom, endRoom);
         this.name = startRoom.name + "-->" + endRoom.name;
     }

@@ -8,14 +8,29 @@ function extractStationData(station) {
             level: measPoint.level,
             xCoord: measPoint.xCoord,
             yCoord: measPoint.yCoord,
+            xRelCoord: measPoint.xRelCoord,
+            yRelCoord: measPoint.yRelCoord,
             windDirection: measPoint.windDirection,
             windStrength: measPoint.windStrength,
+        };
+    }
+
+    function extractLinkData(link) {
+        return {
+            name: link.name,
+            xRelCoord: link.startPoint.xRelCoord,
+            yRelCoord: link.startPoint.yRelCoord,
+            level: link.startPoint.level,
+            distance: link.roomDistance,
+            factor: link.factor,
+            direction: link.direction,
         };
     }
 
     return {
         name: station.name,
         measurePoints: station.measurePoints.map(extractRoomData),
+        links: station.links.map(extractLinkData),
     };
 }
 

@@ -22,10 +22,12 @@ readPointsFromImages().then();
 
 let station = new Station();
 
+/*
 (async () => {
     const imagePath = path.join(__dirname, 'public/images', 'FLOOR_1_BW.png');
     await drawRedDotsOnImage(imagePath,2, 98,  1.5, 17);
 })();
+*/
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -39,17 +41,12 @@ setInterval(function() {
     saveStationData(station);
 }, 1000);
 
+
 setInterval(function() {
-    console.log("5s passed");
-    let test1 = station.findRoomName("TEST_1");
-    if(test1.windStrength < 60){
-        test1.windStrength = 95;
-    }
-}, 5000);
+    station.generateRandomWind(3);
+}, 3000);
 
 
-/*
-setInterval(function() {
-    station.refillTrains()
-}, 900000);
-*/
+
+
+

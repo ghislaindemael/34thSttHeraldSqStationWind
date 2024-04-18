@@ -3,7 +3,7 @@ import { Link } from "./Link.js";
 import fs from "fs";
 import readline from "node:readline";
 import path from "path";
-import { minutesSinceMondayMidnight } from "./Utils.js";
+import {distanceBetweenRooms, minutesSinceMondayMidnight} from "./Utils.js";
 
 export class Station {
     name = "34StHrldSq";
@@ -15,73 +15,67 @@ export class Station {
         //console.log("New Station");
         this.configure();
         //Post config
-
     };
 
     configurePoints(){
         return new Promise((resolve) => {
-            const fileStream = fs.createReadStream(path.join(process.cwd(), './public/stationData/configPoints.txt'));
+            const dataDir = path.join(process.cwd(), './public/stationData/');
 
-            const rl = readline.createInterface({
-                input: fileStream,
-                crlfDelay: Infinity
-            });
+            for(const floor of [1]) {
 
-            rl.on('line', (line) => {
-                if (line.trim() === 'END') {
-                    rl.close();
-                    resolve();
-                }
-                const params = line.split(' ');
-                if (params.length === 5) {
-                    const [name, level, xCoord, yCoord, direction] = params;
-                    this.measurePoints.push(new MeasurePoint(name, level, xCoord, yCoord, direction));
-                }
+                const fileStream = fs.createReadStream(dataDir + `FLOOR_${floor}_Points.txt`);
 
-                /*
-                if (params.length === 5) {
-                    if(params[0].startsWith("TEST")) {
-                        const [name, level, xCoord, yCoord, direction] = params;
-                        this.measurePoints.push(new MeasurePoint(name, level, xCoord, yCoord, direction));
+                const rl = readline.createInterface({
+                    input: fileStream,
+                    crlfDelay: Infinity
+                });
+
+                rl.on('line', (line) => {
+                    if (line.trim() === 'END') {
+                        rl.close();
+                        resolve();
                     }
-                }
-                 */
-            });
+                    const params = line.split(' ');
+                    if (params.length === 5) {
+                        const [name, level, xCoord, yCoord, direction] = params;
+                        this.measurePoints.push(new MeasurePoint(name, level, parseFloat(xCoord), parseFloat(yCoord), direction));
+                    }
+                });
 
-            rl.on('close', () => {
-                resolve();
-            });
+                rl.on('close', () => {
+                    resolve();
+                });
+            }
         });
     }
 
     configurePassages() {
         return new Promise((resolve) => {
-            const fileStream = fs.createReadStream(path.join(process.cwd(),'./public/stationData/configLinks.txt'));
+            for (let i = 0; i < this.measurePoints.length; i++) {
+                const measurePoint1 = this.measurePoints[i];
+                for (let j = i + 1; j < this.measurePoints.length; j++) {
+                    const measurePoint2 = this.measurePoints[j];
 
-            const rl = readline.createInterface({
-                input: fileStream,
-                crlfDelay: Infinity
-            });
+                    if (measurePoint2.xRelCoord - measurePoint1.xRelCoord > 3) {
+                        break;
+                    }
 
-            rl.on('line', (line) => {
-                const params = line.split(' '); // assuming parameters are separated by a space
-                if (params.length === 4) {
-                    const [startRoomName, endRoomName, oneDir, factor] = params;
+                    const distance = distanceBetweenRooms(measurePoint1, measurePoint2);
 
-                    const startRoom = this.findRoomName(startRoomName);
-                    const endRoom = this.findRoomName(endRoomName);
-
-                    if (startRoom && endRoom) {
-                        this.addParameteredPassage(startRoom, endRoom, oneDir, factor);
+                    if (distance < 2.3) {
+                        const link1 = new Link(measurePoint1, measurePoint2);
+                        this.links.push(link1);
+                        measurePoint2.links.push(link1);
+                        const link2 = new Link(measurePoint2, measurePoint1);
+                        this.links.push(link2);
+                        measurePoint1.links.push(link2);
                     }
                 }
-            });
-
-            rl.on('close', () => {
-                resolve();
-            });
+            }
+            resolve();
         });
     }
+
 
     refillTrains() {
         return new Promise((resolve, reject) => {
@@ -157,21 +151,6 @@ export class Station {
             });
     }
 
-    addParameteredPoint(type, name, level, xCoord, yCoord){
-
-    }
-
-    addParameteredPassage(room1, room2, oneDir, factor){
-        let pass1 = new Link(room1, room2, oneDir, factor);
-        this.links.push(pass1);
-        if(oneDir === "false"){
-            let pass2 = new Link(room2, room1, oneDir, factor);
-            this.links.push(pass2);
-            room1.links.push(pass2);
-        }
-        room2.links.push(pass1);
-
-    }
 
     findRoomName(name) {
         let toFind = null;
@@ -240,5 +219,13 @@ export class Station {
     }
 
 
+    generateRandomWind(rooms) {
+        for(let i = 0; i < rooms; i++){
+            const randomIndex = Math.floor(Math.random() * this.measurePoints.length);
+            const randPoint = this.measurePoints[randomIndex];
+            randPoint.windStrength = Math.round(Math.random() * 100);
+            randPoint.windDirection = Math.round(Math.random() * 360);
+        }
+    }
 }
 

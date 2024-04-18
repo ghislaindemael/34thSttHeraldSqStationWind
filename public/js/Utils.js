@@ -11,9 +11,9 @@ export function minutesSinceMondayMidnight(date){
 }
 
 export function distanceBetweenRooms(room1, room2) {
-    let xdif = room1.xCoord - room2.xCoord;
-    let ydif = room1.yCoord - room2.yCoord;
-    return Math.abs(Math.sqrt(Math.abs((xdif * xdif) + (ydif * ydif))));
+    let xdif = room1.xRelCoord - room2.xRelCoord;
+    let ydif = room1.yRelCoord - room2.yRelCoord;
+    return Math.abs(Math.sqrt((xdif * xdif) + (ydif * ydif)));
 }
 
 export function findAngleBetweenPoints(point1, point2) {
