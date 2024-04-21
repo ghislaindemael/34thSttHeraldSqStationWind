@@ -21,31 +21,34 @@ export class Station {
         return new Promise((resolve) => {
             const dataDir = path.join(process.cwd(), './public/stationData/');
 
-            for(const floor of [1]) {
-
+            for(const floor of [0, 1, 2, 3]) {
                 const fileStream = fs.createReadStream(dataDir + `FLOOR_${floor}_Points.txt`);
-
                 const rl = readline.createInterface({
                     input: fileStream,
                     crlfDelay: Infinity
                 });
-
                 rl.on('line', (line) => {
-                    if (line.trim() === 'END') {
-                        rl.close();
-                        resolve();
-                    }
                     const params = line.split(' ');
                     if (params.length === 5) {
                         const [name, level, xCoord, yCoord, direction] = params;
                         this.measurePoints.push(new MeasurePoint(name, level, parseFloat(xCoord), parseFloat(yCoord), direction));
                     }
                 });
-
-                rl.on('close', () => {
-                    resolve();
-                });
+                rl.on('close', () => {});
             }
+            const fileStream = fs.createReadStream(dataDir + `configTunnels.txt`);
+            const rl = readline.createInterface({
+                input: fileStream,
+                crlfDelay: Infinity
+            });
+            rl.on('line', (line) => {
+                const params = line.split(' ');
+                if (params.length === 5) {
+                    const [name, level, xCoord, yCoord, direction] = params;
+                    this.measurePoints.push(new MeasurePoint(name, level, parseFloat(xCoord), parseFloat(yCoord), direction));
+                }
+            });
+            rl.on('close', () => { resolve() });
         });
     }
 
@@ -72,6 +75,20 @@ export class Station {
                     }
                 }
             }
+            const dataDir = path.join(process.cwd(), './public/stationData/');
+            const fileStream = fs.createReadStream(dataDir + `configLinks.txt`);
+            const rl = readline.createInterface({
+                input: fileStream,
+                crlfDelay: Infinity
+            });
+            rl.on('line', (line) => {
+                const params = line.split(' ');
+                if (params.length === 3) {
+                    const [startRoom, endroom, factor] = params;
+                    this.links.push(new Link(startRoom, endroom, factor));
+                }
+            });
+            rl.on('close', () => { resolve() });
             resolve();
         });
     }
@@ -140,7 +157,7 @@ export class Station {
                 this.configurePassages()
                     .then(() => {
                         console.log("Passages configured.");
-                        //this.refillTrains().then();
+                        this.refillTrains().then();
                     })
                     .catch((error) => {
                         console.error("An error occurred during passage configuration:", error);
@@ -217,7 +234,6 @@ export class Station {
             passage.windStrength = 0;
         });
     }
-
 
     generateRandomWind(rooms) {
         for(let i = 0; i < rooms; i++){

@@ -36,7 +36,7 @@ export class Link {
         let startWD = this.startPoint.windDirection;
         startWS *= factorOfAngleDifference(this.direction, startWD);
         this.windDirection = this.direction;
-        this.windStrength = Math.round((1 - (this.roomDistance / 500)) * startWS);
+        this.windStrength = Math.round((1 - (this.roomDistance / 1000)) * startWS);
 
     }
 

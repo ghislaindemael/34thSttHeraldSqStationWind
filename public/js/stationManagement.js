@@ -30,7 +30,7 @@ function extractStationData(station) {
     return {
         name: station.name,
         measurePoints: station.measurePoints.map(extractRoomData),
-        links: station.links.map(extractLinkData),
+        //links: station.links.map(extractLinkData),
     };
 }
 

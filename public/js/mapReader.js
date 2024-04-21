@@ -5,8 +5,7 @@ import { fileURLToPath } from 'url';
 
 export async function readPointsFromImages(){
 
-    //const floors = [0, 1, 2, 3];
-    const floors = [1];
+    const floors = [0, 1, 2, 3];
     const lowBound = 2;
     const highBound = 98;
     const increment = 1.5;
@@ -19,42 +18,53 @@ export async function readPointsFromImages(){
             fileURLToPath(import.meta.url),'..', '..','temp', `FLOOR_${floor}_Points.txt`
         );
 
-        let WHP = '';
-        let WTP = '';
-        let MHP = '';
-        let EHP = '';
-        let ETP = '';
-        let westhallPoints = 0;
-        let westTunnelPoints = 0;
-        let mainHallPoints = 0;
-        let eastHallPoints = 0;
-        let eastTunnelPoints = 0;
+        if(floor === 1){
+            let WHP = '';
+            let WTP = '';
+            let MHP = '';
+            let EHP = '';
+            let ETP = '';
+            let westhallPoints = 0;
+            let westTunnelPoints = 0;
+            let mainHallPoints = 0;
+            let eastHallPoints = 0;
+            let eastTunnelPoints = 0;
 
-        validCoordinates.forEach(({ x, y }) => {
+            validCoordinates.forEach(({ x, y }) => {
 
-            x = (x / 51).toFixed(2);
-            y = ((y / 33) - 1.5).toFixed(2);
+                x = (x / 51).toFixed(2);
+                y = ((y / 33) - 1.5).toFixed(2);
+                if( x < 20 && y > 58){
+                    WHP += `F1_WESTHALL_${westhallPoints} ${floor} ${x} ${y} 0\n`;
+                    westhallPoints += 1;
+                } else if( x <= 50 ){
+                    WTP += `F1_WESTTUNNEL_${westTunnelPoints} ${floor} ${x} ${y} 0\n`;
+                    westTunnelPoints += 1;
+                } else if( x < 70 ){
+                    MHP += `F1_MAINHALL_${mainHallPoints} ${floor} ${x} ${y} 0\n`;
+                    mainHallPoints += 1;
+                } else if( y > 44 ){
+                    EHP += `F1_EASTHALL_${eastHallPoints} ${floor} ${x} ${y} 0\n`;
+                    eastHallPoints += 1;
+                } else {
+                    ETP += `F1_EASTTUNNEL_${eastTunnelPoints} ${floor} ${x} ${y} 0\n`;
+                    eastTunnelPoints += 1;
+                }
+            });
+            fs.writeFileSync(outputFilePath, WHP + WTP + MHP + EHP + ETP);
+        } else {
+            let points = "";
+            let numPoints = 0;
+            validCoordinates.forEach(({ x, y }) => {
+                x = (x / 51).toFixed(2);
+                y = ((y / 33) - 1.5).toFixed(2);
+                points += `F${floor}_${numPoints} ${floor} ${x} ${y} 0\n`;
+                numPoints += 1;
+            });
+            fs.writeFileSync(outputFilePath, points);
+        }
 
-            if( x < 20 && y > 58){
-                WHP += `F1_WESTHALL_${westhallPoints} ${floor} ${x} ${y} 0\n`;
-                westhallPoints += 1;
-            } else if( x <= 50 ){
-                WTP += `F1_WESTTUNNEL_${westTunnelPoints} ${floor} ${x} ${y} 0\n`;
-                westTunnelPoints += 1;
-            } else if( x < 70 ){
-                MHP += `F1_MAINHALL_${mainHallPoints} ${floor} ${x} ${y} 0\n`;
-                mainHallPoints += 1;
-            } else if( y > 44 ){
-                EHP += `F1_EASTHALL_${eastHallPoints} ${floor} ${x} ${y} 0\n`;
-                eastHallPoints += 1;
-            } else {
-                ETP += `F1_EASTTUNNEL_${eastTunnelPoints} ${floor} ${x} ${y} 0\n`;
-                eastTunnelPoints += 1;
-            }
 
-        });
-
-        fs.writeFileSync(outputFilePath, WHP + WTP + MHP + EHP + ETP);
     }
 }
 

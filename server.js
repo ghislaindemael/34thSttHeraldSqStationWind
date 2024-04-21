@@ -18,16 +18,9 @@ app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
 
-readPointsFromImages().then();
+//readPointsFromImages().then();
 
 let station = new Station();
-
-/*
-(async () => {
-    const imagePath = path.join(__dirname, 'public/images', 'FLOOR_1_BW.png');
-    await drawRedDotsOnImage(imagePath,2, 98,  1.5, 17);
-})();
-*/
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
@@ -36,15 +29,9 @@ app.listen(PORT, () => {
 
 setInterval(function() {
     station.cycle();
-    //station.printRooms();
-
     saveStationData(station);
 }, 1000);
 
-
-setInterval(function() {
-    station.generateRandomWind(3);
-}, 3000);
 
 
 
