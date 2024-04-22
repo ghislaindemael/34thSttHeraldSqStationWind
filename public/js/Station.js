@@ -97,7 +97,15 @@ export class Station {
                         let link = new Link(startRoom, endRoom, factor);
                         this.links.push(link);
                         endRoom.links.push(link);
+
+                        if(startRoom.name.startsWith("F")){
+                            let link = new Link(endRoom, startRoom, factor);
+                            console.log(link.name);
+                            this.links.push(link);
+                            startRoom.links.push(link);
+                        }
                     }
+
                 }
             });
             rl.on('close', resolve);

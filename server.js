@@ -41,7 +41,7 @@ setInterval(function (){
 
 
 setInterval(function () {
-    //station.addWindToTunnels();
+    station.addWindToTunnels();
     //station.generateRandomWind();
 }, 5000);
 
