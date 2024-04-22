@@ -6,13 +6,14 @@
     <link rel="stylesheet" href="css/windMap.css">
 </head>
 <body>
+<div class="titleButtonDiv">
 <h2 id="station-data">Station-Data</h2>
 <div class="buttons">
     <button data-floor="0">Floor 0</button>
     <button data-floor="1">Floor 1</button>
     <button data-floor="2">Floor 2</button>
     <button data-floor="3">Floor 3</button>
-    <button data-floor="4">Floor 4</button>
+</div>
 </div>
 <div class="map floor-1"></div>
 </body>
@@ -23,7 +24,7 @@
             const map = $('.map');
             const floor = button.dataset.floor;
             console.log("Setting floor to: " + floor);
-            map.removeClass('floor-0 floor-1 floor-2 floor-3 floor-4');
+            map.removeClass('floor-0 floor-1 floor-2 floor-3');
             map.addClass('floor-' + floor);
         });
     });

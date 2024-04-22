@@ -100,7 +100,7 @@ export class Station {
 
                         if(startRoom.name.startsWith("F")){
                             let link = new Link(endRoom, startRoom, factor);
-                            console.log(link.name);
+                            //console.log(link.name);
                             this.links.push(link);
                             startRoom.links.push(link);
                         }
@@ -203,8 +203,8 @@ export class Station {
     //Wind Management
 
     cycle() {
-        this.decreaseWindStrength(1);
         this.setTunnelWindStrength();
+        this.decreaseWindStrength(1);
         this.setPassageTempWind();
         this.setRoomWindWithPassages();
         this.clearPassages();

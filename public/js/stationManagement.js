@@ -31,7 +31,7 @@ function extractStationData(station) {
     return {
         name: station.name,
         mPoints: station.mPoints.map(extractRoomData),
-        links: station.links.map(extractLinkData),
+        //links: station.links.map(extractLinkData),
     };
 }
 
