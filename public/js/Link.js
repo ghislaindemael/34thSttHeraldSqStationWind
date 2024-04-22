@@ -13,9 +13,14 @@ export class Link {
     constructor(startRoom, endRoom, factor) {
         this.startPoint = startRoom;
         this.endPoint = endRoom;
+        this.factor = parseInt(factor) / 100;
         this.roomDistance = distanceBetweenRooms(startRoom, endRoom);
         this.direction = findAngleBetweenPoints(startRoom, endRoom);
         this.name = startRoom.name + "-->" + endRoom.name;
+    }
+
+    get name(){
+        return this.name;
     }
 
     get windStrength() {
@@ -35,8 +40,17 @@ export class Link {
         let startWS = this.startPoint.windStrength;
         let startWD = this.startPoint.windDirection;
         startWS *= factorOfAngleDifference(this.direction, startWD);
-        this.windDirection = this.direction;
+        this.windDirection = startWD;
+        if(isNaN(this.windDirection)){
+            console.log("Input winddir is nan");
+        }
         this.windStrength = Math.round((1 - (this.roomDistance / 1000)) * startWS);
+
+        /*
+        if(this.startPoint.name.startsWith("B") || this.startPoint.name.startsWith("N")){
+            console.log("Updating: " + this.name + ", " + this.windDirection + " " + this.windStrength);
+        }
+         */
 
     }
 

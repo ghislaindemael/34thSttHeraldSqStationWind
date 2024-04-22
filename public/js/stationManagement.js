@@ -6,31 +6,32 @@ function extractStationData(station) {
         return {
             name: measPoint.name,
             level: measPoint.level,
-            xCoord: measPoint.xCoord,
-            yCoord: measPoint.yCoord,
+            //xCoord: measPoint.xCoord,
+            //yCoord: measPoint.yCoord,
             xRelCoord: measPoint.xRelCoord,
             yRelCoord: measPoint.yRelCoord,
             windDirection: measPoint.windDirection,
             windStrength: measPoint.windStrength,
+            numLinks: measPoint.links.length,
         };
     }
 
     function extractLinkData(link) {
         return {
             name: link.name,
-            xRelCoord: link.startPoint.xRelCoord,
-            yRelCoord: link.startPoint.yRelCoord,
-            level: link.startPoint.level,
+            //xRelCoord: link.startPoint.xRelCoord,
+            //yRelCoord: link.startPoint.yRelCoord,
             distance: link.roomDistance,
             factor: link.factor,
             direction: link.direction,
+
         };
     }
 
     return {
         name: station.name,
-        measurePoints: station.measurePoints.map(extractRoomData),
-        //links: station.links.map(extractLinkData),
+        mPoints: station.mPoints.map(extractRoomData),
+        links: station.links.map(extractLinkData),
     };
 }
 
@@ -42,7 +43,7 @@ function saveStationData(stationObject) {
         if (err) {
             console.error('Error saving station data:', err);
         } else {
-            console.log('Station data saved successfully');
+            //console.log('Station data saved successfully');
         }
     });
 }

@@ -7,7 +7,7 @@ import {distanceBetweenRooms, minutesSinceMondayMidnight} from "./Utils.js";
 
 export class Station {
     name = "34StHrldSq";
-    measurePoints = []
+    mPoints = []
     links = []
     //incomingTrains = []
 
@@ -18,63 +18,69 @@ export class Station {
     };
 
     configurePoints(){
-        return new Promise((resolve) => {
+        return new Promise((resolve, reject) => {
             const dataDir = path.join(process.cwd(), './public/stationData/');
+            const promises = [];
 
+            const processFile = (fileName) => {
+                return new Promise((resolve, reject) => {
+                    const fileStream = fs.createReadStream(dataDir + fileName);
+                    const rl = readline.createInterface({
+                        input: fileStream,
+                        crlfDelay: Infinity
+                    });
+                    rl.on('line', (line) => {
+                        const params = line.split(' ');
+                        if (params.length === 5) {
+                            const [name, level, xCoord, yCoord, direction] = params;
+                            this.mPoints.push(new MeasurePoint(name, level, parseFloat(xCoord), parseFloat(yCoord), parseInt(direction)));
+                        }
+                    });
+                    rl.on('close', resolve);
+                    rl.on('error', reject);
+                });
+            };
+
+            promises.push(processFile('configTunnels.txt'));
             for(const floor of [0, 1, 2, 3]) {
-                const fileStream = fs.createReadStream(dataDir + `FLOOR_${floor}_Points.txt`);
-                const rl = readline.createInterface({
-                    input: fileStream,
-                    crlfDelay: Infinity
-                });
-                rl.on('line', (line) => {
-                    const params = line.split(' ');
-                    if (params.length === 5) {
-                        const [name, level, xCoord, yCoord, direction] = params;
-                        this.measurePoints.push(new MeasurePoint(name, level, parseFloat(xCoord), parseFloat(yCoord), direction));
-                    }
-                });
-                rl.on('close', () => {});
+                promises.push(processFile(`FLOOR_${floor}_Points.txt`));
             }
-            const fileStream = fs.createReadStream(dataDir + `configTunnels.txt`);
-            const rl = readline.createInterface({
-                input: fileStream,
-                crlfDelay: Infinity
-            });
-            rl.on('line', (line) => {
-                const params = line.split(' ');
-                if (params.length === 5) {
-                    const [name, level, xCoord, yCoord, direction] = params;
-                    this.measurePoints.push(new MeasurePoint(name, level, parseFloat(xCoord), parseFloat(yCoord), direction));
-                }
-            });
-            rl.on('close', () => { resolve() });
+
+            Promise.all(promises)
+                .then(() => resolve())
+                .catch((error) => reject(error));
         });
     }
 
+
     configurePassages() {
-        return new Promise((resolve) => {
-            for (let i = 0; i < this.measurePoints.length; i++) {
-                const measurePoint1 = this.measurePoints[i];
-                for (let j = i + 1; j < this.measurePoints.length; j++) {
-                    const measurePoint2 = this.measurePoints[j];
+        return new Promise((resolve, reject) => {
 
-                    if (measurePoint2.xRelCoord - measurePoint1.xRelCoord > 3) {
-                        break;
+            for (let i = 0; i < this.mPoints.length; i++) {
+                const room1 = this.mPoints[i];
+
+                for (let j = 0; j < this.mPoints.length; j++) {
+                    const room2 = this.mPoints[j];
+
+                    if(room1.level === room2.level) {
+                        let startIsTunnnel = (room1.name.startsWith("B") || room1.name.startsWith("N"));
+                        let endIsTunnnel = (room2.name.startsWith("B") || room2.name.startsWith("N"));
+
+                        if(!(startIsTunnnel || endIsTunnnel)){
+                            const distance = distanceBetweenRooms(room1, room2);
+
+                            if (distance < 2.2 && distance > 0) {
+                                const link = new Link(room1, room2, 100);
+                                this.links.push(link);
+                                room2.links.push(link);
+                            }
+                        }
                     }
 
-                    const distance = distanceBetweenRooms(measurePoint1, measurePoint2);
 
-                    if (distance < 2.3) {
-                        const link1 = new Link(measurePoint1, measurePoint2);
-                        this.links.push(link1);
-                        measurePoint2.links.push(link1);
-                        const link2 = new Link(measurePoint2, measurePoint1);
-                        this.links.push(link2);
-                        measurePoint1.links.push(link2);
-                    }
                 }
             }
+
             const dataDir = path.join(process.cwd(), './public/stationData/');
             const fileStream = fs.createReadStream(dataDir + `configLinks.txt`);
             const rl = readline.createInterface({
@@ -84,15 +90,20 @@ export class Station {
             rl.on('line', (line) => {
                 const params = line.split(' ');
                 if (params.length === 3) {
-                    const [startRoom, endroom, factor] = params;
-                    this.links.push(new Link(startRoom, endroom, factor));
+                    const [room1, room2, factor] = params;
+                    let startRoom = this.findRoomName(room1);
+                    let endRoom = this.findRoomName(room2);
+                    if(startRoom && endRoom){
+                        let link = new Link(startRoom, endRoom, factor);
+                        this.links.push(link);
+                        endRoom.links.push(link);
+                    }
                 }
             });
-            rl.on('close', () => { resolve() });
-            resolve();
+            rl.on('close', resolve);
+            rl.on('error', reject);
         });
     }
-
 
     refillTrains() {
         return new Promise((resolve, reject) => {
@@ -154,6 +165,7 @@ export class Station {
         this.configurePoints()
             .then(() => {
                 console.log("Points configured.");
+                console.log("There are " + this.mPoints.length + " points configured.");
                 this.configurePassages()
                     .then(() => {
                         console.log("Passages configured.");
@@ -171,9 +183,9 @@ export class Station {
 
     findRoomName(name) {
         let toFind = null;
-        for (let i = 0; i < this.measurePoints.length; i++) {
-            if (this.measurePoints[i].name.localeCompare(name) === 0) {
-                toFind = this.measurePoints[i];
+        for (let i = 0; i < this.mPoints.length; i++) {
+            if (this.mPoints[i].name.localeCompare(name) === 0) {
+                toFind = this.mPoints[i];
                 break;
             }
         }
@@ -183,7 +195,7 @@ export class Station {
     //Wind Management
 
     cycle() {
-        this.decreaseWindStrength(2);
+        this.decreaseWindStrength(1);
         this.setTunnelWindStrength();
         this.setPassageTempWind();
         this.setRoomWindWithPassages();
@@ -195,7 +207,7 @@ export class Station {
         curDate.setHours(-6);
         let minutesSinceMM = minutesSinceMondayMidnight(curDate);
 
-        this.measurePoints.forEach((point) => {
+        this.mPoints.forEach((point) => {
             if(point.incomingTrains.length > 1){
                 if(parseInt(point.incomingTrains.at(0)) <= minutesSinceMM){
                     console.log("Incoming train to " + point.name);
@@ -215,7 +227,7 @@ export class Station {
     }
 
     decreaseWindStrength(number){
-        this.measurePoints.forEach(room =>{
+        this.mPoints.forEach(room =>{
             room.windStrength -= number;
             if(room.windStrength < 1){
                 room.windStrength = 1;
@@ -224,7 +236,8 @@ export class Station {
     }
 
     setRoomWindWithPassages(){
-        this.measurePoints.forEach((room) => {
+        //console.log("Updating wind from passages.");
+        this.mPoints.forEach((room) => {
             room.updateWindFromPassages();
         });
     }
@@ -235,12 +248,45 @@ export class Station {
         });
     }
 
-    generateRandomWind(rooms) {
-        for(let i = 0; i < rooms; i++){
-            const randomIndex = Math.floor(Math.random() * this.measurePoints.length);
-            const randPoint = this.measurePoints[randomIndex];
+    generateRandomWind() {
+        for(let i = 0; i < 10; i++){
+            const randomIndex = Math.floor(Math.random() * this.mPoints.length);
+            const randPoint = this.mPoints[randomIndex];
             randPoint.windStrength = Math.round(Math.random() * 100);
             randPoint.windDirection = Math.round(Math.random() * 360);
+        }
+    }
+
+    timeUntilTrains(){
+        console.log("Upcoming trains :")
+        for(const line of ["BDFM", "NQRW"]){
+            for(const dir of ["UP", "DOWN"]){
+                for(const tun of ["1", "2"]){
+                    let tunnel = this.findRoomName(line + "_" + dir + "_T" + tun);
+                    if(tunnel){
+                        let times = "" ;
+                        for(let i = 0; i < 3; i++){
+                            times += tunnel.incomingTrains[i] + " ";
+                        }
+                        console.log("-- " + line + "_" + dir + "_T" + tun + ": " + times);
+                    }
+                }
+            }
+        }
+    }
+
+    addWindToTunnels() {
+        console.log("Adding wind to tunnels");
+        for(const line of ["BDFM", "NQRW"]){
+            for(const dir of ["UP", "DOWN"]){
+                for(const tun of ["1", "2"]){
+                    let tunnel = this.findRoomName(line + "_" + dir + "_T" + tun);
+                    if(tunnel){
+                        //console.log(line + "_" + dir + "_T" + tun);
+                        tunnel.windStrength = 99;
+                    }
+                }
+            }
         }
     }
 }

@@ -50,19 +50,26 @@ export class MeasurePoint {
     }
 
     updateWindFromPassages(){
-        let incomingWind = this.windStrength;
-        this.links.forEach(passage => {
-            incomingWind += passage.windStrength;
-        });
-        let avgWindStrength = this.windStrength * (this.windStrength / incomingWind);
-        let avgWindDir = this.windDirection * (this.windStrength / incomingWind);
-        this.links.forEach((passage) => {
-            avgWindStrength += ((passage.windStrength * passage.windStrength) / incomingWind);
-            avgWindDir += (passage.direction * (passage.windStrength / incomingWind));
-        });
+        if(this.links.length > 0){
+            let incomingWind = this.windStrength;
+            this.links.forEach(passage => {
+                incomingWind += passage.windStrength;
+            });
+            let avgWindStrength = this.windStrength * (this.windStrength / incomingWind);
+            let avgWindDir = this.windDirection * (this.windStrength / incomingWind);
+            this.links.forEach((passage) => {
+                avgWindStrength += ((passage.windStrength * passage.windStrength) / incomingWind);
+                avgWindDir += (passage.windDirection * (passage.windStrength / incomingWind));
+            });
 
-        this.windStrength = Math.round(avgWindStrength);
-        this.windDirection = Math.round(avgWindDir);
+            if(isNaN(avgWindDir)){
+                console.log(this.name + " error : windDir is null");
+            }
+
+            this.windStrength = Math.round(avgWindStrength);
+            this.windDirection = Math.round(avgWindDir);
+        }
+
 
     }
 

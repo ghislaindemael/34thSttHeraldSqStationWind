@@ -29,9 +29,20 @@ app.listen(PORT, () => {
 
 setInterval(function() {
     station.cycle();
+    //console.log(station.mPoints.length);
+    //console.log(station.links.length);
     saveStationData(station);
 }, 1000);
 
+setInterval(function (){
+    station.timeUntilTrains();
+}, 30000);
+
+
+setInterval(function () {
+    station.addWindToTunnels();
+    //station.generateRandomWind();
+}, 5000);
 
 
 

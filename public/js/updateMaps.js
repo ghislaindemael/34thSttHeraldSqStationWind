@@ -9,11 +9,11 @@ export function updateWindMaps() {
             const backgroundImage = `./images/FLOOR_${desiredFloor}.png`;
             map.css('background-image', `url(${backgroundImage})`);
 
-            let filteredRooms = data.measurePoints.filter((measPoint) => measPoint.level === desiredFloor);
+            let filteredRooms = data.mPoints.filter((measPoint) => measPoint.level === desiredFloor);
             $('.plotted-image').remove();
 
             filteredRooms.forEach(room => {
-                let index = Math.round(room.windStrength / 10);
+                let index = Math.floor(room.windStrength / 10);
                 if(index === 1){
                     index = 0;
                 }
