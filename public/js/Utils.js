@@ -55,6 +55,8 @@ export function factorOfAngleDifference(angle1, angle2) {
     if(angle > 90){
         return 0;
     } else {
-        return Math.cos(deg2Rad(angle));
+        let rad = deg2Rad(angle);
+        return (1 - Math.pow((rad / 1.6), 10));
+        //return Math.cos(deg2Rad(angle));
     }
 }

@@ -108,7 +108,7 @@ export class Station {
     refillTrains() {
         return new Promise((resolve, reject) => {
             let date = new Date();
-            date.setHours(-6);
+            //date.setHours(-6);
             let minutesSinceMM = minutesSinceMondayMidnight(date);
 
             const outputDir = path.join(process.cwd(), 'public', 'myTrainData');
@@ -204,7 +204,7 @@ export class Station {
 
     setTunnelWindStrength() {
         let curDate = new Date();
-        curDate.setHours(-6);
+        //curDate.setHours(-6);
         let minutesSinceMM = minutesSinceMondayMidnight(curDate);
 
         this.mPoints.forEach((point) => {

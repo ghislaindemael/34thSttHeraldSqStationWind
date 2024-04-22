@@ -36,11 +36,12 @@ setInterval(function() {
 
 setInterval(function (){
     station.timeUntilTrains();
+    //station.addWindToTunnels();
 }, 30000);
 
 
 setInterval(function () {
-    station.addWindToTunnels();
+    //station.addWindToTunnels();
     //station.generateRandomWind();
 }, 5000);
 
