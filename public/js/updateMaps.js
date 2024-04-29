@@ -6,7 +6,7 @@ export function updateWindMaps() {
             const map = $('.map');
             const desiredFloorClass = map.attr('class').split(' ').find(className => className.startsWith('floor-'));
             const desiredFloor = desiredFloorClass.substring(6);
-            const backgroundImage = `./images/FLOOR_${desiredFloor}.png`;
+            const backgroundImage = `./images/FLOOR_${desiredFloor}.jpeg`;
             map.css('background-image', `url(${backgroundImage})`);
 
             let filteredRooms = data.mPoints.filter((measPoint) => measPoint.level === desiredFloor);
@@ -14,23 +14,23 @@ export function updateWindMaps() {
 
             filteredRooms.forEach(room => {
                 let index = Math.floor(room.windStrength / 10);
-                if(index === 1){
-                    index = 0;
+                if(index > 1){
+                    index = index.toString().padStart(2, '0');
+
+                    const imageSrc = './images/FLECHES-' + index + '.png';
+                    const image = $('<img>').attr({
+                        alt: "",
+                        src: imageSrc,
+                        class: 'plotted-image'
+                    }).css({
+                        top: room.yRelCoord + '%',
+                        left: room.xRelCoord + '%',
+                        transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
+                    });
+
+                    $('.map').append(image);
                 }
-                index = index.toString().padStart(2, '0');
 
-                const imageSrc = './images/FLECHES-' + index + '.png';
-                const image = $('<img>').attr({
-                    alt: "",
-                    src: imageSrc,
-                    class: 'plotted-image'
-                }).css({
-                    top: room.yRelCoord + '%',
-                    left: room.xRelCoord + '%',
-                    transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
-                });
-
-                $('.map').append(image);
             });
 
             /*

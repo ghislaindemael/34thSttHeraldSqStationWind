@@ -4,13 +4,12 @@ import { fileURLToPath } from 'url';
 import { dirname } from 'path';
 import { Station } from './public/js/Station.js'
 import { saveStationData } from './public/js/stationManagement.js';
-import {drawRedDotsOnImage, readPointsFromImages} from './public/js/mapReader.js';
 
 const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-//import("./public/js/downloadExtractData.js")
+import("./public/js/downloadExtractData.js")
 
 app.use(express.static(path.join(__dirname, "public")));
 
