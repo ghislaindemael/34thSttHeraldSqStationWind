@@ -9,15 +9,14 @@ const app = express();
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-import("./public/js/downloadExtractData.js")
+//import("./public/js/downloadExtractData.js")
+//readPointsFromImages().then();
 
 app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
     res.sendFile(path.join(__dirname, "public", "index.html"));
 });
-
-//readPointsFromImages().then();
 
 let station = new Station();
 

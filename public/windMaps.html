@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wind Maps</title>
+    <link rel="stylesheet" href="css/windMaps.css">
+</head>
+<body>
+<div class="titleButtonDiv">
+    <h2 id="station-data">Station-Data</h2>
+    <input type="button" onclick="window.location.href='index.html';" value="Go to index" />
+</div>
+<div class="grid">
+    <div class="map floor-0"></div>
+    <div class="map floor-1"></div>
+    <div class="map floor-2"></div>
+    <div class="map floor-3"></div>
+</div>
+</body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+</script>
+<script type="module">
+    import { updateWindMaps } from './js/updateMaps.js';
+    updateWindMaps();
+    setInterval(function()  {
+        updateWindMaps();
+    }, 1000);
+</script>
+</html>

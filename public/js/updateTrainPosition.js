@@ -1,5 +1,5 @@
 function updateTrainPosition(routeColumnId, direction) {
-    console.log("Updating route " + routeColumnId + " " + direction);
+    //console.log("Updating route " + routeColumnId + " " + direction);
 
     var now = new Date();
     var dayOfWeek = now.getDay();

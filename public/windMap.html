@@ -8,7 +8,9 @@
 <body>
 <div class="titleButtonDiv">
 <h2 id="station-data">Station-Data</h2>
-<div class="buttons">
+    <input type="button" onclick="window.location.href='index.html';" value="Go to index" />
+
+    <div class="buttons">
     <button data-floor="0">Floor 0</button>
     <button data-floor="1">Floor 1</button>
     <button data-floor="2">Floor 2</button>
@@ -30,7 +32,7 @@
     });
 </script>
 <script type="module">
-    import { updateWindMaps } from './js/updateMaps.js';
+    import { updateWindMaps } from './js/updateMap.js';
     updateWindMaps();
     setInterval(function()  {
         updateWindMaps();

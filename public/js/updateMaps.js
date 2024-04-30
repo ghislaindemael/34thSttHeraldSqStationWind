@@ -2,59 +2,40 @@ export function updateWindMaps() {
     fetch('./stationData/stationData.json')
         .then((response) => response.json())
         .then((data) => {
+            // Loop through each map in the DOM
+            $('.map').each((index, map) => {
+                map = $(map);
+                const backgroundImage = `./images/FLOOR_${index}.png`;
+                map.css('background-image', `url(${backgroundImage})`);
 
-            const map = $('.map');
-            const desiredFloorClass = map.attr('class').split(' ').find(className => className.startsWith('floor-'));
-            const desiredFloor = desiredFloorClass.substring(6);
-            const backgroundImage = `./images/FLOOR_${desiredFloor}.png`;
-            map.css('background-image', `url(${backgroundImage})`);
+                let floorPoints = data.mPoints.filter((mp) => parseInt(mp.name.charAt(1)) === index);
+                $('.plotted-image', map).remove();
 
-            let filteredRooms = data.mPoints.filter((measPoint) => measPoint.level === desiredFloor);
-            $('.plotted-image').remove();
+                floorPoints.forEach(room => {
+                    let windIndex = Math.round(room.windStrength / 10);
+                    if(windIndex === 10){
+                        windIndex--;
+                    }
+                    if(windIndex > 1){
+                        windIndex = windIndex.toString().padStart(2, '0');
 
-            filteredRooms.forEach(room => {
-                let index = Math.floor(room.windStrength / 10);
-                if(index > 1){
-                    index = index.toString().padStart(2, '0');
+                        const imageSrc = './images/ARR_' + windIndex + '.png';
+                        const image = $('<img>').attr({
+                            alt: "",
+                            src: imageSrc,
+                            class: 'plotted-image'
+                        }).css({
+                            top: room.yRelCoord + '%',
+                            left: room.xRelCoord + '%',
+                            transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
+                        });
 
-                    const imageSrc = './images/FLECHES-' + index + '.png';
-                    const image = $('<img>').attr({
-                        alt: "",
-                        src: imageSrc,
-                        class: 'plotted-image'
-                    }).css({
-                        top: room.yRelCoord + '%',
-                        left: room.xRelCoord + '%',
-                        transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
-                    });
-
-                    $('.map').append(image);
-                }
-
-            });
-
-            /*
-            data.links.filter((link) => link.level === desiredFloor).forEach((link) => {
-                const arrow = $('<img>').attr({
-                    alt: "",
-                    src: './images/FLECHES-07.png',
-                }).css({
-                    top: link.yRelCoord + '%',
-                    left: link.xRelCoord + '%',
-                    transform: `translate(-50%, -50%) rotate(${38 + link.direction}deg)`,
-                    width: `0.9%`,
-                    height: `1.44%`,
-                    position: 'absolute',
+                        map.append(image); // Append the image to the current map
+                    }
                 });
-                $('.map').append(arrow);
             });
-            */
         })
         .catch((error) => {
             console.error('Error:', error);
         });
-
-
-
-
 }

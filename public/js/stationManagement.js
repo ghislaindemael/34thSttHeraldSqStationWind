@@ -5,14 +5,14 @@ function extractStationData(station) {
     function extractRoomData(measPoint) {
         return {
             name: measPoint.name,
-            level: measPoint.level,
+            //level: measPoint.level,
             //xCoord: measPoint.xCoord,
             //yCoord: measPoint.yCoord,
             xRelCoord: measPoint.xRelCoord,
             yRelCoord: measPoint.yRelCoord,
             windDirection: measPoint.windDirection,
             windStrength: measPoint.windStrength,
-            numLinks: measPoint.links.length,
+            //numLinks: measPoint.links.length,
         };
     }
 
