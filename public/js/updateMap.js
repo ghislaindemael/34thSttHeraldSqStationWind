@@ -17,9 +17,9 @@ export function updateWindMaps() {
                 if(index === 10){
                     index--;
                 }
-                if(index > 1){
+                //if(index >= 1){
+                if(index >= 0){
                     index = index.toString().padStart(2, '0');
-
                     const imageSrc = './images/ARR_' + index + '.png';
                     const image = $('<img>').attr({
                         alt: "",
@@ -33,6 +33,18 @@ export function updateWindMaps() {
 
                     $('.map').append(image);
                 }
+                if(room.ceilingType === "OPEN"){
+                    const image = $('<img>').attr({
+                        src: './images/bluedot.png',
+                        class: 'plotted-image'
+                    }).css({
+                        top: room.yRelCoord + '%',
+                        left: room.xRelCoord + '%',
+                        transform: 'translate(-50%, -50%)'
+                    });
+                    $('.map').append(image);
+                }
+
 
             });
 

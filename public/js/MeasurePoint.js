@@ -1,6 +1,6 @@
 export class MeasurePoint {
     name = "default";
-    level = "0";
+    level = 0;
     xCoord = 0;
     yCoord = 0;
     xRelCoord = 0;
@@ -8,16 +8,18 @@ export class MeasurePoint {
     windDirection = 0;
     windStrength = 0;
     links = [];
+    ceilingType = "CLOSED";
     incomingTrains = []
 
-    constructor(inName, inLevel, inXCoord, inYCoord, direction) {
+    constructor(inName, inLevel, inXCoord, inYCoord, direction, openCeiling) {
         this.name = inName;
-        this.level = inLevel;
+        this.level = parseInt(inLevel);
         this.xCoord = Math.round((inXCoord * 51) / 20.4);
         this.yCoord = Math.round((inYCoord * 33) / 20.4);
         this.xRelCoord = inXCoord;
         this.yRelCoord = inYCoord;
         this.windDirection = direction;
+        this.ceilingType = openCeiling;
         //console.log("Created " + inName + ".");
     }
 

@@ -48,11 +48,6 @@ export class Link {
         }
         this.windStrength = Math.round((1 - (this.roomDistance / 10000)) * startWS);
 
-        /*
-        if(this.startPoint.name.startsWith("B") || this.startPoint.name.startsWith("N")){
-            console.log("Updating: " + this.name + ", " + this.windDirection + " " + this.windStrength);
-        }
-         */
 
     }
 
