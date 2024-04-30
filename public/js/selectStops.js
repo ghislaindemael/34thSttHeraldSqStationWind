@@ -2,7 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { createInterface } from 'readline';
 
-const inputFile = path.join(process.cwd(), '..', 'TrainData', 'stop_times.txt');
+const inputFile = path.join(process.cwd(), '..', 'trainData', 'stop_times.txt');
 const outputDir = path.join(process.cwd(), '..', 'myTrainData');
 
 if (!fs.existsSync(outputDir)) {

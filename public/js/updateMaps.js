@@ -6,7 +6,7 @@ export function updateWindMaps() {
             const map = $('.map');
             const desiredFloorClass = map.attr('class').split(' ').find(className => className.startsWith('floor-'));
             const desiredFloor = desiredFloorClass.substring(6);
-            const backgroundImage = `./images/FLOOR_${desiredFloor}.jpeg`;
+            const backgroundImage = `./images/FLOOR_${desiredFloor}.png`;
             map.css('background-image', `url(${backgroundImage})`);
 
             let filteredRooms = data.mPoints.filter((measPoint) => measPoint.level === desiredFloor);
