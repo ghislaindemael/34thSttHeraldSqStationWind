@@ -267,7 +267,7 @@ export class Station {
         for(let i = 0; i < 20; i++){
             const randomIndex = Math.floor(Math.random() * this.mPoints.length);
             const randPoint = this.mPoints[randomIndex];
-            if(randPoint.level === 3){
+            if(randPoint.level === 2){
                 randPoint.windStrength = Math.round(Math.random() * 100);
                 randPoint.windDirection = Math.round(Math.random() * 360);
             }

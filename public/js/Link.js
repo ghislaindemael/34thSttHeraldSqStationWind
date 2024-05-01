@@ -9,14 +9,16 @@ export class Link {
     direction = 0;
     windStrength = 0;
     windDirection = 0;
+    levelDiff = 0;
 
-    constructor(startRoom, endRoom, factor) {
-        this.startPoint = startRoom;
-        this.endPoint = endRoom;
-        this.factor = parseInt(factor) / 100;
-        this.roomDistance = distanceBetweenRooms(startRoom, endRoom);
-        this.direction = findAngleBetweenPoints(startRoom, endRoom);
-        this.name = startRoom.name + "-->" + endRoom.name;
+    constructor(inStartPoint, inEndPoint, inFactor) {
+        this.startPoint = inStartPoint;
+        this.endPoint = inEndPoint;
+        this.factor = parseInt(inFactor) / 100;
+        this.roomDistance = distanceBetweenRooms(inStartPoint, inEndPoint);
+        this.direction = findAngleBetweenPoints(inStartPoint, inEndPoint);
+        this.name = inStartPoint.name + "-->" + inEndPoint.name;
+        this.levelDiff = Math.abs(inStartPoint.level - inEndPoint.level);
     }
 
     get name(){
@@ -47,6 +49,7 @@ export class Link {
             console.log("Input winddir is nan");
         }
         this.windStrength = Math.round((1 - (this.roomDistance / 10000)) * startWS);
+        this.windStrength = Math.round(this.windStrength * (1 - (0.25 * this.levelDiff)));
         //this.windStrength = startWS;
 
 
