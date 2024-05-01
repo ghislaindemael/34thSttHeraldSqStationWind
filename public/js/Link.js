@@ -48,7 +48,7 @@ export class Link {
         if(isNaN(this.windDirection)){
             console.log("Input winddir is nan");
         }
-        this.windStrength = Math.round((1 - (this.roomDistance / 10000)) * startWS);
+        this.windStrength = Math.round((1 - (this.roomDistance / 200)) * startWS);
         this.windStrength = Math.round(this.windStrength * (1 - (0.25 * this.levelDiff)));
         //this.windStrength = startWS;
 
