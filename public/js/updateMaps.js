@@ -39,6 +39,7 @@ export function updateWindMap() {
                     $('.map').append(image);
                 }
 
+                /*
                 const imageSrc = ceilingTypeToImageSrc[room.ceilingType];
                 if (imageSrc) {
                     const image = $('<img>').attr({
@@ -52,19 +53,14 @@ export function updateWindMap() {
 
                     $('.map').append(image);
                 }
+                 */
 
             });
-
-
 
         })
         .catch((error) => {
             console.error('Error:', error);
         });
-
-
-
-
 }
 
 export function updateWindMaps() {
