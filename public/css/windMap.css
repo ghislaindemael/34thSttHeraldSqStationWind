@@ -21,7 +21,7 @@ h2 {
 }
 
 .map {
-    border: 2px red solid;
+    border: 1px black solid;
     position: relative;
     width: 100%;
     aspect-ratio: 1 / 0.67;

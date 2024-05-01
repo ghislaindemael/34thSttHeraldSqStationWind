@@ -57,7 +57,7 @@ export class MeasurePoint {
             this.links.forEach(passage => {
                 incomingWind += passage.windStrength;
             });
-            let avgWindStrength = this.windStrength * (this.windStrength / incomingWind);
+            let avgWindStrength = (this.windStrength * this.windStrength) / incomingWind;
             let avgWindDir = this.windDirection * (this.windStrength / incomingWind);
             this.links.forEach((passage) => {
                 avgWindStrength += ((passage.windStrength * passage.windStrength) / incomingWind);

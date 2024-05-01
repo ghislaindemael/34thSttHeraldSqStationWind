@@ -76,18 +76,21 @@ export class Station {
                                 room2.links.push(link);
                             }
                         }
-                    } else if(room1.ceilingType === "OPEN" && room1.level - room2.level === 1){
-                        if(distance < 2.5){
-                            //console.log("Building vertical link between " + room1.name + " and " + room2.name);
-                            const upLink = new Link(room1, room2, 100);
-                            this.links.push(upLink);
-                            room2.links.push(upLink);
-                            const downLink = new Link(room2, room1, 100);
-                            this.links.push(downLink);
-                            room1.links.push(downLink);
+                    } else {
+                        const levelDif = room1.level - room2.level;
+                        if ((room1.ceilingType === "OP1" && levelDif === 1) || (room1.ceilingType === "OP2" && levelDif === 2)) {
+                            if (distance > 0 && distance < 2.5) {
+                                const upLink = new Link(room1, room2, 100);
+                                this.links.push(upLink);
+                                room2.links.push(upLink);
 
+                                const downLink = new Link(room2, room1, 100);
+                                this.links.push(downLink);
+                                room1.links.push(downLink);
+                            }
                         }
                     }
+
 
                 }
             }
@@ -108,13 +111,6 @@ export class Station {
                         let link = new Link(startRoom, endRoom, factor);
                         this.links.push(link);
                         endRoom.links.push(link);
-
-                        if(startRoom.name.startsWith("F")){
-                            let link = new Link(endRoom, startRoom, factor);
-                            //console.log(link.name);
-                            this.links.push(link);
-                            startRoom.links.push(link);
-                        }
                     }
 
                 }
@@ -271,7 +267,7 @@ export class Station {
         for(let i = 0; i < 20; i++){
             const randomIndex = Math.floor(Math.random() * this.mPoints.length);
             const randPoint = this.mPoints[randomIndex];
-            if(randPoint.level > 0){
+            if(randPoint.level === 3){
                 randPoint.windStrength = Math.round(Math.random() * 100);
                 randPoint.windDirection = Math.round(Math.random() * 360);
             }
