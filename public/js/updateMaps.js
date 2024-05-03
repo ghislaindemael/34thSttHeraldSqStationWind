@@ -80,6 +80,7 @@ export function updateWindMaps() {
                     if(windIndex === 10){
                         windIndex--;
                     }
+                    //if(windIndex >= 0){
                     if(windIndex > 1){
                         windIndex = windIndex.toString().padStart(2, '0');
 
