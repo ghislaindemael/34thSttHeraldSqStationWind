@@ -8,10 +8,10 @@ function extractStationData(station) {
             //level: measPoint.level,
             //xCoord: measPoint.xCoord,
             //yCoord: measPoint.yCoord,
-            xRelCoord: measPoint.xRelCoord,
-            yRelCoord: measPoint.yRelCoord,
-            windDirection: measPoint.windDirection,
-            windStrength: measPoint.windStrength,
+            xRC: measPoint.xRelCoord,
+            yRC: measPoint.yRelCoord,
+            wD: measPoint.windDirection,
+            wS: measPoint.windStrength
             //ceilingType: measPoint.ceilingType,
             //numLinks: measPoint.links.length,
         };
@@ -24,8 +24,7 @@ function extractStationData(station) {
             //yRelCoord: link.startPoint.yRelCoord,
             distance: link.roomDistance,
             factor: link.factor,
-            direction: link.direction,
-
+            direction: link.direction
         };
     }
 

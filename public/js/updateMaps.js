@@ -18,7 +18,7 @@ export function updateWindMap() {
             $('.plotted-image').remove();
 
             filteredRooms.forEach(room => {
-                let index = Math.round(room.windStrength / 10);
+                let index = Math.round(room.wS / 10);
                 if(index === 10){
                     index--;
                 }
@@ -31,9 +31,9 @@ export function updateWindMap() {
                         src: imageSrc,
                         class: 'plotted-image'
                     }).css({
-                        top: room.yRelCoord + '%',
-                        left: room.xRelCoord + '%',
-                        transform: 'translate(-50%, -50%) rotate(' + (38 + room.windDirection) + 'deg)'
+                        top: room.yRC + '%',
+                        left: room.xRC + '%',
+                        transform: 'translate(-50%, -50%) rotate(' + (38 + room.wD) + 'deg)'
                     });
 
                     $('.map').append(image);

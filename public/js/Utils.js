@@ -56,7 +56,7 @@ export function factorOfAngleDifference(angle1, angle2) {
         return 0;
     } else {
         let rad = deg2Rad(angle);
-        return (1 - Math.pow((rad / 1.6), 8));
+        return (1 - Math.pow((rad / 1.6), 4));
         //return Math.cos(deg2Rad(angle));
     }
 }

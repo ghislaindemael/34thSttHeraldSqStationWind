@@ -11,8 +11,9 @@ export class Station {
     links = []
 
     constructor() {
-        this.configure();
+        this.configure().then(this.timeUntilTrains());
         //Post config
+
 
     };
 
