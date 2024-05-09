@@ -42,14 +42,13 @@ export class Link {
         let startWS = this.startPoint.windStrength;
         let startWD = this.startPoint.windDirection;
         let factor = factorOfAngleDifference(this.direction, startWD)
-        //console.log(factor);
         startWS *= factor;
         this.windDirection = startWD;
         if(isNaN(this.windDirection)){
             console.log("Input winddir is nan");
         }
         this.windStrength = Math.round((1 - (this.roomDistance / 200)) * startWS);
-        this.windStrength = Math.round(this.windStrength * (1 - (0.25 * this.levelDiff)));
+        this.windStrength = Math.round(this.windStrength * (1 - (0.2 * this.levelDiff)));
         //this.windStrength = startWS;
 
 

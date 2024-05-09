@@ -117,8 +117,8 @@ export class Station {
                 const readInterface = readline.createInterface({ input: readStream });
                 let index = 0;
                 let tunnels = [];
-                tunnels.push(this.findRoomName("F" + (lineDir.charAt(0) === "B" ? "3_" : "2_") + lineDir + "_T1"));
-                tunnels.push(this.findRoomName("F" + (lineDir.charAt(0) === "B" ? "3_" : "2_") + lineDir + "_T2"));
+                tunnels.push(this.findRoomByName("F" + (lineDir.charAt(0) === "B" ? "3_" : "2_") + lineDir + "_T1"));
+                tunnels.push(this.findRoomByName("F" + (lineDir.charAt(0) === "B" ? "3_" : "2_") + lineDir + "_T2"));
 
                 const promise = new Promise((resolve, reject) => {
                     readInterface.on('line', line => {
@@ -147,7 +147,6 @@ export class Station {
 
             Promise.all(promises)
                 .then(() => {
-                    console.log("Trains refilled.");
                     resolve();
                 })
                 .catch((error) => {
@@ -176,7 +175,7 @@ export class Station {
     }
 
 
-    findRoomName(name) {
+    findRoomByName(name) {
         let toFind = null;
         for (let i = 0; i < this.mPoints.length; i++) {
             if (this.mPoints[i].name.localeCompare(name) === 0) {
@@ -191,8 +190,8 @@ export class Station {
 
     cycle() {
         this.setTunnelWindStrength();
-        this.decreaseWindStrength(1);
         this.setPassageTempWind();
+        this.decreaseWindStrength(1);
         this.setRoomWindWithPassages();
         this.clearPassages();
     }
@@ -260,7 +259,7 @@ export class Station {
         for(const line of ["F3_BDFM", "F2_NQRW"]){
             for(const dir of ["UP", "DOWN"]){
                 for(const tun of ["1", "2"]){
-                    let tunnel = this.findRoomName(line + "_" + dir + "_T" + tun);
+                    let tunnel = this.findRoomByName(line + "_" + dir + "_T" + tun);
                     if(tunnel){
                         let times = "" ;
                         for(let i = 0; i < 3; i++){
@@ -278,7 +277,7 @@ export class Station {
         for(const line of ["F3_BDFM", "F2_NQRW"]){
             for(const dir of ["UP", "DOWN"]){
                 for(const tun of ["1", "2"]){
-                    let tunnel = this.findRoomName(line + "_" + dir + "_T" + tun);
+                    let tunnel = this.findRoomByName(line + "_" + dir + "_T" + tun);
                     if(tunnel){
                         //console.log(line + "_" + dir + "_T" + tun);
                         tunnel.windStrength = 99;
@@ -290,14 +289,14 @@ export class Station {
 
     setTunnelDirection() {
         return new Promise((resolve) => {
-            this.findRoomName("F3_BDFM_UP_T1").windDirection = 0;
-            this.findRoomName("F3_BDFM_UP_T2").windDirection = 0;
-            this.findRoomName("F3_BDFM_DOWN_T1").windDirection = 180;
-            this.findRoomName("F3_BDFM_DOWN_T2").windDirection = 180;
-            this.findRoomName("F2_NQRW_UP_T1").windDirection = 330;
-            this.findRoomName("F2_NQRW_UP_T2").windDirection = 330;
-            this.findRoomName("F2_NQRW_DOWN_T1").windDirection = 150;
-            this.findRoomName("F2_NQRW_DOWN_T2").windDirection = 150;
+            this.findRoomByName("F3_BDFM_UP_T1").windDirection = 0;
+            this.findRoomByName("F3_BDFM_UP_T2").windDirection = 0;
+            this.findRoomByName("F3_BDFM_DOWN_T1").windDirection = 180;
+            this.findRoomByName("F3_BDFM_DOWN_T2").windDirection = 180;
+            this.findRoomByName("F2_NQRW_UP_T1").windDirection = 330;
+            this.findRoomByName("F2_NQRW_UP_T2").windDirection = 330;
+            this.findRoomByName("F2_NQRW_DOWN_T1").windDirection = 150;
+            this.findRoomByName("F2_NQRW_DOWN_T2").windDirection = 150;
             resolve();
         });
     }
