@@ -59,7 +59,7 @@ export class Station {
         return new Promise((resolve, reject) => {
 
             const floorThreshold = 2.5;
-            const tunnelThreshold = 4;
+            const tunnelThreshold = 5;
 
             for (let i = 0; i < this.mPoints.length; i++) {
                 const room1 = this.mPoints[i];
@@ -223,7 +223,12 @@ export class Station {
 
     decreaseWindStrength(number){
         this.mPoints.forEach(room =>{
-            room.windStrength -= number;
+            if(room.name.charAt(4) === 'D' || room.name.charAt(4) === 'Q'){
+                room.windStrength -= (3 * number);
+            } else {
+                room.windStrength -= number;
+            }
+
             if(room.windStrength < 1){
                 room.windStrength = 1;
             }
