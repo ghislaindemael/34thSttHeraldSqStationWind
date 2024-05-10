@@ -11,8 +11,8 @@ function extractStationData(station) {
             xRC: measPoint.xRelCoord,
             yRC: measPoint.yRelCoord,
             wD: measPoint.windDirection,
-            wS: measPoint.windStrength
-            //ceilingType: measPoint.ceilingType,
+            wS: measPoint.windStrength,
+            cT: measPoint.ceilingType,
             //numLinks: measPoint.links.length,
         };
     }

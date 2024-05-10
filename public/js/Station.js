@@ -59,7 +59,7 @@ export class Station {
         return new Promise((resolve, reject) => {
 
             const floorThreshold = 2.5;
-            const tunnelThreshold = 5;
+            const tunnelThreshold = 6;
 
             for (let i = 0; i < this.mPoints.length; i++) {
                 const room1 = this.mPoints[i];
@@ -85,7 +85,7 @@ export class Station {
                     } else {
                         const levelDif = room1.level - room2.level;
                         if ((room1.ceilingType === "OP1" && levelDif === 1) || (room1.ceilingType === "OP2" && levelDif === 2)) {
-                            if (distance > 0 && distance < 2.5) {
+                            if (distance > 0 && distance < floorThreshold) {
                                 const upLink = new Link(room1, room2, 100);
                                 this.links.push(upLink);
                                 room2.links.push(upLink);
@@ -252,7 +252,7 @@ export class Station {
         for(let i = 0; i < 20; i++){
             const randomIndex = Math.floor(Math.random() * this.mPoints.length);
             const randPoint = this.mPoints[randomIndex];
-            if(randPoint.level === 2){
+            if(randPoint.level >= 2){
                 randPoint.windStrength = Math.round(Math.random() * 100);
                 randPoint.windDirection = Math.round(Math.random() * 360);
             }

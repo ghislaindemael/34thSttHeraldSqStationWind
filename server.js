@@ -33,14 +33,14 @@ setInterval(function() {
 }, 1000);
 
 setInterval(function (){
-    station.timeUntilTrains();
+    //station.timeUntilTrains();
     //station.addWindToTunnels();
 }, 30000);
 
 
 setInterval(function () {
     //station.addWindToTunnels();
-    //station.generateRandomWind();
+    station.generateRandomWind();
 }, 15000);
 
 

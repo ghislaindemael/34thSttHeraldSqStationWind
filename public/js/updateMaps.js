@@ -10,11 +10,11 @@ export function updateWindMap() {
 
             const map = $('.map');
             const desiredFloorClass = map.attr('class').split(' ').find(className => className.startsWith('floor-'));
-            const desiredFloor = desiredFloorClass.substring(6);
-            const backgroundImage = `./images/FLOOR_${desiredFloor}.png`;
+            const roomFloor = desiredFloorClass.substring(6);
+            const backgroundImage = `./images/FLOOR_${roomFloor}.png`;
             map.css('background-image', `url(${backgroundImage})`);
 
-            let filteredRooms = data.mPoints.filter((measPoint) => measPoint.name.charAt(1) === desiredFloor);
+            let filteredRooms = data.mPoints.filter((mPoint) => mPoint.name.charAt(1) === roomFloor);
             $('.plotted-image').remove();
 
             filteredRooms.forEach(room => {
@@ -23,7 +23,7 @@ export function updateWindMap() {
                     index--;
                 }
                 if(index >= 1){ //To prevent viewing the point
-                //if(index >= 0){
+                //if(index >= 0){ //To view the point
                     index = index.toString().padStart(2, '0');
                     const imageSrc = './images/ARR_' + index + '.png';
                     const image = $('<img>').attr({
@@ -40,20 +40,21 @@ export function updateWindMap() {
                 }
 
                 /*
-                const imageSrc = ceilingTypeToImageSrc[room.ceilingType];
+                const imageSrc = ceilingTypeToImageSrc[room.cT];
                 if (imageSrc) {
                     const image = $('<img>').attr({
                         src: imageSrc,
                         class: 'plotted-image'
                     }).css({
-                        top: room.yRelCoord + '%',
-                        left: room.xRelCoord + '%',
+                        top: room.yRC + '%',
+                        left: room.xRC + '%',
                         transform: 'translate(-50%, -50%)'
                     });
 
                     $('.map').append(image);
                 }
-                 */
+                */
+
 
             });
 
